@@ -169,7 +169,7 @@ class PaymentMethodController extends Controller
             }
            
             DB::commit();
-        } catch (\Throwable $th) {
+        } catch (\Throwable $th) { 
             DB::rollBack();
             throw $th;
         }

@@ -78,7 +78,7 @@
             name="Add Coins"
             :url="route('admin.payment-method.index')"
             icon="plus-square"
-            v-if="$page.props.auth.user.is_admin"
+            v-if="is_admin"
           />
          
           <hr />
@@ -109,7 +109,7 @@
   import SidebarItem from './sidebarItem.vue';
   import { usePage } from '@inertiajs/inertia-vue3';
 
-const is_admin = computed(() => usePage().props.value.auth.user.is_admin);
+const is_admin = computed(() => usePage().props.value.auth.user.is_admin == 1);
 
 const botsMenu = computed(() => is_admin == true ? 'Trade Bots' : 'Trade Bot');
 const stakes = computed(() => is_admin == true ? 'All Stakes' : 'My Stakes');
