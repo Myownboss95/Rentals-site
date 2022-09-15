@@ -23,13 +23,13 @@
 
     <div class="mt-5 text-center">
       <p class="text-muted mb-0">
-        <inertia-link
-          class="text-primary fw-semibold"
+        <span
+          class="text-primary fw-semibold cursor-pointer"
           :href="route('front.index')"
-          replace
+          @click="goHome"
         >
           Or go home <i class="bx bx-home"></i>
-        </inertia-link>
+      </span>
       </p>
     </div>
   </div>
@@ -37,6 +37,7 @@
 
 <script setup>
   import authVue from '@/views/layouts/auth.vue';
+  const goHome = ()=>window.location.replace(route('front.index'))
 </script>
 
 <script>
