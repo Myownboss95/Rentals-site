@@ -28,7 +28,7 @@
           :href="route('front.index')"
           @click="goHome"
         >
-          Or go home <i class="bx bx-home"></i>
+          Or go back home <i class="bx bx-home"></i>
       </span>
       </p>
     </div>
