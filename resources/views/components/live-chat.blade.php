@@ -1,0 +1,1 @@
+{!! $setting?->chat_script !!}
