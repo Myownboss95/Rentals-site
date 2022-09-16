@@ -24,14 +24,17 @@
                         </path>
                     </svg></a></div>
             <div class="languages"><span class="bp3-popover-wrapper"><span class="bp3-popover-target">
-                        <div class=""><span class="selected">English</span><span icon="chevron-down"
-                                class="bp3-icon bp3-icon-chevron-down"><svg data-icon="chevron-down" width="18"
-                                    height="18" viewBox="0 0 16 16">
+                        <div class="">
+                            <div id="google_translate_element"></div>
+                            {{-- <span class="selected">English</span> --}}
+                            <span icon="chevron-down" class="bp3-icon bp3-icon-chevron-down"><svg
+                                    data-icon="chevron-down" width="18" height="18" viewBox="0 0 16 16">
                                     <desc>chevron-down</desc>
                                     <path
                                         d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
                                         fill-rule="evenodd"></path>
-                                </svg></span></div>
+                                </svg></span>
+                        </div>
                     </span></span></div>
         </header>
 
@@ -453,16 +456,16 @@
                     });
                     atom.forEach((element, index) => {
                         if (index == 0) {
-                            element.innerHTML = (result/data).toFixed(2);
+                            element.innerHTML = (result / data).toFixed(2);
                         }
                         if (index == 1) {
-                            element.innerHTML = ((result/data) * 7).toFixed(2);
+                            element.innerHTML = ((result / data) * 7).toFixed(2);
                         }
                         if (index == 2) {
-                            element.innerHTML = ((result/data) * 7 * 30).toFixed(2);
+                            element.innerHTML = ((result / data) * 7 * 30).toFixed(2);
                         }
                         if (index == 3) {
-                            element.innerHTML = ((result/data) * 7 * 30 * 12).toFixed(2);
+                            element.innerHTML = ((result / data) * 7 * 30 * 12).toFixed(2);
                         }
 
                     });
@@ -473,4 +476,16 @@
             }
         </script>
 
+        <script type="text/javascript">
+            function googleTranslateElementInit() {
+                new google.translate.TranslateElement({
+                        pageLanguage: 'en'
+                    },
+                    'google_translate_element'
+                );
+            }
+        </script>
+
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
+            cb=googleTranslateElementInit"></script>
         @include('front.template.footer')
