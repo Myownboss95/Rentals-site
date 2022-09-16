@@ -52,7 +52,7 @@
       "resources/views/pages/user/withdrawals/withdraw.vue"
     ],
     "css": [
-      "assets/main.7bace207.css"
+      "assets/main.668982d4.css"
     ],
     "assets": [
       "assets/logo-sm.f047c034.svg",
@@ -63,7 +63,7 @@
       "assets/boxicons.65837913.woff",
       "assets/boxicons.c8ae15ef.ttf",
       "assets/boxiconsd41d.c2df7adc.svg",
-      "assets/fa-brands-400.811e1577.eot",
+      "assets/fa-brands-400d41d.811e1577.eot",
       "assets/fa-brands-400.5d919029.html",
       "assets/fa-brands-400.e836c5d5.woff",
       "assets/fa-brands-400.a0c14538.ttf",
@@ -76,7 +76,7 @@
       "assets/fa-solid-900.352f8ead.woff",
       "assets/fa-solid-900.231d68ce.ttf",
       "assets/fa-solid-900.e7685398.svg",
-      "assets/dripicons-v2d41d.4551d45f.eot",
+      "assets/dripicons-v2.4551d45f.eot",
       "assets/dripicons-v2.e87a09ce.woff",
       "assets/dripicons-v2.d8c798b5.ttf",
       "assets/dripicons-v2.2c1ce9e2.svg",
