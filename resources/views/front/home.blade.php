@@ -436,21 +436,21 @@
                     var result = inputPrice * data;
                     var mainPrice = result.toFixed(2) + ' USD';
                     document.getElementById('price').innerHTML = mainPrice;
-                    let percentageR = (roiCheck / 100) * result;
-                    result += percentageR;
+                    let percentageR = (roiCheck / 100);
+                    
                     // console.log(result)
                     amounts.forEach((element, index) => {
                         if (index == 0) {
-                            element.innerHTML = result.toFixed(2) + ' USD';
+                            element.innerHTML = ((percentageR * 1 * result) + result).toFixed(2) + ' USD';
                         }
                         if (index == 1) {
-                            element.innerHTML = (result * 7).toFixed(2) + ' USD';
+                            element.innerHTML = ((percentageR * 7 * result) + result).toFixed(2) + ' USD';
                         }
                         if (index == 2) {
-                            element.innerHTML = (result * 7 * 30).toFixed(2) + ' USD';
+                            element.innerHTML = ((percentageR * 30 * result) + result).toFixed(2) + ' USD';
                         }
                         if (index == 3) {
-                            element.innerHTML = (result * 7 * 30 * 12).toFixed(2) + ' USD';
+                            element.innerHTML = ((percentageR * 365 * result) + result).toFixed(2) + ' USD';
                         }
 
                     });
