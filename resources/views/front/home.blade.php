@@ -437,7 +437,7 @@
                     var mainPrice = result.toFixed(2) + ' USD';
                     document.getElementById('price').innerHTML = mainPrice;
                     let percentageR = (roiCheck / 100);
-                    
+
                     // console.log(result)
                     amounts.forEach((element, index) => {
                         if (index == 0) {
@@ -454,18 +454,20 @@
                         }
 
                     });
+                    let realPrice = Number(inputPrice);
+                            
                     atom.forEach((element, index) => {
                         if (index == 0) {
-                            element.innerHTML = (result / data).toFixed(2);
+                           element.innerHTML = ((percentageR * 1 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 1) {
-                            element.innerHTML = ((result / data) * 7).toFixed(2);
+                            element.innerHTML =  ((percentageR * 7 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 2) {
-                            element.innerHTML = ((result / data) * 7 * 30).toFixed(2);
+                            element.innerHTML =  ((percentageR * 30 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 3) {
-                            element.innerHTML = ((result / data) * 7 * 30 * 12).toFixed(2);
+                            element.innerHTML =  ((percentageR * 365 * realPrice) + realPrice).toFixed(2);
                         }
 
                     });
@@ -487,5 +489,5 @@
         </script>
 
         <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
-            cb=googleTranslateElementInit"></script>
+                    cb=googleTranslateElementInit"></script>
         @include('front.template.footer')
