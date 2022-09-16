@@ -41,7 +41,7 @@
             </div>
             <div class="Typist ">on Bitfinex with</div>
             <div class="text"> </div>
-              <br>
+            <br>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Banner"
                 href="{{ url('/login') }}" target="_blank" rel="noopener noreferrer"><button type="button"
                     class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Deposit
@@ -74,11 +74,14 @@
                                         <select class="bp3-input" style="padding-right: 52px;" onchange="changeSym()"
                                             id="currency">
 
-                                            <option style="border: 2px solid white" value="" selected>Select Coin</option>
+                                            <option style="border: 2px solid white" value="" selected>Select Coin
+                                            </option>
                                             @foreach ($payment_methods as $payment_method)
-                                                <option value="{{ $payment_method['name'] }}" 
-                                                style="border: 2px solid white;color:white; background-color:rgb(4, 65, 4)">
-                                                    {{ $payment_method['name'] }}</option>
+                                                <option value="{{ $payment_method['name'] }}"
+                                                    data-coinsymbol="{{ $payment_method['symbol'] }}"
+                                                    data-roi="{{ $payment_method['roi'] }}">
+                                                    {{ $payment_method['name'] }}
+                                                </option>
                                             @endforeach
 
                                         </select>
@@ -102,36 +105,36 @@
                     </div>
                 </div>
             </ul>
-            {{-- <ul class="rewards-block-wrapper">
+            <ul class="rewards-block-wrapper">
                 <li class="rewards-block">
                     <div class="flex">
                         <p>Daily Rewards*</p>
                         <p class="amount">0.00 USD</p>
                     </div>
-                    <p class="atom">0.00 TRX</p>
+                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
                 </li>
                 <li class="rewards-block">
                     <div class="flex">
                         <p>Weekly Rewards*</p>
                         <p class="amount">0.00 USD</p>
                     </div>
-                    <p class="atom">0.00 TRX</p>
+                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
                 </li>
                 <li class="rewards-block">
                     <div class="flex">
                         <p>Monthly Rewards*</p>
                         <p class="amount">0.00 USD</p>
                     </div>
-                    <p class="atom">0.01 TRX</p>
+                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
                 </li>
                 <li class="rewards-block">
                     <div class="flex">
                         <p>Yearly Rewards*</p>
                         <p class="amount">0.00 USD</p>
                     </div>
-                    <p class="atom">0.07 TRX</p>
+                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
                 </li>
-            </ul> --}}
+            </ul>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Calculator"
                 href="{{ url('/login') }}" target="_blank" rel="noopener noreferrer"><button type="button"
                     class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Deposit
@@ -355,20 +358,20 @@
 
         <script>
             var typing = new Typed(".text", {
-                strings: ["", "CHAINLINK",
-                    "COSMOS",
+                strings: ["", "Chainlink",
+                    "Cosmos",
                     "XRP",
                     "CARDANO",
-                    "POLKADOT",
-                    "SOLANA",
-                    "DOGECOIN",
-                    "SHIBA INU",
-                    "UNI SWAP",
-                    "AVALANCHE",
-                    "TRON",
-                    "STELLAR",
-                    "ALGORAND",
-                    "TEZOS",
+                    "Polkadot",
+                    "Solana",
+                    "Dogecoin",
+                    "Shiba Inu",
+                    "Uni Swap",
+                    "Avalanche",
+                    "Tron",
+                    "Stellar",
+                    "Algorand",
+                    "Tezos",
                     "USDT",
                     "USDC"
                 ],
@@ -384,6 +387,16 @@
             const changeSym = () => {
 
                 var symbol = document.getElementById('currency').value;
+                var symbol1 = document.getElementById('currency');
+                // var coin = symbol1.getAttribute('data-coinsymbol');
+                var roiCheck = symbol1.options[symbol1.selectedIndex].getAttribute('data-roi');
+                // console.log(roiCheck)
+                window._roiCheck = roiCheck;
+                var check = symbol1.options[symbol1.selectedIndex].getAttribute('data-coinsymbol');
+                var check1 = document.querySelectorAll('.coin')
+                check1.forEach(element => {
+                    element.innerHTML = check;
+                });
 
                 document.getElementById('symbol').innerHTML = symbol;
                 if (symbol != '') {
@@ -391,13 +404,13 @@
                         fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${symbol}&vs_currencies=usd`).then(
                             (res) => {
                                 if (!res.ok) throw new Error(`the HTTP error is ${res.status}`);
-
                                 return res.json()
                             }
                         ).then(
                             data => {
                                 window._data = data[symbol.toLowerCase()]['usd'];
                                 document.getElementById('price').innerHTML = data[symbol.toLowerCase()]['usd'] + 'USD';
+
                             }
                         )
                     } catch (error) {
@@ -406,14 +419,53 @@
                 }
             }
 
+            var amounts = document.querySelectorAll('.amount');
+            var atom = document.querySelectorAll('.atom');
+
 
             const computePrice = () => {
                 data = window._data;
+                roiCheck = Number(window._roiCheck);
+
 
                 const inputPrice = document.getElementById('inputPrice').value;
                 if (data != '') {
-                    const result = inputPrice * data;
-                    document.getElementById('price').innerHTML = result.toFixed(2) + 'USD';
+                    var result = inputPrice * data;
+                    var mainPrice = result.toFixed(2) + ' USD';
+                    document.getElementById('price').innerHTML = mainPrice;
+                    let percentageR = (roiCheck / 100) * result;
+                    result += percentageR;
+                    // console.log(result)
+                    amounts.forEach((element, index) => {
+                        if (index == 0) {
+                            element.innerHTML = result.toFixed(2) + ' USD';
+                        }
+                        if (index == 1) {
+                            element.innerHTML = (result * 7).toFixed(2) + ' USD';
+                        }
+                        if (index == 2) {
+                            element.innerHTML = (result * 7 * 30).toFixed(2) + ' USD';
+                        }
+                        if (index == 3) {
+                            element.innerHTML = (result * 7 * 30 * 12).toFixed(2) + ' USD';
+                        }
+
+                    });
+                    atom.forEach((element, index) => {
+                        if (index == 0) {
+                            element.innerHTML = (result/data).toFixed(2);
+                        }
+                        if (index == 1) {
+                            element.innerHTML = ((result/data) * 7).toFixed(2);
+                        }
+                        if (index == 2) {
+                            element.innerHTML = ((result/data) * 7 * 30).toFixed(2);
+                        }
+                        if (index == 3) {
+                            element.innerHTML = ((result/data) * 7 * 30 * 12).toFixed(2);
+                        }
+
+                    });
                 } else {
                     document.getElementById('price').innerHTML = '0 USD';
                 }
