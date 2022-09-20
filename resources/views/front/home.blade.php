@@ -1,28 +1,15 @@
 {{-- @include("header") --}}
 @include('front.template.header')
 
+
 <div id="root">
     <main class="container">
         <header id="header">
             <div class="logo-wrapper"><a href="https://www.bitfinex.com?locale=en" target="_blank"
                     rel="noopener noreferrer">
-                    <svg width="210" height="25" viewBox="0 0 165 20" fill="none" class="logo">
-                        <path fill="#fff"
-                            d="M141.437 19.662a.2.2 0 01-.144.338h-4.386a.198.198 0 01-.145-.063l-5.83-6.166-5.894 6.167a.198.198 0 01-.144.062h-4.387a.2.2 0 01-.144-.338l8.036-8.421-7.764-8.183a.2.2 0 01.145-.338h4.387c.055 0 .108.023.146.063l5.576 5.928 5.598-5.928a.202.202 0 01.146-.063h4.387a.2.2 0 01.145.338l-7.764 8.183 8.036 8.42zM99.856 20a.278.278 0 01-.278-.278V2.998c0-.153.125-.277.278-.277h16.571c.153 0 .277.124.277.277V5.39a.277.277 0 01-.277.277h-12.83v3.851h7.692c.153 0 .278.125.278.278v2.392a.278.278 0 01-.278.277h-7.692v4.287h12.997c.153 0 .278.124.278.277v2.693a.278.278 0 01-.278.278H99.856zM70.514 20a.278.278 0 01-.277-.278V2.998c0-.153.124-.277.277-.277h3.463c.154 0 .278.124.278.277v16.724a.278.278 0 01-.278.278h-3.463zM50.813 20a.278.278 0 01-.277-.278V2.998c0-.153.124-.277.277-.277h16.37c.153 0 .277.124.277.277v2.459a.278.278 0 01-.277.277H54.554v4.555h6.989c.153 0 .278.124.278.277v2.593a.278.278 0 01-.278.277h-6.989v6.286a.278.278 0 01-.278.278h-3.463zM40.067 5.801v13.921a.278.278 0 01-.277.278h-3.463a.278.278 0 01-.278-.278V5.802h-7.381a.278.278 0 01-.278-.278V2.998c0-.153.124-.277.278-.277h18.814c.153 0 .277.124.277.277v2.526a.278.278 0 01-.277.277h-7.415zM21.873 20a.278.278 0 01-.277-.278V2.998c0-.153.124-.277.277-.277h3.463c.154 0 .278.124.278.277v16.724a.278.278 0 01-.278.278h-3.463z">
-                        </path>
-                        <path fill="#fff" fill-rule="evenodd" clip-rule="evenodd"
-                            d="M0 2.998c0-.153.124-.277.278-.277h14.798a3.609 3.609 0 013.608 3.609v1.153a3.609 3.609 0 01-3.609 3.61h.135a3.61 3.61 0 013.61 3.608v1.69A3.609 3.609 0 0115.21 20H.278A.278.278 0 010 19.722V2.998zm3.949 2.536h9.353c.92 0 1.666.746 1.666 1.666v.787c0 .92-.746 1.665-1.666 1.665H3.949V5.534zm0 6.963h9.453c.92 0 1.666.746 1.666 1.666v1.057c0 .92-.746 1.665-1.666 1.665H3.95v-4.388z">
-                        </path>
-                        <path fill="#fff"
-                            d="M77.031 19.722V2.998c0-.153.124-.277.278-.277h2.363c.068 0 .133.024.184.07l13.33 11.798V2.999c0-.154.124-.278.277-.278h3.062c.153 0 .277.124.277.277v16.724a.278.278 0 01-.277.278h-2.363a.278.278 0 01-.184-.07L80.648 8.1v11.622a.278.278 0 01-.278.278H77.31a.278.278 0 01-.278-.278z">
-                        </path>
-                        <path fill="#03CA9B"
-                            d="M144.777 13.042c-.175-2.832 1.015-5.98 3.464-8.429 5.326-5.326 16.418-4.58 16.481-4.575-.03.044-8.139 11.8-17.748 12.9-.742.085-1.476.119-2.197.104z">
-                        </path>
-                        <path fill="#03CA9B"
-                            d="M145.902 16.662c.275.438.599.847.974 1.222 3.288 3.288 9.23 2.677 13.271-1.364 5.342-5.342 4.575-16.482 4.575-16.482-.029.066-5.842 13.095-15.08 15.937-1.254.386-2.511.61-3.74.687z">
-                        </path>
-                    </svg></a></div>
+                    <img width="100" src="{{ asset('mainlogo1.png')}}" class="logo">
+                      
+                    </a></div>
             <div class="languages"><span class="bp3-popover-wrapper"><span class="bp3-popover-target">
                         <div class="">
                             <div id="google_translate_element"></div>
@@ -219,9 +206,9 @@
             <h2 class="title">Frequently Asked Questions</h2>
             <ul>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">How frequently will I receive staking rewards?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">
+                    <h5 role="presentation" class="question" onclick="toggle1()">How frequently will I receive staking rewards?</h5>
+                    <div class="answer-wrapper1" >
+                        <div class="answer" id="answer-wrapper1">
                             <p>Staking rewards are paid out weekly. We will take a mid-week account balance snapshot and
                                 distribute
                                 the rewards based on the number of tokens being held at that time.</p>
@@ -234,13 +221,26 @@
                                 consistently.</p>
                         </div>
                     </div>
+                    <script>
+                        var x = document.getElementById("answer-wrapper1");
+                          x.style.display = "none";
+                        function toggle1() {
+                        //   console.log(x.style.display)
+                          if (x.style.display === "none") {
+                            x.style.display = "inline";
+                          } else if(x.style.display === "inline") {
+                            x.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">Is there a minimum/maximum digital token holdings
+                    <h5 role="presentation" class="question" onclick="toggle2()">Is there a minimum/maximum digital token holdings
                         requirement to
                         start staking?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">There is no minimum to begin staking with us. However, to avoid unnecessary
+                    <div class="answer-wrapper2">
+                        <div class="answer1" id="answer-wrapper2">
+                            <p>There is no minimum to begin staking with us. However, to avoid unnecessary
                             stress on
                             our system, we do set a minimum amount of staking rewards before you become eligible to
                             receive a
@@ -249,24 +249,52 @@
                             (the "Minimum Reward") per token per week. If, based on the number of tokens you have
                             staked, the amount
                             of the staking reward is less than the Minimum Reward you will not receive a staking reward.
+                            </p>
                         </div>
                     </div>
+                    <script>
+                        var y = document.getElementById("answer-wrapper2");
+                          y.style.display = "none";
+                        function toggle2() {
+                        //   console.log(y.innerHTML)
+                          if (y.style.display === "none") {
+                            y.style.display = "inline";
+                          } else if(y.style.display === "inline") {
+                            y.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">Do I have to pay fees to use this service?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">No. We keep a small portion of the staking rewards we collect and deposit
+                    <h5 role="presentation" class="question" onclick="toggle3()">Do I have to pay fees to use this service?</h5>
+                    <div class="answer-wrapper3">
+                        <div class="answer3" id="answer-wrapper3">
+                            <p>No. We keep a small portion of the staking rewards we collect and deposit
                             the rest
                             into the accounts of our users. In some cases, our staking service provider also retains a
                             portion of
-                            rewards collected by the digital tokens we stake. </div>
+                            rewards collected by the digital tokens we stake.
+                            </p> </div>
                     </div>
+                    <script>
+                        var xx = document.getElementById("answer-wrapper3");
+                          xx.style.display = "none";
+                        function toggle3() {
+                        //   console.log(xx.innerHTML)
+                          if (xx.style.display === "none") {
+                            xx.style.display = "inline";
+                          } else if(xx.style.display === "inline") {
+                            xx.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">Is it safe and how does Bitfinex stake my digital tokens?
+                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Bitfinex stake my digital tokens?
                     </h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">Yes, the staked digital tokens never leave our cold wallets. To further
+                    <div class="answer-wrapper4">
+                        <div class="answer4" id="answer-wrapper4">
+                            <p>Yes, the staked digital tokens never leave our cold wallets. To further
                             minimize risk
                             (e.g., from slashing and to ensure we can accommodate withdrawals) we only stake a portion
                             of the
@@ -276,45 +304,86 @@
                             a chosen
                             validator node. Staking provides a layer of governance to its network participants which
                             helps to make
-                            the network more secure and for that, network participants are rewarded.</div>
+                            the network more secure and for that, network participants are rewarded.
+                            </p></div>
                     </div>
+
+                    <script>
+                        var yy = document.getElementById("answer-wrapper4");
+                          yy.style.display = "none";
+                        function toggle4() {
+                        //   console.log(xx.innerHTML)
+                          if (yy.style.display === "none") {
+                            yy.style.display = "inline";
+                          } else if(yy.style.display === "inline") {
+                            yy.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">So I just leave my digital tokens in my Bitfinex account
+                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Bitfinex account
                         and they
                         earn rewards?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">
+                    <div class="answer-wrapper5">
+                        <div class="answer5" id="answer-wrapper5">
                             <p>Yes, if your tokens are NOT Ethereum. Every week, we’ll distribute the staking rewards we
                                 collect to
                                 users who held the staked digital tokens in their Bitfinex account. You don’t have to do
                                 anything in
                                 particular.</p>
                             <p>If you want to stake Ethereum, you’d need to convert your ETH into ETH2 first. Visit our
-                                <a href="https://support.bitfinex.com/hc/en-us/articles/900004888823-Ethereum-2-0-Staking"
+                                <a href="#"
                                     target="_blank">Knowledge Base</a> to learn how to start staking your Ethereum
                                 holdings.
                             </p>
                         </div>
                     </div>
+                    <script>
+                        var z = document.getElementById("answer-wrapper5");
+                          z.style.display = "none";
+                        function toggle5() {
+                        //   console.log(xx.innerHTML)
+                          if (z.style.display === "none") {
+                            z.style.display = "inline";
+                          } else if(z.style.display === "inline") {
+                            z.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">Who makes the governance decisions with my tokens?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">For chains that implement governance mechanisms into their protocol,
+                    <h5 role="presentation" class="question" onclick="toggle6()">Who makes the governance decisions with my tokens?</h5>
+                    <div class="answer-wrapper6">
+                        <div class="answer6" id="answer-wrapper6">
+                            <p>For chains that implement governance mechanisms into their protocol,
                             Bitfinex will not
                             actively take part in any governance events using your tokens other than delegating to a
                             trusted node of
                             our choosing. Where we have partnered with a staking service provider, we will generally
                             allow that
                             service provider to make decisions regarding governance without our input.</div>
-                    </div>
+                            </p>
+                        </div>
+
+                        <script>
+                            var zz = document.getElementById("answer-wrapper6");
+                              zz.style.display = "none";
+                            function toggle6() {
+                            //   console.log(xx.innerHTML)
+                              if (zz.style.display === "none") {
+                                zz.style.display = "inline";
+                              } else if(zz.style.display === "inline") {
+                                zz.style.display = "none";
+                              }
+                            }
+                            </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">Will I still be able to trade or withdraw my staked
+                    <h5 role="presentation" class="question" onclick="toggle7()">Will I still be able to trade or withdraw my staked
                         tokens?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">
+                    <div class="answer-wrapper7">
+                        <div class="answer7" id="answer-wrapper7" >
                             <p>It depends on the tokens you’re staking. For tokens other than Ethereum, you are able to
                                 trade your
                                 staked tokens. Although some staked tokens are “locked” for a period of time, depending
@@ -342,11 +411,23 @@
                                 ETH2 Rewards for more detailed information.</p>
                         </div>
                     </div>
+                    <script>
+                        var zza = document.getElementById("answer-wrapper7");
+                          zza.style.display = "none";
+                        function toggle7() {
+                        //   console.log(xx.innerHTML)
+                          if (zza.style.display === "none") {
+                            zza.style.display = "inline";
+                          } else if(zza.style.display === "inline") {
+                            zza.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question">How do I stake Ethereum (ETH2)?</h5>
-                    <div class="answer-wrapper">
-                        <div class="answer">
+                    <h5 role="presentation" class="question" onclick="toggle8()">How do I stake Ethereum (ETH2)?</h5>
+                    <div class="answer-wrapper8">
+                        <div class="answer8" id="answer-wrapper8">
                             <p>In order to stake ETH2 you must opt in. ETH2 staking is highly experimental and risky.
                                 Please ensure
                                 you independently assess, understand and accept the related risks before deciding to
@@ -355,6 +436,19 @@
                                 information on how to stake ETH2.</p>
                         </div>
                     </div>
+
+                    <script>
+                        var apa = document.getElementById("answer-wrapper8");
+                          apa.style.display = "none";
+                        function toggle8() {
+                        //   console.log(xx.innerHTML)
+                          if (apa.style.display === "none") {
+                            apa.style.display = "inline";
+                          } else if(apa.style.display === "inline") {
+                            apa.style.display = "none";
+                          }
+                        }
+                        </script>
                 </li>
             </ul>
         </div>
@@ -455,19 +549,19 @@
 
                     });
                     let realPrice = Number(inputPrice);
-                            
+
                     atom.forEach((element, index) => {
                         if (index == 0) {
-                           element.innerHTML = ((percentageR * 1 * realPrice) + realPrice).toFixed(2);
+                            element.innerHTML = ((percentageR * 1 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 1) {
-                            element.innerHTML =  ((percentageR * 7 * realPrice) + realPrice).toFixed(2);
+                            element.innerHTML = ((percentageR * 7 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 2) {
-                            element.innerHTML =  ((percentageR * 30 * realPrice) + realPrice).toFixed(2);
+                            element.innerHTML = ((percentageR * 30 * realPrice) + realPrice).toFixed(2);
                         }
                         if (index == 3) {
-                            element.innerHTML =  ((percentageR * 365 * realPrice) + realPrice).toFixed(2);
+                            element.innerHTML = ((percentageR * 365 * realPrice) + realPrice).toFixed(2);
                         }
 
                     });
@@ -478,6 +572,7 @@
             }
         </script>
 
+<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <script type="text/javascript">
             function googleTranslateElementInit() {
                 new google.translate.TranslateElement({
@@ -488,6 +583,5 @@
             }
         </script>
 
-        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?
-                    cb=googleTranslateElementInit"></script>
+        
         @include('front.template.footer')

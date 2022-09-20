@@ -2,6 +2,35 @@
   <Head title="Dashboard" />
   <breadcrumb title="Dashboard" :crumbs="['Dashboard']" />
 
+
+  <div class="row m-1">
+    <div class="p-2 col-md-3 col-sm-12">
+      <div class="card shadow-lg radius-20">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-8">
+              
+              <h4 class="mb-3">
+              </h4>
+              <inertia-link
+            :href="route('user.deposits.create')"
+            class="btn btn-primary"
+            >Deposit<i class="mdi mdi-arrow-right ms-1"></i
+          ></inertia-link>
+            </div>
+            <div class="col-4">
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  
   <div v-if="payment_methods.length">
   <div class="row m-1">
     <div class="p-2 col-md-3 col-sm-12" v-for="(payment_method, key) in payment_methods" :key="key">
