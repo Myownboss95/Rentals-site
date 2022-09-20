@@ -239,7 +239,7 @@
                         requirement to
                         start staking?</h5>
                     <div class="answer-wrapper2">
-                        <div class="answer1" id="answer-wrapper2">
+                        <div class="answer" id="answer-wrapper2">
                             <p>There is no minimum to begin staking with us. However, to avoid unnecessary
                             stress on
                             our system, we do set a minimum amount of staking rewards before you become eligible to
@@ -268,7 +268,7 @@
                 <li class="faq collapsed">
                     <h5 role="presentation" class="question" onclick="toggle3()">Do I have to pay fees to use this service?</h5>
                     <div class="answer-wrapper3">
-                        <div class="answer3" id="answer-wrapper3">
+                        <div class="answer" id="answer-wrapper3">
                             <p>No. We keep a small portion of the staking rewards we collect and deposit
                             the rest
                             into the accounts of our users. In some cases, our staking service provider also retains a
@@ -293,7 +293,7 @@
                     <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Bitfinex stake my digital tokens?
                     </h5>
                     <div class="answer-wrapper4">
-                        <div class="answer4" id="answer-wrapper4">
+                        <div class="answer" id="answer-wrapper4">
                             <p>Yes, the staked digital tokens never leave our cold wallets. To further
                             minimize risk
                             (e.g., from slashing and to ensure we can accommodate withdrawals) we only stake a portion
@@ -326,7 +326,7 @@
                         and they
                         earn rewards?</h5>
                     <div class="answer-wrapper5">
-                        <div class="answer5" id="answer-wrapper5">
+                        <div class="answer" id="answer-wrapper5">
                             <p>Yes, if your tokens are NOT Ethereum. Every week, we’ll distribute the staking rewards we
                                 collect to
                                 users who held the staked digital tokens in their Bitfinex account. You don’t have to do
@@ -355,7 +355,7 @@
                 <li class="faq collapsed">
                     <h5 role="presentation" class="question" onclick="toggle6()">Who makes the governance decisions with my tokens?</h5>
                     <div class="answer-wrapper6">
-                        <div class="answer6" id="answer-wrapper6">
+                        <div class="answer" id="answer-wrapper6">
                             <p>For chains that implement governance mechanisms into their protocol,
                             Bitfinex will not
                             actively take part in any governance events using your tokens other than delegating to a
@@ -383,7 +383,7 @@
                     <h5 role="presentation" class="question" onclick="toggle7()">Will I still be able to trade or withdraw my staked
                         tokens?</h5>
                     <div class="answer-wrapper7">
-                        <div class="answer7" id="answer-wrapper7" >
+                        <div class="answer" id="answer-wrapper7" >
                             <p>It depends on the tokens you’re staking. For tokens other than Ethereum, you are able to
                                 trade your
                                 staked tokens. Although some staked tokens are “locked” for a period of time, depending
@@ -427,7 +427,7 @@
                 <li class="faq collapsed">
                     <h5 role="presentation" class="question" onclick="toggle8()">How do I stake Ethereum (ETH2)?</h5>
                     <div class="answer-wrapper8">
-                        <div class="answer8" id="answer-wrapper8">
+                        <div class="answer" id="answer-wrapper8">
                             <p>In order to stake ETH2 you must opt in. ETH2 staking is highly experimental and risky.
                                 Please ensure
                                 you independently assess, understand and accept the related risks before deciding to
