@@ -6,10 +6,10 @@
         <div class="navbar-brand-box">
           <inertia-link :href="route(`${is_admin ? 'admin':'user'}.index`)" class="logo logo-dark">
             <span class="logo-sm">
-              <img src="@/assets/images/logo-sm.svg" alt="" height="24" />
+              <img src="@/assets/images/logo-sm.png" alt="" height="24" />
             </span>
             <span class="logo-lg">
-              <img src="@/assets/images/logo-sm.svg" alt="" height="24" />
+              <img src="@/assets/images/logo-sm.png" alt="" height="24" />
               <span class="logo-txt">{{ appName }}</span>
             </span>
           </inertia-link>
