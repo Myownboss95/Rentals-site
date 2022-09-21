@@ -81,7 +81,7 @@
             </div>
           </div>
         </div> -->
-        <div style="margin: auto;">
+        <div style="margin: 5px;">
             <div id="google_translate_element"></div>
         </div>
 
@@ -294,7 +294,7 @@ import { profile_picture } from '@/js/functions';
 import { Inertia } from '@inertiajs/inertia';
 import route from 'ziggy-js';
 
-
+ 
 const user = computed(() => usePage().props.value.auth.user);
 const is_admin = user.value.is_admin;
 

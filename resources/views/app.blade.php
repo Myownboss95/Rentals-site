@@ -15,7 +15,7 @@
     <style>
         body>div.skiptranslate{
             display: none;
-            visibility: hidden;
+            visibility: hidden; 
             height: 0;
             width:0;
         }

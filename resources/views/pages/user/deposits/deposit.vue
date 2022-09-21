@@ -6,7 +6,7 @@
     <div class="card-body">
       <div class="row align-items-center py-3">
         <div class="col-md-6 border-end">
-          <div class="row">
+          <div class="row"> 
             <div
               class="col-6 text-center my-2"
               v-for="(method, key) in props.payment_methods"
@@ -18,7 +18,7 @@
                 <h6>{{ method.name }}</h6>
                 <!-- <h6>{{ price }}</h6> -->
               </div>
-            </div>
+            </div> 
             <div class="col-12">
               <FormGroup
                 :disabled="disableElements"
