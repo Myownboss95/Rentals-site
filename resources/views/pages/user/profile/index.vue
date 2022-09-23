@@ -96,15 +96,15 @@
                 >Transactions</a
               >
             </li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a
                 class="nav-link px-3"
                 data-bs-toggle="tab"
                 href="#kyc"
                 role="tab"
-                >KYC</a
+                >Referrals</a
               >
-            </li> -->
+            </li>
           </ul>
         </div>
         <!-- end card body -->
@@ -142,6 +142,24 @@
                     <FormGroup class="col-md-8" placeholder="Address" label="Address" v-model="form.address" name="address" />
                     <FormGroup class="col-md-4" placeholder="Postal/Zip code" label="Postal/Zip code" v-model="form.zip_code" name="zip_code" />
                 </div>
+                <div class="row mt-4">
+                  <h6>Referral Code</h6>
+                  <div class="col-md-6">
+                    <div class="row">
+                      <div class="col-7 border p-1">
+                        <strong class="font-size-16 my-1">{{hostname}}ref/{{form.referral_code}}</strong>
+                      </div>
+                      <div class="col-5 border p-1">
+                        <span class="ml-2" @click="copy('https://'+hostname+'ref/'+form.referral_code)"><i class="fa fa-copy"></i>
+                         <strong> Click to Copy</strong>
+                        </span>
+                        
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                
 
                 <div class="d-flex justify-content-center mt-3">
                     <FormButton class="btn btn-primary px-5" type="submit" :disable="form.processing">
@@ -210,21 +228,58 @@
         </div>
         <!-- end tab pane -->
 
-        <!-- <div class="tab-pane" id="kyc" role="tabpanel">
+        <div class="tab-pane" id="kyc" role="tabpanel">
           <div class="card">
             <div class="card-header">
-              <h5 class="card-title mb-0">KYC</h5>
+              <h5 class="card-title mb-0">Referrals</h5>
             </div>
             <div class="card-body">
               <div>
                 <div class="row justify-content-center">
+                  <div class="row">
+                      <div class="col-md-5 col-sm-12 border p-1">
+                        <strong class="font-size-16 my-1">{{hostname}}ref/{{form.referral_code}}</strong>
+                      </div>
+                      <div class="col-md-3 col-sm-12 border p-1">
+                        <span class="ml-2" @click="copy('https://'+hostname+'ref/'+form.referral_code)"><i class="fa fa-copy"></i>
+                         <strong> Click to Copy</strong>
+                        </span>
+                        
+                      </div>
+                    </div>
+                    <div class="pb-3">
+                  <div v-if="referrals.length">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Reference</th>
+                      <th>Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(referral, key) in referrals" :key="key">
+                      <td>{{ referral.last_name? referral.last_name:'-' }}{{ referral.first_name ? referral.first_name:'-' }}</td>
+                      <td>{{ referral.email }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div v-else>
+              <span class="ms-1 text-muted font-size-13"
+                >No Transactions to Display</span
+              >
+            </div>
+
+                </div>
 
                 </div>
 
               </div>
             </div>
           </div>
-        </div> -->
+        </div>
         <!-- end tab pane -->
       </div>
       <!-- end tab content -->
@@ -260,17 +315,23 @@ import route from "ziggy-js";
 import { profile_picture } from "@/js/functions";
 import FormButton from '@/views/components/form/FormButton.vue';
 import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
+import { info } from '@/js/toast';
+import { copy } from '@/js/functions';
 
 
 const props = defineProps({
    user: Object,
   countries: Object,
-  transactions: Object
+  transactions: Object,
+  hostname: Object,
+  referrals: Object
 });
-console.log(props.user);
+// console.log(props.referrals);
 const user = computed(() => props.user);
 const countries = computed(() => props.countries);
-const transactions = computed(()=>props.transactions)
+const transactions = computed(()=>props.transactions);
+const referrals = computed(()=>props.referrals);
+const hostname = computed(()=>props.hostname);
 
 const form = useForm({
     first_name: props.user?.first_name ||'',
@@ -281,6 +342,7 @@ const form = useForm({
     city: props.user?.city ||'',
     address: props.user?.address ||'',
     zip_code: props.user?.zip_code ||'',
+    referral_code: props.user?.referral_code || '',
 })
 
 let states = ref({});

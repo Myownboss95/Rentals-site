@@ -20,8 +20,13 @@ class ProfileController extends Controller
          $user = User::find(auth()->user()->id);
          $service = new LocationService();
          $transactions = $user->transactions()->limit(6)->get();
+         $referrals = $user->referrals()->get();
+        //  dd($referrals);
+         $hostname = $_SERVER['HTTP_HOST'].'/'; 
+        // dd($hostname);
         //  dd($user);
-         return inertia('user.profile.index', ['user'=>$user, 'countries' => $service->countries(), 'transactions'=>$transactions]);
+         return inertia('user.profile.index', ['user'=>$user, 'countries' => $service->countries(), 'referrals'=>$referrals,
+         'transactions'=>$transactions, 'hostname'=>$hostname]);
     }
 
     /**

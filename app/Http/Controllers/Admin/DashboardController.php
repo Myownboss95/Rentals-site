@@ -33,6 +33,7 @@ class DashboardController extends Controller
         $getSellTrades = new Trade();
         $sellTrades = $getSellTrades->newQuery()->where('type', 'sell')->limit(6)->get();
         $num_sellTrades = Transaction::where('type', 'buy')->count();
+        
 
         return inertia('admin.index', [
             'users' => $users,

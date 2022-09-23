@@ -58,15 +58,17 @@ const handleButtonClicked = () => {
     icon.value = icon.value == 'mdi mdi-eye-outline'? 'mdi mdi-mdi-eye-off-outline':'mdi mdi-mdi-eye-outline';
 }
 
-const props = defineProps([ 'flash' ]);
+const props = defineProps([ 'flash','data' ]);
 
 const form = useForm({
     email: props.flash?.email || '',
+    referral_code: props.data?.regToken || '',
     password: '',
     password_confirmation:''
 })
 
 const submit = () => {
+  // console.log(form.data())
     form.post((route('register')));
 }
 
