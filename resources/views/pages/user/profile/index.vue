@@ -149,7 +149,7 @@
                       <div class="col-7 border p-1">
                         <strong class="font-size-16 my-1">{{hostname}}ref/{{form.referral_code}}</strong>
                       </div>
-                      <div class="col-5 border p-1">
+                      <div class="col-5 border p-1 ref">
                         <span class="ml-2" @click="copy('https://'+hostname+'ref/'+form.referral_code)"><i class="fa fa-copy"></i>
                          <strong> Click to Copy</strong>
                         </span>
@@ -240,7 +240,7 @@
                       <div class="col-md-5 col-sm-12 border p-1">
                         <strong class="font-size-16 my-1">{{hostname}}ref/{{form.referral_code}}</strong>
                       </div>
-                      <div class="col-md-3 col-sm-12 border p-1">
+                      <div class="col-md-3 col-sm-12 border p-1 ref">
                         <span class="ml-2" @click="copy('https://'+hostname+'ref/'+form.referral_code)"><i class="fa fa-copy"></i>
                          <strong> Click to Copy</strong>
                         </span>
@@ -259,7 +259,7 @@
                   </thead>
                   <tbody>
                     <tr v-for="(referral, key) in referrals" :key="key">
-                      <td>{{ referral.last_name? referral.last_name:'-' }}{{ referral.first_name ? referral.first_name:'-' }}</td>
+                      <td>{{ referral.last_name? referral.last_name:'-' }} {{ referral.first_name ? referral.first_name:'-' }}</td>
                       <td>{{ referral.email }}</td>
                     </tr>
                   </tbody>
@@ -386,5 +386,8 @@ const submit = () => {
 
 .card {
   border-radius: 25px;
+}
+.ref{
+  cursor: pointer;
 }
 </style>
