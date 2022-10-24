@@ -5,7 +5,7 @@
 <div id="root">
     <main class="container">
         <header id="header">
-            <div class="logo-wrapper"><a href="https://www.bitfinex.com?locale=en" target="_blank"
+            <div class="logo-wrapper"><a href="https://www.stakinglord.com" target="_blank"
                     rel="noopener noreferrer">
                     <img width="100" src="{{ asset('mainlogo1.png')}}" class="logo">
                       
@@ -24,12 +24,12 @@
                         </div>
                     </span></span></div>
         </header>
-
+ 
         <div id="heading" class="en">
             <div class="Typist ">
                 <p>Earn<span class="highlight wipe-through">staking rewards</span></p>
             </div>
-            <div class="Typist ">on Bitfinex with</div>
+            <div class="Typist ">on Staking Lord with</div>
             <div class="text"> </div>
             <br>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Banner"
@@ -44,7 +44,7 @@
         <div id="stake-program">
             <div class="bp3-divider divider"></div>
             <p class="description">Our soft-staking program allows you to easily generate rewards by simply holding your
-                digital tokens on Bitfinex. Staking rewards can be as high as 10%* per year for supported Digital
+                digital tokens on Staking Lord. Staking rewards can be as high as 10%* per year for supported Digital
                 Tokens.
                 Please read the <a href="/#faqs">FAQs</a> for details.</p>
             <div class="bp3-divider divider divider-margin"></div>
@@ -145,15 +145,15 @@
                 </li>
                 <li class="step active">
                     <h3 class="step-number">2</h3>
-                    <h4 class="step-tip">Deposit to Bitfinex</h4>
-                    <p class="step-description">Simply deposit your chosen digital tokens to your Bitfinex account to
+                    <h4 class="step-tip">Deposit to Staking Lord</h4>
+                    <p class="step-description">Simply deposit your chosen digital tokens to your Staking Lord account to
                         begin
                         staking.**</p>
                 </li>
                 <li class="step">
                     <h3 class="step-number">3</h3>
                     <h4 class="step-tip">Earn weekly rewards</h4>
-                    <p class="step-description">Watch your account grow as Bitfinex automatically deposits your staking
+                    <p class="step-description">Watch your account grow as Staking Lord automatically deposits your staking
                         rewards
                         into your account on a weekly basis.</p>
                 </li>
@@ -182,7 +182,7 @@
                             </div>
                         </div>
                         <div class="block-footer"><a data-gtm-trigger="deposit-button-clicks"
-                                data-gtm-action="Deposit Solana" href="https://staking.test/register" target="_blank"
+                                data-gtm-action="Deposit Solana" href="https://stakinglord.com/register" target="_blank"
                                 rel="noopener noreferrer"><button type="button"
                                     class="bp3-button bp3-large bp3-outlined deposit-btn"><span
                                         class="bp3-button-text">Deposit</span></button></a></div>
@@ -194,7 +194,7 @@
                 <p>* This is the estimated annual staking reward for staked tokens.&nbsp;For ETH staking, the estimated
                     annual
                     staking reward is based on rewards as of December 23, 2020, rewards will vary including based on the
-                    Ethereum protocol. Actual annualized staking rewards may differ. Bitfinex makes no guarantees
+                    Ethereum protocol. Actual annualized staking rewards may differ. Staking Lord makes no guarantees
                     regarding the
                     amount of any staking rewards.</p>
                 <p>** To stake ETH2, you must opt in. Please see the FAQs for more details.</p>
@@ -212,11 +212,11 @@
                             <p>Staking rewards are paid out weekly. We will take a mid-week account balance snapshot and
                                 distribute
                                 the rewards based on the number of tokens being held at that time.</p>
-                            <p>Please note that staking rewards are calculated and distributed to Bitfinex by the token
+                            <p>Please note that staking rewards are calculated and distributed to Staking Lord by the token
                                 network.
                                 There is not any fixed rewards distribution timeline and policy that determine who
                                 receives the
-                                rewards. Therefore, Bitfinex does not guarantee that you will receive staking rewards
+                                rewards. Therefore, Staking Lord does not guarantee that you will receive staking rewards
                                 every week or
                                 consistently.</p>
                         </div>
@@ -290,7 +290,7 @@
                         </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Bitfinex stake my digital tokens?
+                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Staking Lord stake my digital tokens?
                     </h5>
                     <div class="answer-wrapper4">
                         <div class="answer" id="answer-wrapper4">
@@ -322,14 +322,14 @@
                         </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Bitfinex account
+                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Staking Lord account
                         and they
                         earn rewards?</h5>
                     <div class="answer-wrapper5">
                         <div class="answer" id="answer-wrapper5">
                             <p>Yes, if your tokens are NOT Ethereum. Every week, we’ll distribute the staking rewards we
                                 collect to
-                                users who held the staked digital tokens in their Bitfinex account. You don’t have to do
+                                users who held the staked digital tokens in their Staking Lord account. You don’t have to do
                                 anything in
                                 particular.</p>
                             <p>If you want to stake Ethereum, you’d need to convert your ETH into ETH2 first. Visit our
@@ -357,7 +357,7 @@
                     <div class="answer-wrapper6">
                         <div class="answer" id="answer-wrapper6">
                             <p>For chains that implement governance mechanisms into their protocol,
-                            Bitfinex will not
+                            Staking Lord will not
                             actively take part in any governance events using your tokens other than delegating to a
                             trusted node of
                             our choosing. Where we have partnered with a staking service provider, we will generally
@@ -400,13 +400,13 @@
                                 the way the
                                 Ethereum protocol works. Once you choose to stake ETH, that decision is final and
                                 irreversible. The
-                                ETH you stake through Bitfinex’s staking service will be converted to an ETH2 balance in
+                                ETH you stake through Staking Lord’s staking service will be converted to an ETH2 balance in
                                 your account
                                 once they are successfully staked. Rewards earned on staked ETH will be reflected as a
                                 balance of ETH2
                                 Rewards in your account. ETH2 and ETH2 Rewards balances cannot be withdrawn but there
                                 may be a market
-                                for trading ETH2 or ETH2 Rewards on Bitfinex. Please refer to our token specific terms
+                                for trading ETH2 or ETH2 Rewards on Staking Lord. Please refer to our token specific terms
                                 for ETH2 and
                                 ETH2 Rewards for more detailed information.</p>
                         </div>
