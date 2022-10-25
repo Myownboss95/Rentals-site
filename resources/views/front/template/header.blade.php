@@ -1,22 +1,22 @@
 <head>
     <meta charset="utf-8">
-    <title>Staking Lord Staking | No hassle | Deposit &amp; Earn</title>
+    <title>Coin Staking  | No hassle | Deposit &amp; Earn</title>
     <link rel="icon" href="/favicon.png">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Earn staking rewards by holding digital tokens on Staking Lord.">
+    <meta name="description" content="Earn staking rewards by holding digital tokens on Coin Staking.">
     <meta name="keywords" content="bitcoin,exchange,bitcoin exchange,litecoin,zcash,ethereum,margin,trade">
     <meta property="og:url" content="https://stakinglord.com/">
-    <meta property="og:site_name" content="Staking Lord ">
+    <meta property="og:site_name" content="Coin Staking ">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Staking Lord  | No hassle | Deposit &amp; Earn">
+    <meta property="og:title" content="Coin Staking  | No hassle | Deposit &amp; Earn">
     <meta property="og:description" content="Earn staking rewards by holding digital tokens on Staking Room.">
-    <meta property="og:image" content="https://staking.Staking Lord.com/thumbnail-1.png">
+    <meta property="og:image" content="https://coinstaking.app/thumbnail-1.png">
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="staking lord">
-    <meta name="twitter:title" content="Staking Lord  | No hassle | Deposit &amp; Earn">
-    <meta name="twitter:description" content="Earn staking rewards by holding digital tokens on Staking Lord.">
-    <meta name="twitter:image" content="https://staking.Staking Lord.com/thumbnail-2.png">
+    <meta name="twitter:site" content="Coin Staking">
+    <meta name="twitter:title" content="Coin Staking  | No hassle | Deposit &amp; Earn">
+    <meta name="twitter:description" content="Earn staking rewards by holding digital tokens on Coin Staking.">
+    <meta name="twitter:image" content="https://coinstaking.app/.app/thumbnail-2.png">
     <meta name="referrer" content="origin">
     <link rel="apple-touch-icon" href="/thumbnail-2.png">
     <link rel="manifest" href="/manifest.json">
