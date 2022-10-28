@@ -48,7 +48,7 @@ class CreateNewUser implements CreatesNewUsers
                 'referrer_id' => $refferedUser->id
             ]);
             }
-        }
+        } 
         event(new CreateUserAccounts($user));
         return $user;
     }

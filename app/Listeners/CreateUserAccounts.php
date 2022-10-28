@@ -20,7 +20,7 @@ class CreateUserAccounts
         //
     }
 
-    /**
+    /** 
      * Handle the event.
      *
      * @param  object  $event
