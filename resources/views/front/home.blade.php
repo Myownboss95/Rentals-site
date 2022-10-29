@@ -29,7 +29,7 @@
             <div class="Typist ">
                 <p>Earn<span class="highlight wipe-through">staking rewards</span></p>
             </div>
-            <div class="Typist ">on Coin Staking with</div>
+            <div class="Typist ">on CoinStaking.App with</div>
             <div class="text"> </div>
             <br>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Banner"
@@ -44,9 +44,9 @@
         <div id="stake-program">
             <div class="bp3-divider divider"></div>
             <p class="description">Our soft-staking program allows you to easily generate rewards by simply holding your
-                digital tokens on Coin Staking. Staking rewards can be as high as 10%* per year for supported Digital
+                digital tokens on Coinstaking.app. Staking rewards can be as high as 100%* per Month for supported Digital
                 Tokens.
-                Please read the <a href="/#faqs">FAQs</a> for details.</p>
+                Please read the<a href="/#faqs">FAQs</a> for details.</p>
             <div class="bp3-divider divider divider-margin"></div>
             <h2 class="calculate">Calculate your potential rewards</h2>
             <ul class="selects calculate-selects">
@@ -145,15 +145,15 @@
                 </li>
                 <li class="step active">
                     <h3 class="step-number">2</h3>
-                    <h4 class="step-tip">Deposit to Coin Staking</h4>
-                    <p class="step-description">Simply deposit your chosen digital tokens to your Coin Staking account to
+                    <h4 class="step-tip">Deposit to CoinStaking.App</h4>
+                    <p class="step-description">Simply deposit your chosen digital tokens to your CoinStaking.App account to
                         begin
                         staking.**</p>
                 </li>
                 <li class="step">
                     <h3 class="step-number">3</h3>
                     <h4 class="step-tip">Earn weekly rewards</h4>
-                    <p class="step-description">Watch your account grow as Coin Staking automatically deposits your staking
+                    <p class="step-description">Watch your account grow as CoinStaking.App automatically deposits your staking
                         rewards
                         into your account on a weekly basis.</p>
                 </li>
@@ -191,13 +191,10 @@
 
             </ul>
             <div class="tip">
-                <p>* This is the estimated annual staking reward for staked tokens.&nbsp;For ETH staking, the estimated
-                    annual
-                    staking reward is based on rewards as of December 23, 2020, rewards will vary including based on the
-                    Ethereum protocol. Actual annualized staking rewards may differ. Coin Staking makes no guarantees
-                    regarding the
-                    amount of any staking rewards.</p>
-                <p>** To stake ETH2, you must opt in. Please see the FAQs for more details.</p>
+                <p>* Refer your friends with your refferal link and get rewarded 10% of their first staking.</p>
+                <p>** Stake above 20,000 USD on any selected staking coin and receive a bonus of 1,500 USDT.</p>
+                <p>***Staking reward are paid into your account daily and can be withdraw or re-stake.</p>
+				<p>****Staking reward are not compounding.</p>
             </div>
         </div>
 
@@ -206,19 +203,10 @@
             <h2 class="title">Frequently Asked Questions</h2>
             <ul>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle1()">How frequently will I receive staking rewards?</h5>
+                    <h5 role="presentation" class="question" onclick="toggle1()">What is Coinstaking.app?</h5>
                     <div class="answer-wrapper1" >
                         <div class="answer" id="answer-wrapper1">
-                            <p>Staking rewards are paid out weekly. We will take a mid-week account balance snapshot and
-                                distribute
-                                the rewards based on the number of tokens being held at that time.</p>
-                            <p>Please note that staking rewards are calculated and distributed to Coin Staking by the token
-                                network.
-                                There is not any fixed rewards distribution timeline and policy that determine who
-                                receives the
-                                rewards. Therefore, Coin Staking does not guarantee that you will receive staking rewards
-                                every week or
-                                consistently.</p>
+                            <p>Coinstaking.app is the platform for retail and institutional investors that allows to receive passive income by investing in stakable cryptocurrency.
                         </div>
                     </div>
                     <script>
@@ -240,15 +228,8 @@
                         start staking?</h5>
                     <div class="answer-wrapper2">
                         <div class="answer" id="answer-wrapper2">
-                            <p>There is no minimum to begin staking with us. However, to avoid unnecessary
-                            stress on
-                            our system, we do set a minimum amount of staking rewards before you become eligible to
-                            receive a
-                            staking reward. That threshold is generally set at a number of tokens that is valued at
-                            around US$0.50
-                            (the "Minimum Reward") per token per week. If, based on the number of tokens you have
-                            staked, the amount
-                            of the staking reward is less than the Minimum Reward you will not receive a staking reward.
+                            <p>There is no minimum to begin staking with us. However, to avoid unnecessary stress on our system, we do set a minimum amount of staking rewards before you become eligible to receive a staking reward. That threshold is generally set at a number of tokens that is valued at around $50
+
                             </p>
                         </div>
                     </div>
@@ -269,11 +250,7 @@
                     <h5 role="presentation" class="question" onclick="toggle3()">Do I have to pay fees to use this service?</h5>
                     <div class="answer-wrapper3">
                         <div class="answer" id="answer-wrapper3">
-                            <p>No. We keep a small portion of the staking rewards we collect and deposit
-                            the rest
-                            into the accounts of our users. In some cases, our staking service provider also retains a
-                            portion of
-                            rewards collected by the digital tokens we stake.
+                            <p>No. We keep a small portion of the staking rewards we collect and deposit the rest into the accounts of our users. In some cases, our staking service provider also retains a portion of rewards collected by the digital tokens we stake.
                             </p> </div>
                     </div>
                     <script>
@@ -290,22 +267,13 @@
                         </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Coin Staking stake my digital tokens?
+                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Coinstaking.app stake my digital tokens?
                     </h5>
                     <div class="answer-wrapper4">
                         <div class="answer" id="answer-wrapper4">
-                            <p>Yes, the staked digital tokens never leave our cold wallets. To further
-                            minimize risk
-                            (e.g., from slashing and to ensure we can accommodate withdrawals) we only stake a portion
-                            of the
-                            digital tokens we hold. Every digital token has its own way of implementing the staking
-                            mechanic, but
-                            the process usually begins with us using our cold wallet funds in order to delegate votes to
-                            a chosen
-                            validator node. Staking provides a layer of governance to its network participants which
-                            helps to make
-                            the network more secure and for that, network participants are rewarded.
-                            </p></div>
+                            <p>Yes, the staked digital tokens never leave our cold wallets. To further minimize risk (e.g., from slashing and to ensure we can accommodate withdrawals) we only stake a portion of the digital tokens we hold. Every digital token has its own way of implementing the staking mechanic, but the process usually begins with us using our cold wallet funds in order to delegate votes to a chosen validator node. Staking provides a layer of governance to its network participants which helps to make the network more secure and for that, network participants are rewarded.
+                            </p>
+                        </div>
                     </div>
 
                     <script>
@@ -322,21 +290,14 @@
                         </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Coin Staking account
-                        and they
-                        earn rewards?</h5>
+                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Coinstaking.app account and they earn rewards?</h5>
                     <div class="answer-wrapper5">
                         <div class="answer" id="answer-wrapper5">
                             <p>Yes, if your tokens are NOT Ethereum. Every week, we’ll distribute the staking rewards we
                                 collect to
-                                users who held the staked digital tokens in their Coin Staking account. You don’t have to do
+                                users who held the staked digital tokens in their Coinstaking.app account. You don’t have to do
                                 anything in
                                 particular.</p>
-                            <p>If you want to stake Ethereum, you’d need to convert your ETH into ETH2 first. Visit our
-                                <a href="#"
-                                    target="_blank">Knowledge Base</a> to learn how to start staking your Ethereum
-                                holdings.
-                            </p>
                         </div>
                     </div>
                     <script>
@@ -357,13 +318,14 @@
                     <div class="answer-wrapper6">
                         <div class="answer" id="answer-wrapper6">
                             <p>For chains that implement governance mechanisms into their protocol,
-                            Coin Staking will not
-                            actively take part in any governance events using your tokens other than delegating to a
-                            trusted node of
-                            our choosing. Where we have partnered with a staking service provider, we will generally
-                            allow that
-                            service provider to make decisions regarding governance without our input.</div>
+                                Staking Lord will not
+                                actively take part in any governance events using your tokens other than delegating to a
+                                trusted node of
+                                our choosing. Where we have partnered with a staking service provider, we will generally
+                                allow that
+                                service provider to make decisions regarding governance without our input.
                             </p>
+                        </div>
                         </div>
 
                         <script>
@@ -380,35 +342,12 @@
                             </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle7()">Will I still be able to trade or withdraw my staked
-                        tokens?</h5>
+                    <h5 role="presentation" class="question" onclick="toggle7()">Do I need to do anything after deposit?</h5>
                     <div class="answer-wrapper7">
                         <div class="answer" id="answer-wrapper7" >
-                            <p>It depends on the tokens you’re staking. For tokens other than Ethereum, you are able to
-                                trade your
-                                staked tokens. Although some staked tokens are “locked” for a period of time, depending
-                                on the
-                                protocol.</p>
-                            <p>To accommodate withdrawals, we only stake a portion of the digital tokens we hold. In the
-                                unlikely
-                                event that withdrawals by other users exceed the “un-staked” portion of the tokens we
-                                hold,
-                                withdrawals may be delayed until the staked tokens are released. The duration of the
-                                potential delay
-                                would depend on the applicable protocol.</p>
-                            <p>If you are staking Ethereum, you will not be able to withdraw your staked ETH because of
-                                the way the
-                                Ethereum protocol works. Once you choose to stake ETH, that decision is final and
-                                irreversible. The
-                                ETH you stake through Coin Staking’s staking service will be converted to an ETH2 balance in
-                                your account
-                                once they are successfully staked. Rewards earned on staked ETH will be reflected as a
-                                balance of ETH2
-                                Rewards in your account. ETH2 and ETH2 Rewards balances cannot be withdrawn but there
-                                may be a market
-                                for trading ETH2 or ETH2 Rewards on Coin Staking. Please refer to our token specific terms
-                                for ETH2 and
-                                ETH2 Rewards for more detailed information.</p>
+                           <p>
+                            You don’t need to make any additional actions. Your coins will be automatically and instantly included in a staking pool. Just sit back and enjoy dividends!
+                           </p>
                         </div>
                     </div>
                     <script>
@@ -425,15 +364,12 @@
                         </script>
                 </li>
                 <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle8()">How do I stake Ethereum (ETH2)?</h5>
+                    <h5 role="presentation" class="question" onclick="toggle8()">How frequently will I receive staking rewards?</h5>
                     <div class="answer-wrapper8">
                         <div class="answer" id="answer-wrapper8">
-                            <p>In order to stake ETH2 you must opt in. ETH2 staking is highly experimental and risky.
-                                Please ensure
-                                you independently assess, understand and accept the related risks before deciding to
-                                stake.</p>
-                            <p>Please refer to our <a href="#" target="_blank">Knowledge Base</a> for detailed
-                                information on how to stake ETH2.</p>
+                            <p>Staking rewards are paid out daily. Staking rewards are distributed based on the number of tokens being held at that time.
+
+                                Please note that staking rewards are calculated and distributed to Staking Room by the token network.</p>
                         </div>
                     </div>
 
