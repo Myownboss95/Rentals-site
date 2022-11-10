@@ -125,7 +125,7 @@
                 </li>
             </ul>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Calculator"
-                href="{{ url('/register') }}" target="_blank" rel="noopener noreferrer"><button type="button"
+                href="{{ url('/login') }}" target="_blank" rel="noopener noreferrer"><button type="button"
                     class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Login</span></button></a>
         </div>
 
