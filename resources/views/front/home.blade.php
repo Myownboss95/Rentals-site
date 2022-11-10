@@ -34,8 +34,7 @@
             <br>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Banner"
                 href="{{ url('/register') }}" target="_blank" rel="noopener noreferrer"><button type="button"
-                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Deposit
-                        Now</span></button></a>
+                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Register</span></button></a>
         </div>
 
 
@@ -127,8 +126,7 @@
             </ul>
             <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Calculator"
                 href="{{ url('/register') }}" target="_blank" rel="noopener noreferrer"><button type="button"
-                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Deposit
-                        Now</span></button></a>
+                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Login</span></button></a>
         </div>
 
         <div id="deposit">
@@ -175,7 +173,7 @@
                             <h3 class="coin-title" style="text-transform: capitalize;">{{ $payment_method['name'] }}
                             </h3>
                             <div class="coin-text">
-                                <p>Estimated annual staking rewards*
+                                <p>Estimated daily staking rewards*
 
                                 </p>
                                 <p><span>Up to {{ $payment_method['roi'] }}%</span></p>
