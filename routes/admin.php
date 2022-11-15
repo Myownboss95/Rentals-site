@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\BotController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\PaymentMethodController;
 use App\Http\Controllers\Admin\DepositController;
@@ -48,6 +49,7 @@ Route::get('bots/activations', [BotController::class, 'showBotActivationRequest'
 Route::post('bots/activations/{id}', [BotController::class, 'generateBotActivationToken'])->name('bots.activation.token-generate');
 
 Route::resource('tradeables', TradeableController::class);
+Route::resource('categories', CategoryController::class);
 Route::resource('settings', SettingController::class);
 Route::resource('payment-method', PaymentMethodController::class);
 Route::resource('deposits', DepositController::class)->only('index');

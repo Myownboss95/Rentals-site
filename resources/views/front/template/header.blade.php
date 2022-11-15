@@ -1,32 +1,158 @@
+<!doctype html>
+<html lang="zxx" class="theme-light">
+    
+<!-- Mirrored from templates.envytheme.com/luvion/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Nov 2022 11:31:43 GMT -->
 <head>
-    <meta charset="utf-8">
-    <title>Coin Staking  | No hassle | Deposit &amp; Earn</title>
-    <link rel="icon" href="/favicon.png">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="viewport" content="width=device-width">
-    <meta name="description" content="Earn staking rewards by holding digital tokens on Coin Staking.">
-    <meta name="keywords" content="bitcoin,exchange,bitcoin exchange,litecoin,zcash,ethereum,margin,trade">
-    <meta property="og:url" content="https://stakinglord.com/">
-    <meta property="og:site_name" content="Coin Staking ">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Coin Staking  | No hassle | Deposit &amp; Earn">
-    <meta property="og:description" content="Earn staking rewards by holding digital tokens on Staking Room.">
-    <meta property="og:image" content="https://coinstaking.app/thumbnail-1.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="Coin Staking">
-    <meta name="twitter:title" content="Coin Staking  | No hassle | Deposit &amp; Earn">
-    <meta name="twitter:description" content="Earn staking rewards by holding digital tokens on Coin Staking.">
-    <meta name="twitter:image" content="https://coinstaking.app/.app/thumbnail-2.png">
-    <meta name="referrer" content="origin">
-    <link rel="apple-touch-icon" href="/thumbnail-2.png">
-    <link rel="manifest" href="/manifest.json">
-    <link rel="stylesheet" type="text/css" href="/static/css/3.chunk.css">
-    <script charset="utf-8" src="{{asset('stake/3.chunk.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="/static/css/4.chunk.css">
-    <script charset="utf-8" src="{{asset('stake/4.chunk.js')}}"></script>
-    <link rel="stylesheet" type="text/css" href="{{asset('stake/styling.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('stake/style2.css')}}">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js" integrity="sha512-BdHyGtczsUoFcEma+MfXc71KJLv/cd+sUsUaYYf2mXpfG/PtBjNXsPo78+rxWjscxUYN2Qr2+DbeGGiJx81ifg==" crossorigin="anonymous"></script>
-</head>
-<body>
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/fontawesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/magnific-popup.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/slick.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/meanmenu.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/odometer.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/dark-style.css')}}">
+
+        <title>{{ config('app.name') }}</title>
+
+        <link rel="icon" type="image/png" href="{{asset('front/favicon.png')}}">
+    </head>
+
+    <body>
+
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+        <!-- Start Navbar Area -->
+        <div class="navbar-area">
+            <div class="luvion-responsive-nav">
+                <div class="container">
+                    <div class="luvion-responsive-menu">
+                        <div class="logo">
+                            <a href="{{ url('/') }}">
+                                <img src="{{asset('front/img/logo.png')}}" alt="logo">
+                                <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="luvion-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="{{ url('/') }}">
+                            <img src="{{asset('front/img/logo.png')}}" alt="logo">
+                            <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
+                        </a>
+
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="#" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
+
+                                        <li class="nav-item"><a href="index-2.html" class="nav-link active">Loan Providers</a></li>
+
+                                        <li class="nav-item"><a href="index-3.html" class="nav-link">Digital Banking</a></li>
+
+                                        <li class="nav-item"><a href="index-4.html" class="nav-link">Financial Service Provider</a></li>
+
+                                        <li class="nav-item"><a href="index-5.html" class="nav-link">Bankers & Entrepreneurs</a></li>
+
+                                        <li class="nav-item"><a href="index-6.html" class="nav-link">Social Finance Agency</a></li>
+
+                                        <li class="nav-item"><a href="index-7.html" class="nav-link">Currency Transfer Provider</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Features <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
+
+                                        <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="#" class="nav-link">About Us</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About Style One</a></li>
+
+                                                <li class="nav-item"><a href="about-two.html" class="nav-link">About Style Two</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item"><a href="#" class="nav-link">Features</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
+        
+                                                <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+
+                                        <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                                        <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
+
+                                        <li class="nav-item"><a href="{{ url('/register') }}" class="nav-link">Register</a></li>
+
+                                        <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error</a></li>
+
+                                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+
+                                        <li class="nav-item"><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+
+                                        <li class="nav-item"><a href="personal.html" class="nav-link">Personal</a></li>
+
+                                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+
+                                        <li class="nav-item"><a href="contact-two.html" class="nav-link">Contact Style Two</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="blog-1.html" class="nav-link">Blog Grid</a></li>
+
+                                        <li class="nav-item"><a href="blog-2.html" class="nav-link">Blog Right Sidebar</a></li>
+
+                                        <li class="nav-item"><a href="single-blog.html" class="nav-link">Blog Details</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                            </ul>
+
+                            <div class="others-options">
+                                <a href="{{ url('/login') }}" class="login-btn"><i class="flaticon-user"></i> Log In</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- End Navbar Area -->

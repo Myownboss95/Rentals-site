@@ -24,6 +24,13 @@
             icon="user-x"
             v-if="is_admin"
           />
+          <SidebarItem
+            name="Product Categories"
+            :url="route('admin.categories.index')"
+            icon="user-x"
+            v-if="is_admin"
+          />
+          
           <!-- <li class="menu-title">Trading</li>
           <SidebarItem
             name="Trades History"

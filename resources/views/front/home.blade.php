@@ -1,521 +1,1033 @@
-{{-- @include("header") --}}
 @include('front.template.header')
 
-
-<div id="root">
-    <main class="container">
-        <header id="header">
-            <div class="logo-wrapper"><a href="{{ url('/') }}" target="_blank"
-                    rel="noopener noreferrer">
-                    <img width="100" src="{{ asset('mainlogo1.png')}}" class="logo">
-                      
-                    </a></div>
-            <div class="languages"><span class="bp3-popover-wrapper"><span class="bp3-popover-target">
-                        <div class="">
-                            <div id="google_translate_element"></div>
-                            {{-- <span class="selected">English</span> --}}
-                            <span icon="chevron-down" class="bp3-icon bp3-icon-chevron-down"><svg
-                                    data-icon="chevron-down" width="18" height="18" viewBox="0 0 16 16">
-                                    <desc>chevron-down</desc>
-                                    <path
-                                        d="M12 5c-.28 0-.53.11-.71.29L8 8.59l-3.29-3.3a1.003 1.003 0 00-1.42 1.42l4 4c.18.18.43.29.71.29s.53-.11.71-.29l4-4A1.003 1.003 0 0012 5z"
-                                        fill-rule="evenodd"></path>
-                                </svg></span>
+  <!-- Start Main Banner Area -->
+  <div class="main-banner-section jarallax" data-jarallax='{"speed": 0.3}'>
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 col-md-12">
+                        <div class="banner-content">
+                            <h1>Easy, Rentals for entrepreneurs</h1>
+                            <p>Get the tools for business, events, parties, etc</p>
+                            <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
-                    </span></span></div>
-        </header>
- 
-        <div id="heading" class="en">
-            <div class="Typist ">
-                <p>Earn<span class="highlight wipe-through">staking rewards</span></p>
-            </div>
-            <div class="Typist ">on CoinStaking.App with</div>
-            <div class="text"> </div>
-            <br>
-            <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Banner"
-                href="{{ url('/register') }}" target="_blank" rel="noopener noreferrer"><button type="button"
-                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Register</span></button></a>
-        </div>
+                    </div>
 
+                    <div class="col-lg-6 col-md-12">
+                        <div class="money-transfer-form">
+                            <form>
+                                <div class="form-group">
+                                    <label>You Are Looking For</label>
+                                    <div class="money-transfer-field">
+                                        <input type="text" class="form-control" autocomplete="off" value="1">
 
-
-        {{-- section --}}
-        <div id="stake-program">
-            <div class="bp3-divider divider"></div>
-            <p class="description">Our soft-staking program allows you to easily generate rewards by simply holding your
-                digital tokens on Coinstaking.app. Staking rewards can be as high as 100%* per Month for supported Digital
-                Tokens.
-                Please read the<a href="/#faqs">FAQs</a> for details.</p>
-            <div class="bp3-divider divider divider-margin"></div>
-            <h2 class="calculate">Calculate your potential rewards</h2>
-            <ul class="selects calculate-selects">
-                <div class="bp3-form-group select">
-                    <label class="bp3-label">
-                        <span class="select-label">I want to stake</span>
-                        <span class="bp3-text-muted"></span>
-                    </label>
-                    <div class="bp3-form-content">
-                        <div class="bp3-popover-wrapper bp3-fill">
-                            <div class="bp3-popover-target">
-                                <div class="">
-
-                                    <div class="bp3-input-group bp3-large">
-                                        <select class="bp3-input" style="padding-right: 52px;" onchange="changeSym()"
-                                            id="currency">
-
-                                            <option style="border: 2px solid white" value="" selected>Select Coin
-                                            </option>
-                                            @foreach ($payment_methods as $payment_method)
-                                                <option value="{{ $payment_method['name'] }}"
-                                                    data-coinsymbol="{{ $payment_method['symbol'] }}"
-                                                    data-roi="{{ $payment_method['roi'] }}">
-                                                    {{ $payment_method['name'] }}
-                                                </option>
-                                            @endforeach
-
-                                        </select>
+                                        <div class="amount-currency-select">
+                                            <select>
+                                                <option>Cars</option>
+                                                <option>Houses</option>
+                                                <option>Boats</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="currency-info">
+                                    <div class="bar"></div>
+                                    <span><strong>800.3</strong> Exchange Rate</span>
+                                    
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Within the Range of</label>
+                                    <div class="money-transfer-field">
+                                        <input type="text" class="form-control" autocomplete="off" value="1,000">
+
+                                        <div class="amount-currency-select">
+                                            <select>
+                                                <option>USD</option>
+                                                <option>EUR</option>
+                                                <option>GBP</option>
+                                                <option>BRL</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <div class="money-transfer-info">
+                                    <span>You could save vs banks <strong>1,010.32 USD</strong></span>
+                                </div> -->
+
+                                <button type="submit" class="btn btn-primary">Get Started</button>
+
+                                <div class="terms-info">
+                                    <p>By clicking continue, I am agree with <a href="#">Terms & Policy</a></p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Banner Area -->
+
+<!-- Start Featured Boxes Area -->
+<section class="featured-boxes-area">
+    <div class="container">
+        <div class="featured-boxes-inner">
+            <div class="row m-0">
+                <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                    <div class="single-featured-box">
+                        <div class="icon color-fb7756">
+                            <i class="flaticon-piggy-bank"></i>
+                        </div>
+
+                        <h3>Transparent Pricing</h3>
+                        <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                        <a href="features-1.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                    <div class="single-featured-box">
+                        <div class="icon color-facd60">
+                            <i class="flaticon-data-encryption"></i>
+                        </div>
+
+                        <h3>Fully Encrypted</h3>
+                        <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                        <a href="features-1.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                    <div class="single-featured-box">
+                        <div class="icon color-1ac0c6">
+                            <i class="flaticon-wallet"></i>
+                        </div>
+
+                        <h3>Instant Cashout</h3>
+                        <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                        <a href="features-1.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 col-md-6 p-0">
+                    <div class="single-featured-box">
+                        <div class="icon">
+                            <i class="flaticon-shield"></i>
+                        </div>
+
+                        <h3>Safe and Secure</h3>
+                        <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+
+                        <a href="features-1.html" class="read-more-btn">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Featured Boxes Area -->
+
+<!-- Start How It Works Area -->
+<section class="how-it-works-area ptb-70">
+    <div class="container">
+        <div class="section-title">
+            <h2>How It Works</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/1.png')}}" alt="image">
+
+                    <h3>1. Register for free</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/2.png')}}" alt="image">
+
+                    <h3>2. Choose an item to rent</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/3.png')}}" alt="image">
+
+                    <h3>3. Check Out</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/4.png')}}" alt="image">
+
+                    <h3>4. Verify your identity</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/5.png')}}" alt="image">
+
+                    <h3>5. Pay</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-6 col-md-6">
+                <div class="single-how-it-works">
+                    <img src="{{asset('front/img/how-it-works-image/6.png')}}" alt="image">
+
+                    <h3>6. That’s it. Return when due</h3>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End How It Works Area -->
+<!-- Start Blog Area -->
+<section class="blog-area ptb-70 pt-0">
+<div class="container">
+<div class="section-title">
+    <h2>Rentables</h2>
+    <div class="bar"></div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</div>
+
+<div class="row">
+    <div class="col-lg-4 col-md-6">
+        <div class="single-blog-post">
+            <div class="blog-image">
+                <a href="single-blog.html">
+                    <img src="{{asset('front/img/blog-image/1.jpg')}}" alt="image">
+                </a>
+
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i> $250 per Month
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <h3><a href="single-blog.html">Chandelier</a></h3>
+
+                <span>by <a href="#">admin</a></span>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6">
+        <div class="single-blog-post">
+            <div class="blog-image">
+                <a href="single-blog.html">
+                    <img src="{{asset('front/img/blog-image/2.jpg')}}" alt="image">
+                </a>
+
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i> $450/Month
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <h3><a href="single-blog.html">Office Space</a></h3>
+
+                <span>by <a href="#">admin</a></span>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
+        <div class="single-blog-post">
+            <div class="blog-image">
+                <a href="single-blog.html">
+                    <img src="{{asset('front/img/blog-image/3.jpg')}}" alt="image">
+                </a>
+
+                <div class="date">
+                    <i class="far fa-calendar-alt"></i> $850/Month
+                </div>
+            </div>
+
+            <div class="blog-post-content">
+                <h3><a href="single-blog.html">Official Cars</a></h3>
+
+                <span>by <a href="#">admin</a></span>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+
+                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>
+<!-- End Blog Area -->
+<!-- Start Services Area -->
+<section class="services-area ptb-70 pt-0">
+    <div class="container-fluid p-0">
+        <div class="overview-box">
+            <div class="overview-content">
+                <div class="content left-content">
+                    <span class="sub-title">Fast & Easy Online Rentals</span>
+                    <h2>Freelancers, entrepreneurs, and sole traders</h2>
+                    <div class="bar"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <ul class="features-list">
+                        <li><span><i class="flaticon-check-mark"></i> Free plan available</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Full data privacy compliance</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> 100% transparent costs</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Commitment-free</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Real-time spending overview</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Debit Mastercard included</span></li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Apply Now</a>
+                </div>
+            </div>
+
+            <div class="overview-image">
+                <div class="image">
+                    <img src="{{asset('front/img/4.jpg')}}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Area -->
+
+<!-- Start Services Area -->
+<section class="services-area ptb-70 bg-f7fafd">
+    <div class="container-fluid p-0">
+        <div class="overview-box">
+            <div class="overview-image">
+                <div class="image">
+                    <img src="{{asset('front/img/5.png')}}" alt="image">
+
+                    <div class="circle-img">
+                        <img src="{{asset('front/img/circle.png')}}" alt="image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <div class="content">
+                    <span class="sub-title">Top Security</span>
+                    <h2>Small- to medium-sized businesses</h2>
+                    <div class="bar"></div>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <ul class="features-list">
+                        <li><span><i class="flaticon-check-mark"></i> Easy Set up</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Return within time</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> A powerful open API</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Coverage around the world</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Business without borders</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Area -->
+
+<!-- Start Services Area -->
+<section class="services-area ptb-70">
+    <div class="container-fluid p-0">
+        <div class="overview-box">
+            <div class="overview-content">
+                <div class="content left-content">
+                    <span class="sub-title">Price Transparency</span>
+                    <h2>Large or enterprise level businesses</h2>
+                    <div class="bar"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+                    <ul class="features-list">
+                        <li><span><i class="flaticon-check-mark"></i> Corporate Cards</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> International Payments</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Automated accounting</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Request Features</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Premium Support</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Direct Debit</span></li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Create Account</a>
+                </div>
+            </div>
+
+            <div class="overview-image">
+                <div class="image">
+                    <img src="{{asset('front/img/6.jpg')}}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Area -->
+
+<!-- Start Services Area -->
+<section class="services-area ptb-70 bg-f7fafd">
+    <div class="container-fluid p-0">
+        <div class="overview-box">
+            <div class="overview-image">
+                <div class="image">
+                    <img src="{{asset('front/img/7.jpg')}}" alt="image">
+                </div>
+            </div>
+
+            <div class="overview-content">
+                <div class="content">
+                    <span class="sub-title">Automated Accounting</span>
+                    <h2>Save 24 hours per week on accounting</h2>
+                    <div class="bar"></div>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+                    <ul class="features-list">
+                        <li><span><i class="flaticon-check-mark"></i> Easy transfers</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Deposit checks instantly</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> A powerful open API</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Coverage around the world</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Business without borders</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
+                    </ul>
+
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Services Area -->
+
+<!-- Start Comparisons Area -->
+<section class="comparisons-area ptb-70 bg-f6f4f8">
+    <div class="container">
+        <div class="section-title">
+            <h2>Compare us with others</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div class="comparisons-table table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Packages</th>
+                        <th scope="col">Freelancer</th>
+                        <th scope="col">Householder</th>
+                        <th scope="col">Business Man</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Control payout timing</td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Transparent payouts</td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-cancel"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Automate evidence submission</td>
+                        <td><i class="flaticon-cancel"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Collaboration notes</td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-cancel"></i></td>
+                        <td><i class="flaticon-cancel"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Deposit tagging</td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-cancel"></i></td>
+                    </tr>
+                    <tr>
+                        <td>Technical support over IRC</td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                    </tr>
+                    <tr>
+                        <td>24×7 support</td>
+                        <td><i class="flaticon-cancel"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                        <td><i class="flaticon-check-mark"></i></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- End Comparisons Area -->
+
+<!-- Start Features Area -->
+<section class="features-section ptb-70 bg-f7fafd">
+    <div class="container">
+        <div class="section-title">
+            <h2>Our Features</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-5 col-md-12">
+                <div class="features-box-list">
+                    <div class="row">
+                        <div class="col-lg-12 col-sm-6 col-md-6">
+                            <div class="features-box">
+                                <div class="icon">
+                                    <i class="flaticon-settings"></i>
+                                </div>
+
+                                <h3>Incredible infrastructure</h3>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-sm-6 col-md-6">
+                            <div class="features-box">
+                                <div class="icon bg-f78acb">
+                                    <i class="flaticon-envelope-of-white-paper"></i>
+                                </div>
+
+                                <h3>Email notifications</h3>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-sm-6 col-md-6">
+                            <div class="features-box">
+                                <div class="icon bg-cdf1d8">
+                                    <i class="flaticon-menu"></i>
+                                </div>
+
+                                <h3>Simple dashboard</h3>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 col-sm-6 col-md-6">
+                            <div class="features-box">
+                                <div class="icon bg-c679e3">
+                                    <i class="flaticon-info"></i>
+                                </div>
+
+                                <h3>Information retrieval</h3>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="bp3-form-group select"><label class="bp3-label"><span class="select-label">Amount</span>
-                        <span class="bp3-text-muted"></span></label>
-                    <div class="bp3-form-content">
-                        <div class="bp3-input-group bp3-large">
-                            <input type="text" id="inputPrice" placeholder="Amount Here" maxlength="11"
-                                class="bp3-input" style="padding-right: 139px;" oninput="computePrice()">
+            </div>
 
-                            <span class="bp3-input-action"><span class="select-amount" id="price">0.00
-                                    USD</span></span>
-                        </div>
-                        <div class="token-unit" style="left: 125px;" id="symbol"></div>
+            <div class="col-lg-7 col-md-12">
+                <div class="features-image">
+                    <img src="{{asset('front/img/features-img1.png')}}" alt="image">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Features Area -->
+
+<!-- Start Invoicing Area -->
+<section class="invoicing-area ptb-70">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="invoicing-content">
+                    <h2>Easy Payment to borrow free get a better filling at home</h2>
+                    <div class="bar"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <a href="#" class="btn btn-primary">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="invoicing-image">
+                    <div class="main-image">
+                        <img src="{{asset('front/img/invoicing-image/1.png')}}" class="wow animate__animated animate__zoomIn" alt="image">
+                        <img src="{{asset('front/img/invoicing-image/2.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{asset('front/img/invoicing-image/3.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{asset('front/img/invoicing-image/4.png')}}" class="wow animate__animated animate__fadeInRight" alt="image">
+                    </div>
+
+                    <div class="main-mobile-image">
+                        <img src="{{asset('front/img/invoicing-image/main-pic.png')}}" class="wow animate__animated animate__zoomIn" alt="image">
+                    </div>
+
+                    <div class="circle-image">
+                        <img src="{{asset('front/img/invoicing-image/circle1.png')}}" alt="image">
+                        <img src="{{asset('front/img/invoicing-image/circle2.png')}}" alt="image">
                     </div>
                 </div>
-            </ul>
-            <ul class="rewards-block-wrapper">
-                <li class="rewards-block">
-                    <div class="flex">
-                        <p>Daily Rewards*</p>
-                        <p class="amount">0.00 USD</p>
-                    </div>
-                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
-                </li>
-                <li class="rewards-block">
-                    <div class="flex">
-                        <p>Weekly Rewards*</p>
-                        <p class="amount">0.00 USD</p>
-                    </div>
-                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
-                </li>
-                <li class="rewards-block">
-                    <div class="flex">
-                        <p>Monthly Rewards*</p>
-                        <p class="amount">0.00 USD</p>
-                    </div>
-                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
-                </li>
-                <li class="rewards-block">
-                    <div class="flex">
-                        <p>Yearly Rewards*</p>
-                        <p class="amount">0.00 USD</p>
-                    </div>
-                    <span class="atom">0.00 </span> <span class="coin">TRX</span>
-                </li>
-            </ul>
-            <a data-gtm-trigger="deposit-button-clicks" data-gtm-action="Deposit Now at Calculator"
-                href="{{ url('/login') }}" target="_blank" rel="noopener noreferrer"><button type="button"
-                    class="bp3-button bp3-large bp3-intent-success"><span class="bp3-button-text">Login</span></button></a>
-        </div>
-
-        <div id="deposit">
-            <div class="title-wrapper">
-                <h2 class="title">No hassle, just deposit</h2>
             </div>
-            <ul class="steps">
-                <li class="step">
-                    <h3 class="step-number">1</h3>
-                    <h4 class="step-tip">Pick a digital token to stake</h4>
-                    <p class="step-description">Browse our list of staking supported digital tokens below and pick
-                        which ones
-                        best suit you.</p>
-                </li>
-                <li class="step active">
-                    <h3 class="step-number">2</h3>
-                    <h4 class="step-tip">Deposit to CoinStaking.App</h4>
-                    <p class="step-description">Simply deposit your chosen digital tokens to your CoinStaking.App account to
-                        begin
-                        staking.**</p>
-                </li>
-                <li class="step">
-                    <h3 class="step-number">3</h3>
-                    <h4 class="step-tip">Earn weekly rewards</h4>
-                    <p class="step-description">Watch your account grow as CoinStaking.App automatically deposits your staking
-                        rewards
-                        into your account on a weekly basis.</p>
-                </li>
-            </ul>
+        </div>
+    </div>
+</section>
+<!-- End Invoicing Area -->
+
+<!-- Start Fun Facts Area -->
+<section class="funfacts-area ptb-70 pt-0">
+    <div class="container">
+        <div class="section-title">
+            <h2>We always try to understand customers expectation</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
         </div>
 
+        <div class="row">
+            <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                <div class="funfact">
+                    <h3><span class="odometer" data-count="180">00</span>K</h3>
+                    <p>Downloaded</p>
+                </div>
+            </div>
 
-        <div id="digital-tokens">
-            <h2 class="title">Supported Digital Tokens</h2>
-            <ul class="earnings-list">
+            <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                <div class="funfact">
+                    <h3><span class="odometer" data-count="20">00</span>K</h3>
+                    <p>Feedback</p>
+                </div>
+            </div>
 
-                @foreach ($payment_methods as $payment_method)
-                    <li class="block-wrapper">
-                        <div class="block-content">
-                            <div class="coin-logo-wrapper">
-                                <img src="{{ asset('storage/payment_methods/' . $payment_method['svg']) }}"
-                                    alt="tag" width="50" height="50">
-                            </div>
-                            <h3 class="coin-title" style="text-transform: capitalize;">{{ $payment_method['name'] }}
-                            </h3>
-                            <div class="coin-text">
-                                <p>Estimated daily staking rewards*
+            <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                <div class="funfact">
+                    <h3><span class="odometer" data-count="500">00</span>+</h3>
+                    <p>Workers</p>
+                </div>
+            </div>
 
-                                </p>
-                                <p><span>Up to {{ $payment_method['roi'] }}%</span></p>
-                            </div>
-                        </div>
-                        <div class="block-footer"><a data-gtm-trigger="deposit-button-clicks"
-                                data-gtm-action="Deposit Solana" href="{{ url('/register') }}" target="_blank"
-                                rel="noopener noreferrer"><button type="button"
-                                    class="bp3-button bp3-large bp3-outlined deposit-btn"><span
-                                        class="bp3-button-text">Deposit</span></button></a></div>
-                    </li>
-                @endforeach
-
-            </ul>
-            <div class="tip">
-                <p>* Refer your friends with your refferal link and get rewarded 10% of their first staking.</p>
-                <p>** Stake above 20,000 USD on any selected staking coin and receive a bonus of 1,500 USDT.</p>
-                <p>***Staking reward are paid into your account daily and can be withdraw or re-stake.</p>
-				<p>****Staking reward are not compounding.</p>
+            <div class="col-lg-3 col-sm-3 col-md-3 col-6">
+                <div class="funfact">
+                    <h3><span class="odometer" data-count="70">00</span>+</h3>
+                    <p>Contrubutors</p>
+                </div>
             </div>
         </div>
 
-
-        <div id="faqs">
-            <h2 class="title">Frequently Asked Questions</h2>
-            <ul>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle1()">What is Coinstaking.app?</h5>
-                    <div class="answer-wrapper1" >
-                        <div class="answer" id="answer-wrapper1">
-                            <p>Coinstaking.app is the platform for retail and institutional investors that allows to receive passive income by investing in stakable cryptocurrency.
-                        </div>
-                    </div>
-                    <script>
-                        var x = document.getElementById("answer-wrapper1");
-                          x.style.display = "none";
-                        function toggle1() {
-                        //   console.log(x.style.display)
-                          if (x.style.display === "none") {
-                            x.style.display = "inline";
-                          } else if(x.style.display === "inline") {
-                            x.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle2()">Is there a minimum/maximum digital token holdings
-                        requirement to
-                        start staking?</h5>
-                    <div class="answer-wrapper2">
-                        <div class="answer" id="answer-wrapper2">
-                            <p>There is no minimum to begin staking with us. However, to avoid unnecessary stress on our system, we do set a minimum amount of staking rewards before you become eligible to receive a staking reward. That threshold is generally set at a number of tokens that is valued at around $50
-
-                            </p>
-                        </div>
-                    </div>
-                    <script>
-                        var y = document.getElementById("answer-wrapper2");
-                          y.style.display = "none";
-                        function toggle2() {
-                        //   console.log(y.innerHTML)
-                          if (y.style.display === "none") {
-                            y.style.display = "inline";
-                          } else if(y.style.display === "inline") {
-                            y.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle3()">Do I have to pay fees to use this service?</h5>
-                    <div class="answer-wrapper3">
-                        <div class="answer" id="answer-wrapper3">
-                            <p>No. We keep a small portion of the staking rewards we collect and deposit the rest into the accounts of our users. In some cases, our staking service provider also retains a portion of rewards collected by the digital tokens we stake.
-                            </p> </div>
-                    </div>
-                    <script>
-                        var xx = document.getElementById("answer-wrapper3");
-                          xx.style.display = "none";
-                        function toggle3() {
-                        //   console.log(xx.innerHTML)
-                          if (xx.style.display === "none") {
-                            xx.style.display = "inline";
-                          } else if(xx.style.display === "inline") {
-                            xx.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle4()">Is it safe and how does Coinstaking.app stake my digital tokens?
-                    </h5>
-                    <div class="answer-wrapper4">
-                        <div class="answer" id="answer-wrapper4">
-                            <p>Yes, the staked digital tokens never leave our cold wallets. To further minimize risk (e.g., from slashing and to ensure we can accommodate withdrawals) we only stake a portion of the digital tokens we hold. Every digital token has its own way of implementing the staking mechanic, but the process usually begins with us using our cold wallet funds in order to delegate votes to a chosen validator node. Staking provides a layer of governance to its network participants which helps to make the network more secure and for that, network participants are rewarded.
-                            </p>
-                        </div>
-                    </div>
-
-                    <script>
-                        var yy = document.getElementById("answer-wrapper4");
-                          yy.style.display = "none";
-                        function toggle4() {
-                        //   console.log(xx.innerHTML)
-                          if (yy.style.display === "none") {
-                            yy.style.display = "inline";
-                          } else if(yy.style.display === "inline") {
-                            yy.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle5()">So I just leave my digital tokens in my Coinstaking.app account and they earn rewards?</h5>
-                    <div class="answer-wrapper5">
-                        <div class="answer" id="answer-wrapper5">
-                            <p>Yes, if your tokens are NOT Ethereum. Every week, we’ll distribute the staking rewards we
-                                collect to
-                                users who held the staked digital tokens in their Coinstaking.app account. You don’t have to do
-                                anything in
-                                particular.</p>
-                        </div>
-                    </div>
-                    <script>
-                        var z = document.getElementById("answer-wrapper5");
-                          z.style.display = "none";
-                        function toggle5() {
-                        //   console.log(xx.innerHTML)
-                          if (z.style.display === "none") {
-                            z.style.display = "inline";
-                          } else if(z.style.display === "inline") {
-                            z.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle6()">Who makes the governance decisions with my tokens?</h5>
-                    <div class="answer-wrapper6">
-                        <div class="answer" id="answer-wrapper6">
-                            <p>For chains that implement governance mechanisms into their protocol,
-                                Staking Lord will not
-                                actively take part in any governance events using your tokens other than delegating to a
-                                trusted node of
-                                our choosing. Where we have partnered with a staking service provider, we will generally
-                                allow that
-                                service provider to make decisions regarding governance without our input.
-                            </p>
-                        </div>
-                        </div>
-
-                        <script>
-                            var zz = document.getElementById("answer-wrapper6");
-                              zz.style.display = "none";
-                            function toggle6() {
-                            //   console.log(xx.innerHTML)
-                              if (zz.style.display === "none") {
-                                zz.style.display = "inline";
-                              } else if(zz.style.display === "inline") {
-                                zz.style.display = "none";
-                              }
-                            }
-                            </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle7()">Do I need to do anything after deposit?</h5>
-                    <div class="answer-wrapper7">
-                        <div class="answer" id="answer-wrapper7" >
-                           <p>
-                            You don’t need to make any additional actions. Your coins will be automatically and instantly included in a staking pool. Just sit back and enjoy dividends!
-                           </p>
-                        </div>
-                    </div>
-                    <script>
-                        var zza = document.getElementById("answer-wrapper7");
-                          zza.style.display = "none";
-                        function toggle7() {
-                        //   console.log(xx.innerHTML)
-                          if (zza.style.display === "none") {
-                            zza.style.display = "inline";
-                          } else if(zza.style.display === "inline") {
-                            zza.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-                <li class="faq collapsed">
-                    <h5 role="presentation" class="question" onclick="toggle8()">How frequently will I receive staking rewards?</h5>
-                    <div class="answer-wrapper8">
-                        <div class="answer" id="answer-wrapper8">
-                            <p>Staking rewards are paid out daily. Staking rewards are distributed based on the number of tokens being held at that time.
-
-                                Please note that staking rewards are calculated and distributed to Staking Room by the token network.</p>
-                        </div>
-                    </div>
-
-                    <script>
-                        var apa = document.getElementById("answer-wrapper8");
-                          apa.style.display = "none";
-                        function toggle8() {
-                        //   console.log(xx.innerHTML)
-                          if (apa.style.display === "none") {
-                            apa.style.display = "inline";
-                          } else if(apa.style.display === "inline") {
-                            apa.style.display = "none";
-                          }
-                        }
-                        </script>
-                </li>
-            </ul>
+        <div class="contact-cta-box">
+            <h3>Have any question about us?</h3>
+            <p>Don't hesitate to contact us</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
         </div>
 
-        <script>
-            var typing = new Typed(".text", {
-                strings: ["", "Chainlink",
-                    "Cosmos",
-                    "XRP",
-                    "CARDANO",
-                    "Polkadot",
-                    "Solana",
-                    "Dogecoin",
-                    "Shiba Inu",
-                    "Uni Swap",
-                    "Avalanche",
-                    "Tron",
-                    "Stellar",
-                    "Algorand",
-                    "Tezos",
-                    "USDT",
-                    "USDC"
-                ],
-                typeSpeed: 100,
-                backSpeed: 40,
-                loop: true,
-            });
-            window.onload = (event) => {
-                document.getElementById('inputPrice').value = '';
-                document.getElementById('currency').value = '';
-            };
+        <div class="map-bg">
+            <img src="{{asset('front/img/map.png')}}" alt="map">
+        </div>
+    </div>
+</section>
+<!-- End Fun Facts Area -->
 
-            const changeSym = () => {
+<!-- Start Feedback Area -->
+<section class="feedback-area ptb-70 bg-f7fafd">
+    <div class="container">
+        <div class="section-title">
+            <h2>What customers say about Us</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
 
-                var symbol = document.getElementById('currency').value;
-                var symbol1 = document.getElementById('currency');
-                // var coin = symbol1.getAttribute('data-coinsymbol');
-                var roiCheck = symbol1.options[symbol1.selectedIndex].getAttribute('data-roi');
-                // console.log(roiCheck)
-                window._roiCheck = roiCheck;
-                var check = symbol1.options[symbol1.selectedIndex].getAttribute('data-coinsymbol');
-                var check1 = document.querySelectorAll('.coin')
-                check1.forEach(element => {
-                    element.innerHTML = check;
-                });
+        <div class="feedback-slides">
+            <div class="client-feedback">
+                <div>
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/1.jpg')}}" alt="image">
+                            </div>
 
-                document.getElementById('symbol').innerHTML = symbol;
-                if (symbol != '') {
-                    try {
-                        fetch(`https://api.coingecko.com/api/v3/simple/price?ids=${symbol}&vs_currencies=usd`).then(
-                            (res) => {
-                                if (!res.ok) throw new Error(`the HTTP error is ${res.status}`);
-                                return res.json()
-                            }
-                        ).then(
-                            data => {
-                                window._data = data[symbol.toLowerCase()]['usd'];
-                                document.getElementById('price').innerHTML = data[symbol.toLowerCase()]['usd'] + 'USD';
+                            <h3>John Lucy</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/2.jpg')}}" alt="image">
+                            </div>
 
-                            }
-                        )
-                    } catch (error) {
+                            <h3>John Smith</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/3.jpg')}}" alt="image">
+                            </div>
 
-                    }
-                }
-            }
+                            <h3>Maxwel Warner</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/4.jpg')}}" alt="image">
+                            </div>
 
-            var amounts = document.querySelectorAll('.amount');
-            var atom = document.querySelectorAll('.atom');
+                            <h3>Ross Taylor</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/5.jpg')}}" alt="image">
+                            </div>
+
+                            <h3>James Anderson</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/1.jpg')}}" alt="image">
+                            </div>
+
+                            <h3>Steven Smith</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/2.jpg')}}" alt="image">
+                            </div>
+
+                            <h3>Steven Lucy</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="single-feedback">
+                            <div class="client-img">
+                                <img src="{{asset('front/img/client-image/3.jpg')}}" alt="image">
+                            </div>
+
+                            <h3>John Terry</h3>
+                            <span>Web Developer</span>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="client-thumbnails">
+                <div>
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/1.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/2.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/3.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/4.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/5.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/1.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/2.jpg')}}" alt="client"></div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="img-fill"><img src="{{asset('front/img/client-image/3.jpg')}}" alt="client"></div>
+                    </div>
+                </div>
+
+                <button class="prev-arrow slick-arrow">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                
+                <button class="next-arrow slick-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Feedback Area -->
+
+<!-- Start Ready To Talk Area -->
+<section class="ready-to-talk">
+    <div class="container">
+        <div class="ready-to-talk-content">
+            <h3>Ready to talk?</h3>
+            <p>Our team is here to answer your question about 232 Rentals</p>
+            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <span><a href="#">Or, get started now with a free trial</a></span>
+        </div>
+    </div>
+</section>
+<!-- End Ready To Talk Area -->
+
+<!-- Start Partner Area -->
+<div class="partner-area">
+    <div class="container">
+
+        <h3>More that 1.5 million people and organizations use 232 Rentals</h3>
+
+        <div class="partner-inner">
+            <div class="row align-items-center">
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-1.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover1.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-2.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover2.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-3.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover3.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-4.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover4.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-5.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover5.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-6.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover6.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-7.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover7.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-8.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover8.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-9.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover9.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-10.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover10.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-11.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover11.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-12.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover12.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-13.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover13.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-14.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover14.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-15.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover15.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-16.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover16.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-17.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover17.png')}}" alt="partner">
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
+                    <a href="#">
+                        <img src="{{asset('front/img/partner-image/partner-18.png')}}" alt="partner">
+                        <img src="{{asset('front/img/partner-image/partner-hover18.png')}}" alt="partner">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Partner Area -->
+
+<!-- Start App Download Area -->
+<section class="app-download-area">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 col-md-12">
+                <div class="app-image">
+                    <div class="main-image">
+                        <img src="{{asset('front/img/mobile-app1.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{asset('front/img/mobile-app2.png')}}" class="wow animate__animated animate__fadeInUp" alt="image">
+                    </div>
+
+                    <div class="main-mobile-image">
+                        <img src="{{asset('front/img/main-mobile.png')}}" class="wow animate__animated animate__fadeInUp" alt="image">
+                    </div>
+
+                    <div class="circle-img">
+                        <img src="{{asset('front/img/circle.png')}}" alt="image">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="app-download-content">
+                    <h2>You can find all the thing you need to payout</h2>
+                    <div class="bar"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+
+                    <div class="btn-box">
+                        <a href="#" class="app-store-btn">
+                            <i class="flaticon-apple"></i>
+                            Download on
+                            <span>App Store</span>
+                        </a>
+
+                        <a href="#" class="play-store-btn">
+                            <i class="flaticon-play-store"></i>
+                            Download on
+                            <span>Google play</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End App Download Area -->
 
 
-            const computePrice = () => {
-                data = window._data;
-                roiCheck = Number(window._roiCheck);
+
+<!-- Start Account Create Area -->
+<section class="account-create-area">
+    <div class="container">
+        <div class="account-create-content">
+            <h2>Apply for an account in minutes</h2>
+            <p>Get your Rental account today!</p>
+            <a href="login.html" class="btn btn-primary">Get Your 232Rental Account</a>
+        </div>
+    </div>
+</section>
+<!-- End Account Create Area -->
 
 
-                const inputPrice = document.getElementById('inputPrice').value;
-                if (data != '') {
-                    var result = inputPrice * data;
-                    var mainPrice = result.toFixed(2) + ' USD';
-                    document.getElementById('price').innerHTML = mainPrice;
-                    let percentageR = (roiCheck / 100);
-
-                    // console.log(result)
-                    amounts.forEach((element, index) => {
-                        if (index == 0) {
-                            element.innerHTML = ((percentageR * 1 * result) + result).toFixed(2) + ' USD';
-                        }
-                        if (index == 1) {
-                            element.innerHTML = ((percentageR * 7 * result) + result).toFixed(2) + ' USD';
-                        }
-                        if (index == 2) {
-                            element.innerHTML = ((percentageR * 30 * result) + result).toFixed(2) + ' USD';
-                        }
-                        if (index == 3) {
-                            element.innerHTML = ((percentageR * 365 * result) + result).toFixed(2) + ' USD';
-                        }
-
-                    });
-                    let realPrice = Number(inputPrice);
-
-                    atom.forEach((element, index) => {
-                        if (index == 0) {
-                            element.innerHTML = ((percentageR * 1 * realPrice) + realPrice).toFixed(2);
-                        }
-                        if (index == 1) {
-                            element.innerHTML = ((percentageR * 7 * realPrice) + realPrice).toFixed(2);
-                        }
-                        if (index == 2) {
-                            element.innerHTML = ((percentageR * 30 * realPrice) + realPrice).toFixed(2);
-                        }
-                        if (index == 3) {
-                            element.innerHTML = ((percentageR * 365 * realPrice) + realPrice).toFixed(2);
-                        }
-
-                    });
-                } else {
-                    document.getElementById('price').innerHTML = '0 USD';
-                }
-
-            }
-        </script>
-
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-        <script type="text/javascript">
-            function googleTranslateElementInit() {
-                new google.translate.TranslateElement({
-                        pageLanguage: 'en'
-                    },
-                    'google_translate_element'
-                );
-            }
-        </script>
-
-        
-        @include('front.template.footer')
+@include('front.template.footer')

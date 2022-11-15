@@ -1,28 +1,105 @@
-<footer id="footer">
-    <div class="logo-wrapper"><a href="{{ url('/') }}" target="_blank"
-        rel="noopener noreferrer">
-        <img width="100" src="{{ asset('mainlogo1.png')}}" class="logo">
-      </a></div>
-    <div>
-      <div class="social-network"><a href="https://twitter.com/coinstaking_app" target="_blank"
-          rel="noopener noreferrer"><svg width="28" height="23" viewBox="0 0 28 23" fill="none" class="platform">
-            <path
-              d="M27.6442 2.65903C26.6162 3.10998 25.5208 3.40888 24.3788 3.55401C25.5536 2.85254 26.4503 1.75023 26.8719 0.421575C25.7765 1.07467 24.5671 1.53598 23.2782 1.79342C22.2381 0.685923 20.7556 0 19.1384 0C16.0008 0 13.4748 2.54673 13.4748 5.6688C13.4748 6.11801 13.5128 6.54996 13.6061 6.96116C8.89453 6.73137 4.72544 4.47318 1.92473 1.0332C1.43577 1.88154 1.14896 2.85254 1.14896 3.89784C1.14896 5.86058 2.15971 7.60044 3.66632 8.60772C2.75578 8.59045 1.86253 8.3261 1.10577 7.90971C1.10577 7.92698 1.10577 7.94944 1.10577 7.97191C1.10577 10.726 3.07024 13.0135 5.64633 13.5405C5.18502 13.6666 4.68224 13.7271 4.16046 13.7271C3.79763 13.7271 3.43134 13.7064 3.08752 13.6303C3.82182 15.8747 5.9055 17.5247 8.38311 17.5783C6.45493 19.0866 4.00669 19.9954 1.3563 19.9954C0.891527 19.9954 0.445763 19.9747 0 19.9177C2.51044 21.5366 5.48565 22.4609 8.69411 22.4609C19.1229 22.4609 24.8245 13.8221 24.8245 6.33398C24.8245 6.08346 24.8159 5.84157 24.8038 5.60141C25.9286 4.80319 26.8736 3.80627 27.6442 2.65903Z"
-              fill="white"></path>
-          </svg></a>
-        
+
+
+  <!-- Start Footer Area -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-sm-6 col-md-6">
+          <div class="single-footer-widget">
+            <div class="logo">
+              <a href="{{ url('/') }}" class="black-logo"><img src="assets/img/black-logo.png" alt="logo"></a>
+              <a href="{{ url('/') }}" class="white-logo"><img src="assets/img/logo.png" alt="logo"></a>
+                              <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra maecenas accumsan lacus vel facilisis.</p>
+            </div>
+                          
+            <ul class="social-links">
+              <li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+              <li><a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+            </ul>
           </div>
-      <p class="copyright">Copyright © 2013-2022 Coin Staking App Inc. All rights reserved.</p>
-    </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-md-6">
+          <div class="single-footer-widget">
+                          <h3>Company</h3>
+                          
+            <ul class="list">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="features-2.html">Services</a></li>
+              <li><a href="features-1.html">Features</a></li>
+              <li><a href="pricing.html">Our Pricing</a></li>
+              <li><a href="blog-1.html">Latest News</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-md-6">
+          <div class="single-footer-widget">
+                          <h3>Support</h3>
+                          
+            <ul class="list">
+              <li><a href="faq.html">FAQ's</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms & Condition</a></li>
+              <li><a href="#">Community</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-md-6">
+          <div class="single-footer-widget">
+            <h3>Address</h3>
+            
+            <ul class="footer-contact-info">
+              <li><span>Location:</span> 27 Division St, New York, NY 10002, USA</li>
+              <li><span>Email:</span> <a href="https://templates.envytheme.com/cdn-cgi/l/email-protection#9bf3fef7f7f4dbf7eeedf2f4f5b5f8f4f6"><span class="__cf_email__" data-cfemail="422a272e2e2d022e37342b2d2c6c212d2f">[email&#160;protected]</span></a></li>
+              <li><span>Phone:</span> <a href="tel:+321984754">+ (321) 984 754</a></li>
+              <li><span>Fax:</span> <a href="tel:+12129876543">+1-212-9876543</a></li>
+                          </ul>
+          </div>
+        </div>
+      </div>
+
+              <div class="copyright-area">
+                  <p>Copyright <script>document.write(new Date().getFullYear())</script> 232Rentals is proudly created by <a href="https://digitalcraft360.com/" target="_blank"> Craft360 Digital Services</a></p>
+              </div>
+          </div>
+          
+          <div class="map-image"><img src="assets/img/map.png" alt="map"></div>
   </footer>
-</main>
-</div>
-<script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script>
-<script>!function (e) { function t(t) { for (var n, o, i = t[0], c = t[1], l = t[2], s = 0, p = []; s < i.length; s++)o = i[s], Object.prototype.hasOwnProperty.call(a, o) && a[o] && p.push(a[o][0]), a[o] = 0; for (n in c) Object.prototype.hasOwnProperty.call(c, n) && (e[n] = c[n]); for (f && f(t); p.length;)p.shift()(); return u.push.apply(u, l || []), r() } function r() { for (var e, t = 0; t < u.length; t++) { for (var r = u[t], n = !0, o = 1; o < r.length; o++) { var c = r[o]; 0 !== a[c] && (n = !1) } n && (u.splice(t--, 1), e = i(i.s = r[0])) } return e } var n = {}, o = { 1: 0 }, a = { 1: 0 }, u = []; function i(t) { if (n[t]) return n[t].exports; var r = n[t] = { i: t, l: !1, exports: {} }; return e[t].call(r.exports, r, r.exports, i), r.l = !0, r.exports } i.e = function (e) { var t = []; o[e] ? t.push(o[e]) : 0 !== o[e] && { 3: 1, 4: 1 }[e] && t.push(o[e] = new Promise((function (t, r) { for (var n = "static/css/" + ({}[e] || e) + ".chunk.css", a = i.p + n, u = document.getElementsByTagName("link"), c = 0; c < u.length; c++) { var l = (f = u[c]).getAttribute("data-href") || f.getAttribute("href"); if ("stylesheet" === f.rel && (l === n || l === a)) return t() } var s = document.getElementsByTagName("style"); for (c = 0; c < s.length; c++) { var f; if ((l = (f = s[c]).getAttribute("data-href")) === n || l === a) return t() } var p = document.createElement("link"); p.rel = "stylesheet", p.type = "text/css", p.onload = t, p.onerror = function (t) { var n = t && t.target && t.target.src || a, u = new Error("Loading CSS chunk " + e + " failed.\n(" + n + ")"); u.code = "CSS_CHUNK_LOAD_FAILED", u.request = n, delete o[e], p.parentNode.removeChild(p), r(u) }, p.href = a, document.getElementsByTagName("head")[0].appendChild(p) })).then((function () { o[e] = 0 }))); var r = a[e]; if (0 !== r) if (r) t.push(r[2]); else { var n = new Promise((function (t, n) { r = a[e] = [t, n] })); t.push(r[2] = n); var u, c = document.createElement("script"); c.charset = "utf-8", c.timeout = 120, i.nc && c.setAttribute("nonce", i.nc), c.src = function (e) { return i.p + "static/js/" + ({}[e] || e) + ".chunk.js" }(e); var l = new Error; u = function (t) { c.onerror = c.onload = null, clearTimeout(s); var r = a[e]; if (0 !== r) { if (r) { var n = t && ("load" === t.type ? "missing" : t.type), o = t && t.target && t.target.src; l.message = "Loading chunk " + e + " failed.\n(" + n + ": " + o + ")", l.name = "ChunkLoadError", l.type = n, l.request = o, r[1](l) } a[e] = void 0 } }; var s = setTimeout((function () { u({ type: "timeout", target: c }) }), 12e4); c.onerror = c.onload = u, document.head.appendChild(c) } return Promise.all(t) }, i.m = e, i.c = n, i.d = function (e, t, r) { i.o(e, t) || Object.defineProperty(e, t, { enumerable: !0, get: r }) }, i.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, i.t = function (e, t) { if (1 & t && (e = i(e)), 8 & t) return e; if (4 & t && "object" == typeof e && e && e.__esModule) return e; var r = Object.create(null); if (i.r(r), Object.defineProperty(r, "default", { enumerable: !0, value: e }), 2 & t && "string" != typeof e) for (var n in e) i.d(r, n, function (t) { return e[t] }.bind(null, n)); return r }, i.n = function (e) { var t = e && e.__esModule ? function () { return e.default } : function () { return e }; return i.d(t, "a", t), t }, i.o = function (e, t) { return Object.prototype.hasOwnProperty.call(e, t) }, i.p = "/", i.oe = function (e) { throw console.error(e), e }; var c = window.webpackJsonp = window.webpackJsonp || [], l = c.push.bind(c); c.push = t, c = c.slice(); for (var s = 0; s < c.length; s++)t(c[s]); var f = l; r() }([])</script>
-<script src="{{asset('stake/vendors--main.chunk.js')}}"></script>
-<script src="{{asset('stake/main.chunk.js')}}"></script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-162419949-1"></script>
-<script>function gtag() { dataLayer.push(arguments) } window.dataLayer = window.dataLayer || [], gtag("js", new Date), gtag("config", "UA-162419949-1")</script>
-</body>
+      <!-- End Footer Area -->
+      
+      <div class="go-top"><i class="fas fa-arrow-up"></i></div>
+
+      <!-- Dark/Light Toggle -->
+  <div class="dark-version">
+          <label id="switch" class="switch">
+              <input type="checkbox" onchange="toggleTheme()" id="slider">
+              <span class="slider round"></span>
+          </label>
+      </div>
+
+      <!-- Links of JS files -->
+      <script src="{{asset('front/js/jquery.min.js')}}"></script>
+      <script src="{{asset('front/js/bootstrap.bundle.min.js')}}"></script>
+      <script src="{{asset('front/js/meanmenu.js')}}"></script>
+      <script src="{{asset('front/js/nice-select.min.js')}}"></script>
+      <script src="{{asset('front/js/slick.min.js')}}"></script>
+      <script src="{{asset('front/js/magnific-popup.min.js')}}"></script>
+      <script src="{{asset('front/js/appear.min.js')}}"></script>
+      <script src="{{asset('front/js/odometer.min.js')}}"></script>
+      <script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
+      <script src="{{asset('front/js/parallax.min.js')}}"></script>
+      <script src="{{asset('front/js/wow.min.js')}}"></script>
+      <script src="{{asset('front/js/form-validator.min.js')}}"></script>
+      <script src="{{asset('front/js/contact-form-script.js')}}"></script>
+      <script src="{{asset('front/js/jquery.ajaxchimp.min.js')}}"></script>
+      <script src="{{asset('front/js/main.js')}}"></script>
+  </body>
+
+
 
 </html>

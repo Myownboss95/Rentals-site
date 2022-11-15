@@ -55,7 +55,7 @@ class BotController extends Controller
         ]);
 
         Bot::create($valid);
-        session()->flash('succes', 'Bot created successfully');
+        session()->flash('success', 'Bot created successfully');
         return redirect()->route('admin.bots.index');
     }
 
