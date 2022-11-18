@@ -25,7 +25,7 @@
             }"
             v-model="form.tradeable_type"
           />
-
+ 
           <FormSelect
             class="mt-3"
             id="asset"

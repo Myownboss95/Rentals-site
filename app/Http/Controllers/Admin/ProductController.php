@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 
-use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
@@ -31,7 +33,8 @@ class ProductController extends Controller
     public function create()
     {
         //
-        return inertia('admin.products.create');
+        $categories = Category::all();
+        return inertia('admin.products.create', ['categories'=> $categories]);
     }
 
     /**
@@ -43,6 +46,31 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        $valid = $request->validate([
+            'name' => ['required'],
+            'slug' => ['required', 'unique:products'],
+            'details' => ['required', 'string'],
+            'categories_id' => ['required', 'numeric', 'exists:category,id'],
+            'rent_status' => ['required','numeric'],
+            'rent_price' => ['required','numeric'],
+            'sales_price' => ['required','numeric'],
+            'discount_price' => ['required','numeric'],
+            'quantity' => ['required','numeric'],
+            'image' => ['required','string'],
+            'images' => ['nullable','string'],
+            'description' => ['required','string'],
+        ]);
+        DB::beginTransaction();
+        try {
+            Product::create($valid);
+            DB::commit();
+        } catch (\Throwable $th) {
+            DB::rollBack();
+            throw $th;
+        }
+        return redirect()->route('admin.products.create')->withSuccess('Settings Saved successfully');
+    
+
     }
 
     /**

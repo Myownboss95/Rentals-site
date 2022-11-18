@@ -33,6 +33,7 @@
         "simplebar": "^5.3.8",
         "v-google-translate": "^1.0.0",
         "vue": "^3.2.36",
+        "vue-media-upload": "^1.1.5",
         "vue-tradingview-widgets": "^1.1.2",
         "vue3-editor": "^0.1.1",
         "ziggy": "^2.4.0",

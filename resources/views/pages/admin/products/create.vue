@@ -28,6 +28,22 @@
             label="Add Product Details"
             v-model="form.details"
           />
+          <FormSelect
+            id="categories"
+            name="categories"
+            label="Product Category"
+            :options="categories"
+            v-model="form.categories_id"
+          />
+
+          <FormSelect
+            id="rent_status"
+            name="rent_status"
+            label="Rent Status"
+            :options="{ 1: 'Enable', 0: 'Disable' }"
+            v-model="form.rent_status"
+          />
+
 
           <FormGroup
             name="rent_price"
@@ -66,25 +82,19 @@
             <input
               class="form-control"
               type="file"
-              @input="form.images = $event.target.files[0]"
+              multiple="multiple"
+              @input="form.images = $event.target.files"
             />
           </div>
+          <!-- <upload-media /> -->
 
           <div class="mt-3 mb-3">
             <label>Description</label>
-            <textarea name="" id="" cols="30" rows="10" class="form-control"
+            <textarea name="description" id="" cols="30" rows="10" class="form-control"
               v-model="form.description">
             </textarea>
           </div>
-
-          <FormSelect
-            id="demo"
-            name="rent_status"
-            label="Rent Status"
-            :options="{ 1: 'Enable', 0: 'Disable' }"
-            v-model="form.rent_status"
-          />
-
+          
           <FormButton
             type="submit"
             class="w-100 btn btn-outline-primary mt-3"
@@ -109,10 +119,21 @@ import InputGroup from "@/views/components/form/InputGroup.vue";
 import { ref, watch } from "vue";
 import axios from "axios";
 import { error } from "@/js/toast";
+import { computed } from "@vue/reactivity";
+import { UploadMedia, UpdateMedia } from 'vue-media-upload';
 
 const form = useForm({
   name: "",
   slug: "",
+  categories_id: "",
+  rent_status: "",
+  rent_price: "",
+  sales_price: "",
+  discount_price: "",
+  quantity: "",
+  image: "",
+  images: "",
+  description: "",
 });
 
 watch(
@@ -123,6 +144,19 @@ watch(
     }
   }
 );
+
+const props = defineProps({
+  categories: Array,
+                    })
+const categories = computed({
+  get() {
+      let filtered = { '': 'Select Category' };
+      props.categories.forEach((item) => {
+        filtered[item.id] = `${item.name}`;
+      });
+      return filtered;
+    },
+})
 
 const createProducts = () => {
   // console.log(form.data())
