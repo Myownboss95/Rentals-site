@@ -11,7 +11,7 @@ class FrontendController extends Controller
     public $theme;
     public function __construct()
     {
-        $this->theme = config('app.theme', 'front2');
+        $this->theme = config('app.theme', 'front');
     }
     public function home()
     {

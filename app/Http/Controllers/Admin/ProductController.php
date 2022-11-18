@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+
+use App\Http\Controllers\Controller;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
@@ -15,6 +17,10 @@ class ProductController extends Controller
     public function index()
     {
         //
+        $products = Product::latest();
+        return inertia('admin.products.index', [
+            'products' => $products->paginate(),
+        ]);
     }
 
     /**
@@ -25,6 +31,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return inertia('admin.products.create');
     }
 
     /**

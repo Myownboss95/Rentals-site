@@ -40,7 +40,7 @@
                             </FormButton>
 
                             <FormButton @button-clicked="closeTrade(trade.id)" class="btn btn-outline-danger btn-sm ms-2">
-                                <ButtonLoader text="<i class='fa fa-times'></i>  Close" :loading="form.processeing" />
+                                <ButtonLoader text="<i class='fa fa-times'></i>  Close" :loading="form.processing" />
                             </FormButton>
                         </div>
                         <div else>

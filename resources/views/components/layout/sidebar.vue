@@ -27,7 +27,13 @@
           <SidebarItem
             name="Product Categories"
             :url="route('admin.categories.index')"
-            icon="user-x"
+            icon="folder-minus"
+            v-if="is_admin"
+          />
+          <SidebarItem
+            name="Product"
+            :url="route('admin.products.index')"
+            icon="archive"
             v-if="is_admin"
           />
           

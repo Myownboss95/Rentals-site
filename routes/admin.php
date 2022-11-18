@@ -1,20 +1,21 @@
 <?php
 
+use App\Models\Withdrawal;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\BotController;
-use App\Http\Controllers\Admin\CategoryController;
-use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Controllers\Admin\PaymentMethodController;
-use App\Http\Controllers\Admin\DepositController;
 use App\Http\Controllers\Admin\KycController;
 use App\Http\Controllers\Admin\MailController;
 use App\Http\Controllers\Admin\PlanController;
-use App\Http\Controllers\Admin\SettingController;
-use App\Http\Controllers\Admin\TradeableController;
-use App\Http\Controllers\Admin\TradeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\TradeController;
+use App\Http\Controllers\Admin\DepositController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\SettingController;
+use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\TradeableController;
 use App\Http\Controllers\Admin\WithdrawalController;
-use App\Models\Withdrawal;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\PaymentMethodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,6 +51,7 @@ Route::post('bots/activations/{id}', [BotController::class, 'generateBotActivati
 
 Route::resource('tradeables', TradeableController::class);
 Route::resource('categories', CategoryController::class);
+Route::resource('products', ProductController::class);
 Route::resource('settings', SettingController::class);
 Route::resource('payment-method', PaymentMethodController::class);
 Route::resource('deposits', DepositController::class)->only('index');
