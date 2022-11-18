@@ -14,16 +14,16 @@ export default defineConfig(({ mode }) => {
     let env = loadEnv(mode, process.cwd());
 
     function serverData() {
-    if (env.VITE_APP_ENV == 'production') {
-        return {}
-    }
-    return {
-        host: domain,
-        https: {
-            key: fs.readFileSync(`${certPath}.key`),
-            cert: fs.readFileSync(`${certPath}.crt`),
+    if (env.VITE_APP_ENV != 'production') {
+        return {
+            host: domain,
+            https: {
+                key: fs.readFileSync(`${certPath}.key`),
+                cert: fs.readFileSync(`${certPath}.crt`),
+            }
         }
     }
+    return {}
 }
 
     return {
