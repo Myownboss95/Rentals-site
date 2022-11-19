@@ -212,31 +212,34 @@
 </div>
 
 <div class="row">
+    @foreach ($products as $product)
     <div class="col-lg-4 col-md-6">
         <div class="single-blog-post">
             <div class="blog-image">
                 <a href="single-blog.html">
-                    <img src="{{asset('front/img/blog-image/1.jpg')}}" alt="image">
+                    <img 
+                    src="{{ asset('storage/products/' . $product['image']) }}" class="img-fluid" alt="image"
+                    >
                 </a>
 
                 <div class="date">
-                    <i class="far fa-calendar-alt"></i> $250 per Month
+                    <i class="far fa-calendar-alt"></i> &#8358;{{$product['discount_price'] }} per 30 Days
                 </div>
             </div>
 
             <div class="blog-post-content">
-                <h3><a href="single-blog.html">Chandelier</a></h3>
+                <h3><a href="single-blog.html">{{$product['name'] }}</a></h3>
 
-                <span>by <a href="#">admin</a></span>
+                <span>category <a href="#">{{ $product->category->name }}</a></span>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
+                <p>@limitDetails($product['description'])</p>
 
                 <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>
-
-    <div class="col-lg-4 col-md-6">
+    @endforeach
+    {{-- <div class="col-lg-4 col-md-6">
         <div class="single-blog-post">
             <div class="blog-image">
                 <a href="single-blog.html">
@@ -282,7 +285,7 @@
                 <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
-    </div>
+    </div> --}}
 </div>
 </div>
 </section>

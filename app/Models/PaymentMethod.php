@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class PaymentMethod extends Model
-{
+{ 
     use HasFactory;
     protected $guarded = [
         'id'

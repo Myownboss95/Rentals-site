@@ -25,7 +25,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('images')->nullable();
             $table->boolean('featured')->default(false);
-            $table->foreignIdFor(Category::class)->nullable()->constrained()->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreignIdFor(Category::class);
             $table->boolean('rent_status')->default(false);
             $table->text('description');
             $table->unsignedInteger('quantity')->default(10);

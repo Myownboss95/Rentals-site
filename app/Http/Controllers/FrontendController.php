@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use App\Models\Settings;
 use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
@@ -16,8 +17,8 @@ class FrontendController extends Controller
     public function home()
     {
         $setting = Settings::first();
-        $payment_methods = PaymentMethod::latest()->where('status', 1)->get();
-        return view("$this->theme.home", compact('setting', 'payment_methods'));
+        $products = Product::latest()->where('rent_status', 1)->where('featured', 1)->with('category')->limit(6)->get();
+        return view("$this->theme.home", compact('setting', 'products'));
     }
 
     public function about()

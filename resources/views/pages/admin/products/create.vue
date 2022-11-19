@@ -23,6 +23,12 @@
             class="mt-3"
           />
           <FormGroup
+            name="max_rent_duration"
+            placeholder="Add Max Rent Duration"
+            label="Add Maximum Rent Duration"
+            v-model="form.max_rent_duration"
+          />
+          <FormGroup
             name="details"
             placeholder="Add Product Details"
             label="Add Product Details"
@@ -33,7 +39,7 @@
             name="categories"
             label="Product Category"
             :options="categories"
-            v-model="form.categories_id"
+            v-model="form.category_id"
           />
 
           <FormSelect
@@ -42,6 +48,13 @@
             label="Rent Status"
             :options="{ 1: 'Enable', 0: 'Disable' }"
             v-model="form.rent_status"
+          />
+          <FormSelect
+            id="featured"
+            name="featured"
+            label="Make Featured Product"
+            :options="{ 1: 'Enable', 0: 'Disable' }"
+            v-model="form.featured"
           />
 
 
@@ -125,13 +138,16 @@ import { UploadMedia, UpdateMedia } from 'vue-media-upload';
 const form = useForm({
   name: "",
   slug: "",
-  categories_id: "",
+  details:"",
+  category_id: "",
   rent_status: "",
+  max_rent_duration:"",
   rent_price: "",
   sales_price: "",
   discount_price: "",
   quantity: "",
   image: "",
+  featured:'',
   images: "",
   description: "",
 });
@@ -159,7 +175,7 @@ const categories = computed({
 })
 
 const createProducts = () => {
-  // console.log(form.data())
+  console.log(form.data())
   form.post(route("admin.products.store"));
 };
 </script>

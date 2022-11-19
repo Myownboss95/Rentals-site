@@ -21,7 +21,7 @@
             <tr>
               <th>Name</th>
               <th>Slug</th>
-              <th>Amount</th>
+              <th>Amount[SKU]</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -31,7 +31,7 @@
               <td>{{ product.name }}</td>
 
               <td>{{ product.slug }}</td>
-              <td>0</td>
+              <td>{{ product.quantity }}</td>
               <td>
                 <InertiaLink
                   :href="route('admin.products.edit', product.id)"

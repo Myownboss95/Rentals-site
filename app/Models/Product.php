@@ -10,9 +10,15 @@ class Product extends Model
 {
     use HasFactory;
 
+    // protected $fillable = [ 'name'];
+    protected $guarded = ['id'];   
+    
+    protected $casts = [
+        'images' => 'object'
+    ];
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'payment_id');
+        return $this->belongsTo(Category::class);
     }
 }

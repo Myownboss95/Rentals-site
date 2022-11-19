@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Routing\Pipeline;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Fortify\Actions\AttemptToAuthenticate;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
@@ -29,5 +30,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Blade::directive('limitDetails', function ($details,$limit = 10) {
+            return "<?php echo limit_text($details, $limit); ?>";
+        });
     }
 }
