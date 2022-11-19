@@ -10,7 +10,7 @@
     "require": {
         "php": "^8.0.2",
         "andreaselia/laravel-api-to-postman": "^1.12",
-        "doctrine/dbal": "^3.4",
+        "doctrine/dbal": "^3.5",
         "druc/laravel-langscanner": "^2.0",
         "guzzlehttp/guzzle": "^7.2",
         "inertiajs/inertia-laravel": "^0.6.3",
