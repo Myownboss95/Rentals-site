@@ -19,9 +19,10 @@
             v-model="form.slug"
             class="mt-3"
           />
+          
           <FormGroup
             name="max_rent_duration"
-            placeholder="Add Max Rent Duration"
+            placeholder="Add Maximum Rent Duration"
             label="Add Maximum Rent Duration"
             v-model="form.max_rent_duration"
           />
@@ -183,7 +184,7 @@ watch(
 );
 
 const updateProducts = () => {
-  // console.log(form.data());
+  console.log(form.data());
   form.put(route("admin.products.update", props.product.id));
 };
 </script>

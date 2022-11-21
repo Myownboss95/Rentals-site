@@ -145,30 +145,36 @@ class ProductController extends Controller
     public function update(Request $request, Product $product)
     {
         //
+        // dd($request);
         $data = $request->validate([
             'name' => ['required'],
             'slug' => ['required', Rule::unique('products')->ignore($product)],
             'details' => ['required', 'string'],
-            'categories_id' => ['required', 'numeric', 'exists:categories,id'],
+            'category_id' => ['required', 'numeric', 'exists:categories,id'],
             'rent_status' => ['required','numeric'],
             'max_rent_duration' => ['required','integer'],
             'rent_price' => ['required','numeric'],
             'sales_price' => ['nullable','numeric'],
             'discount_price' => ['required','numeric'],
             'quantity' => ['integer','numeric'],
-            'image' => ['required','mimes:png,jpg,jpeg'],
+            'image' => ['nullable'],
             'featured' => ['required','integer'],
             'images' => ['nullable'],
             'description' => ['nullable','string'],
          ]);
-         dd($data);
+         
+        // dd($request->file('image'));
+        if($request->file('image')!=null){
+            $file = $this->uploadFile($request->file('image'));
+            is_null($file) ?: $data['image'] = $file;
+        }
+        
 
-        $file = $this->uploadFile($request->file('image'));
-        is_null($file) ?: $data['image'] = $file;
-
-
-        $images = $this->uploadFile($request->file('images'));
-        is_null($images) ?: $data['images'] = $images;
+        if($request->file('images')!=null){
+            $images = $this->uploadFile($request->file('images'));
+            is_null($images) ?: $data['images'] = $images;
+        }
+        
 
         DB::beginTransaction();
         try {
