@@ -216,25 +216,25 @@
     <div class="col-lg-4 col-md-6">
         <div class="single-blog-post">
             <div class="blog-image">
-                <a href="single-blog.html">
+                <a href="{{ route('shop.show', $product->slug) }}">
                     <img 
                     src="{{ asset('storage/products/' . $product['image']) }}" class="img-fluid" alt="image"
                     >
                 </a>
 
                 <div class="date">
-                    <i class="far fa-calendar-alt"></i> &#8358;{{$product['discount_price'] }} per 30 Days
+                    <i class="far fa-calendar-alt"></i> {{format($product['rent_price']) }} per {{$product['max_rent_duration'] }} Days
                 </div>
             </div>
 
             <div class="blog-post-content">
-                <h3><a href="single-blog.html">{{$product['name'] }}</a></h3>
+                <h3><a href="{{ route('shop.show', $product->slug) }}">{{$product['name'] }}</a></h3>
 
-                <span>category <a href="#">{{ $product->category->name }}</a></span>
+                <span>Category <a href="#">{{ $product->category->name }}</a></span>
 
                 <p>@limitDetails($product['description'])</p>
 
-                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
+                <a href="{{ route('shop.show', $product->slug) }}" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
             </div>
         </div>
     </div>

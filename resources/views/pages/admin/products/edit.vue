@@ -145,14 +145,14 @@ import { computed, ref, watch } from "vue";
 import { error } from "@/js/toast";
 
 const props = defineProps(["product","categories"]);
-// console.log(props.categories);
+// console.log(props.product);
 const form = useForm({
   name: props.product?.name,
   slug: props.product?.slug,
   details: props.product?.details,
   category_id: props.product?.category_id,
   rent_status: props.product?.rent_status,
-  max_rent_duration: props.category?.max_rent_duration,
+  max_rent_duration: props.product?.max_rent_duration,
   rent_price: props.product?.rent_price,
   sales_price: props.product?.sales_price,
   discount_price: props.product?.discount_price,
@@ -184,7 +184,7 @@ watch(
 );
 
 const updateProducts = () => {
-  console.log(form.data());
+  // console.log(form.data());
   form.put(route("admin.products.update", props.product.id));
 };
 </script>

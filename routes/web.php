@@ -8,10 +8,13 @@ use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\Admin\UserController;
+// use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\EmailVerifiedController;
 use App\Http\Controllers\ChangePasswordController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SuccessfulPasswordResetController;
 use App\Http\Controllers\TwoFactorAuthenticationController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,8 @@ use App\Http\Controllers\TwoFactorAuthenticationController;
 //         return inertia('index');
 //     })->name('index');
 // });
+
+// Route::get('/product/{slug}', ProductController::class, 'show')->name('shop.show');
 
 Route::middleware(['auth'])->group(function () {
 
@@ -59,6 +64,7 @@ Route::middleware(['auth'])->group(function () {
 
 
 Route::middleware('guest')->group(function () {
+    
     Route::get('logout', LogoutController::class);
     Route::get('reset-password', SuccessfulPasswordResetController::class)->name('password.reset.successful');
 });
@@ -67,7 +73,9 @@ Route::get('/ref/{token}', [ReferralController::class, 'check']);
 
 Route::match(['get', 'post'], 'set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set-locale');
 
-
+Route::controller(ShopController::class)->group(function () {
+    Route::get('/shop/{slug}', "show")->name('shop.show');
+});
 Route::controller(FrontendController::class)->group(function () {
     $theme = config('app.theme', 'front2');
     Route::get('/', "home")->name('front.index');

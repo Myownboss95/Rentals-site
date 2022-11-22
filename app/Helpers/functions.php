@@ -10,3 +10,17 @@ function limit_text($text, $limit) {
     }
     return $text;
 }
+
+function getStockLevel($quantity) {
+    if($quantity > 6) {
+        return 'In Stock';
+    } else if($quantity <= 6 && $quantity > 0) {
+        return 'Low Stock';
+    } else {
+        return 'Out Of Stock';
+    }
+}
+
+function format($price) {
+    echo '<label>&#8358;</label>'.number_format($price, 2);
+}

@@ -116,10 +116,7 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
-    {
-        //
-    }
+   
 
     /**
      * Show the form for editing the specified resource.
@@ -130,6 +127,7 @@ class ProductController extends Controller
     public function edit(Product $product)
     {
         //
+        // dd($product);
         $categories = Category::all();
         return inertia('admin.products.edit', ['product' => $product, 
                                                'categories' => $categories]);

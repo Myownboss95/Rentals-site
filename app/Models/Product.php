@@ -21,4 +21,7 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function scopeMightAlsoLike($query) {
+        return $query->inRandomOrder()->take(8);
+    }
 }
