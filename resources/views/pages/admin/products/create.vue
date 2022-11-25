@@ -27,7 +27,7 @@
             placeholder="Add Max Rent Duration"
             label="Add Maximum Rent Duration"
             v-model="form.max_rent_duration"
-          />
+          /> 
           <FormGroup
             name="details"
             placeholder="Add Product Details"

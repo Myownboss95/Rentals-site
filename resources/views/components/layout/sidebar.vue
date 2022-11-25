@@ -36,6 +36,12 @@
             icon="archive"
             v-if="is_admin"
           />
+          <SidebarItem
+            name="Product Tags"
+            :url="route('admin.tags.index')"
+            icon="tag"
+            v-if="is_admin"
+          />
           
           <!-- <li class="menu-title">Trading</li>
           <SidebarItem

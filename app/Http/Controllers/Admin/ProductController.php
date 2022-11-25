@@ -63,6 +63,7 @@ class ProductController extends Controller
             'image' => ['required','mimes:png,jpg,jpeg'],
             'featured' => ['required','integer'],
             'images' => ['nullable'],
+            'product_tag' => ['nullable'],
             'description' => ['nullable','string'],
         ]);
 
@@ -158,6 +159,7 @@ class ProductController extends Controller
             'image' => ['nullable'],
             'featured' => ['required','integer'],
             'images' => ['nullable'],
+            'product_tag' => ['nullable'],
             'description' => ['nullable','string'],
          ]);
          
