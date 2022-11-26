@@ -76,6 +76,7 @@ Route::match(['get', 'post'], 'set-locale/{locale}', [LocaleController::class, '
 Route::controller(ShopController::class)->group(function () {
     Route::get('/shop/{slug}', "show")->name('shop.show');
     Route::get('/shop', "index")->name('shop.index');
+    Route::get('/shop/categories/{slug}', "index")->name('shop.categories');
 });
 Route::controller(FrontendController::class)->group(function () {
     $theme = config('app.theme', 'front2');

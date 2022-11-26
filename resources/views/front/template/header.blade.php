@@ -56,7 +56,7 @@
 
             <div class="luvion-nav">
                 <div class="container">
-                    <nav class="navbar navbar-expand-md navbar-light">
+                    <nav class="navbar navbar-expand-md navbar-dark">
                         <a class="navbar-brand" href="{{ url('/') }}">
                             <img src="{{asset('front/img/logo.png')}}" alt="logo">
                             <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
@@ -112,7 +112,7 @@
 
                                         <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
 
-                                        <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+                                        
 
                                         <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
 
@@ -149,6 +149,8 @@
 
                             <div class="others-options">
                                 <a href="{{ url('/login') }}" class="login-btn"><i class="flaticon-user"></i> Log In</a>
+                                <a href="{{ url('/register') }}" class="login-btn"><i class="flaticon-user"></i> Register</a>
+                            
                             </div>
                         </div>
                     </nav>

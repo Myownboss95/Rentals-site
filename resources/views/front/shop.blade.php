@@ -1,4 +1,4 @@
-@include('front.template.header')
+@include('front.template.header2')
 
 
 <!-- Start Shop Area -->
@@ -9,7 +9,8 @@
             <div class="bar"></div>
             <p>Check out our list and make your orders</p>
         </div>
-
+<div class="row">
+    <div class="col-md-9">
         <div class="row">
             @foreach ($products as $product)
                 <div class="col-lg-4 col-md-6">
@@ -41,6 +42,53 @@
             @endforeach
 
         </div>
+    </div>
+    <div class="col-md-3">
+        <div class="row">
+            <div class="col-md-12">
+                <aside class="widget-area" id="secondary">
+                <section class="widget widget_search">
+                    <form class="search-form">
+                        <label>
+                            <span class="screen-reader-text">Search for:</span>
+                            <input type="search" class="search-field" placeholder="Search...">
+                        </label>
+                        <button type="submit"><i class="fas fa-search"></i></button>
+                    </form>
+                </section>
+                <form class="ctp-banner-form">
+                    <div class="form-header">
+                        <span>Categories</span>
+                        
+                    </div>
+                    <div class="form-content">
+                       
+                            
+                                @if ($categories)
+                                    @foreach ( $categories as $category )
+                                        {{-- <li><a href="{{ route('shop.index', ['category' => $category->slug]) }}">{{$category->name}}</a></li>  --}}
+                                 <a  class="categories" href="{{ route('shop.index', ['category' => $category->slug]) }}">
+                                        <div class="features-box" style="padding:6px"> 
+                                            {{-- <div class="icon">
+                                                <i class="flaticon-settings"></i>
+                                            </div> --}}
+            
+                                            <h5>{{$category->name}}</h5>
+                                        </div>
+                                    </a>
+                                    @endforeach
+                                    
+                                    
+                                @endif
+                    </div>
+                        
+                </form>
+                </aside>
+            </div>
+        </div>
+        
+    </div>
+    </div>
         <div class="d-flex justify-content-center">
            {!! $products->links() !!}
         </div>

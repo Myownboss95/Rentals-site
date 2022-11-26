@@ -1,120 +1,165 @@
-<!DOCTYPE html>
-<html lang="zxx" dir="ltr">
-
-
-<!-- Mirrored from www.indonez.com/html-demo/Wave/about.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Aug 2022 19:01:15 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<!doctype html>
+<html lang="zxx" class="theme-light">
+    
+<!-- Mirrored from templates.envytheme.com/luvion/default/index-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 09 Nov 2022 11:31:43 GMT -->
 <head>
-    <meta charset="utf-8">
-    <meta name="description" content="{{config('app.name')}} Cryptocurrency, Forex Broker">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#313131" />
-    <!-- Site Properties -->
-    <title>{{ config('app.name') }}</title>
-    <!-- Critical preload -->
-    <link rel="preload" href="{{asset('front/js/vendors/uikit.min.js')}}" as="script">
-    {{-- <link rel="preload" href="{{asset('js/s')}}" as="script"> --}}
-    <link rel="preload" href="{{asset('front/css/vendors/uikit.min.css')}}" as="style">
-    <link rel="preload" href="{{asset('front/css/style.css')}}" as="style">
-    <!-- Icon preload -->
-    <link rel="preload" href="{{asset('front/fonts/fa-brands-400.woff2')}}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{asset('front/fonts/fa-solid-900.woff2')}}" as="font" type="font/woff2" crossorigin>
-    <!-- Font preload -->
-    <link rel="preload" href="{{asset('front/fonts/rubik-v9-latin-500.woff2')}}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{asset('front/fonts/rubik-v9-latin-300.woff2')}}" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="{{asset('front/fonts/rubik-v9-latin-regular.woff2')}}" as="font" type="font/woff2" crossorigin>
-    <!-- Favicon and apple icon -->
-    <link rel="shortcut icon" href="{{asset('front/favicon.ico')}}" type="image/x-icon">
-    <link rel="apple-touch-icon-precomposed" href="{{asset('front/apple-touch-icon.png')}}">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="{{asset('front/css/vendors/uikit.min.css')}}">
-    <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
-</head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<body>
-    <!-- preloader begin -->
-    <div class="in-loader">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <!-- preloader end -->
-    <header>
-        <!-- header content begin -->
-        <div class="uk-section uk-padding-remove-vertical">
-            <nav class="uk-navbar-container" data-uk-sticky="show-on-up: true; animation: uk-animation-slide-top;">
-                <div class="uk-container" data-uk-navbar>
-                    <div class="uk-navbar-left">
-                        <div class="uk-navbar-item">
-                            <!-- logo begin -->
-                            <a class="uk-logo" href="/">
-                                <img src="{{asset('front/img/in-lazy.gif')}}" data-src="{{asset(config('app.logo'))}}" alt="logo" width="146" height="39" data-uk-img>
+        <!-- Links of CSS files -->
+        <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/animate.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/fontawesome.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/flaticon.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/magnific-popup.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/nice-select.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/slick.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/meanmenu.css')}}">
+		<link rel="stylesheet" href="{{asset('front/css/odometer.min.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/responsive.css')}}">
+        <link rel="stylesheet" href="{{asset('front/css/dark-style.css')}}">
+
+        <title>{{ config('app.name') }}</title>
+        <style type="text/css">
+        .categories:hover{
+            color: white;
+        }
+        </style>
+        <link rel="icon" type="image/png" href="{{asset('front/favicon.png')}}">
+    </head>
+
+        <!-- Preloader -->
+        <div class="preloader">
+            <div class="loader">
+                <div class="shadow"></div>
+                <div class="box"></div>
+            </div>
+        </div>
+        <!-- End Preloader -->
+
+        <!-- Start Navbar Area -->
+        <div class="navbar-area">
+            <div class="luvion-responsive-nav">
+                <div class="container">
+                    <div class="luvion-responsive-menu">
+                        <div class="logo">
+                            <a href="{{ url('/') }}">
+                                <img src="{{asset('front/img/logo.png')}}" alt="logo">
+                                <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
                             </a>
-                            <!-- logo end -->
-                            <!-- navigation begin -->
-                            <ul class="uk-navbar-nav uk-visible@m">
-                            <li><a href="/">Home</a></li>
-
-
-                            <li><a href="#">About Us<i class="fas fa-chevron-down"></i></a>
-                                <div class="uk-navbar-dropdown uk-navbar-dropdown-width-2">
-                                    <div class="uk-navbar-dropdown-grid uk-child-width-1-2" data-uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li><a href="/about-us">About Us</a></li>
-                                                <li><a href="/contact-us">Contact Us<i class="fas fa-external-link-square-alt fa-sm"></i></a></li>
-                                                {{-- <li><a href="/terms-and-conditions">Terms & conditions<i class="fas fa-gavel fa-sm"></i></a></li> --}}
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-navbar-dropdown-nav">
-                                                <li><a class="uk-disabled" href="#">With our support, you’ll be better positioned to generate huge profits based on our tremendous trading experience in Forex and Crypto Trading.</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            {{-- <li><a href="/packages">Packages</a></li>
-                            <li><a href="/testimonials">Testimonials</a></li> --}}
-                            <li><a href="/faqs">FAQs</a></li>
-
-                        </ul>
-                        </div>
-                        <div class="uk-navbar-right">
-                            <div class="uk-navbar-item uk-visible@m in-optional-nav">
-                                <a href="/login" class="uk-button uk-button-text"><i class="fas fa-user-circle uk-margin-small-right"></i>Log in</a>
-                                <a href="/register" class="uk-button uk-button-primary uk-button-small uk-border-pill">Sign up</a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
-            </nav>
-            <!-- module navigation end -->
-            <div class="uk-container">
-                <div class="uk-grid">
-                    <div class="uk-width-1-1" style="margin-top: 35px;">
-                        <div class="uk-card uk-card-secondary uk-card-small uk-card-body uk-border-rounded">
-                            <div class="uk-grid uk-text-small" data-uk-grid>
-                                <div class="uk-width-3-4@m uk-visible@m">
-                                    <p>Trading involves substantial risk and may result in the loss of your invested/greater that your invested capital, respectively.</p>
-                                </div>
-                                <div class="uk-width-expand@m uk-text-center uk-text-right@m">
-                                    <a class="uk-margin-right" href="#"><i class="fas fa-comment-alt uk-margin-small-right"></i>Live Chat</a>
-                                    <a href="#"><i class="fas fa-phone-alt uk-margin-small-right uk-margin-small-left"></i>1-800-123-4567</a>
-                                </div>
-                            </div>
+            </div>
+
+            <div class="luvion-nav">
+                <div class="container">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="index.html">
+                            <img src="{{asset('front/img/logo.png')}}" alt="logo">
+                            <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
+                        </a>
+
+                        <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
+                            <ul class="navbar-nav">
+                                <li class="nav-item"><a href="#" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
+
+                                        <li class="nav-item"><a href="index-2.html" class="nav-link active">Loan Providers</a></li>
+
+                                        <li class="nav-item"><a href="index-3.html" class="nav-link">Digital Banking</a></li>
+
+                                        <li class="nav-item"><a href="index-4.html" class="nav-link">Financial Service Provider</a></li>
+
+                                        <li class="nav-item"><a href="index-5.html" class="nav-link">Bankers & Entrepreneurs</a></li>
+
+                                        <li class="nav-item"><a href="index-6.html" class="nav-link">Social Finance Agency</a></li>
+
+                                        <li class="nav-item"><a href="index-7.html" class="nav-link">Currency Transfer Provider</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="{{ url('/shop') }}" class="nav-link">Rent Now</a></li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Features <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
+
+                                        <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="#" class="nav-link">About Us</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="about.html" class="nav-link">About Style One</a></li>
+
+                                                <li class="nav-item"><a href="about-two.html" class="nav-link">About Style Two</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item"><a href="#" class="nav-link">Features</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
+        
+                                                <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
+
+                                        
+
+                                        <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
+
+                                        <li class="nav-item"><a href="{{ url('/register') }}" class="nav-link">Register</a></li>
+
+                                        <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error</a></li>
+
+                                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+
+                                        <li class="nav-item"><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+
+                                        <li class="nav-item"><a href="personal.html" class="nav-link">Personal</a></li>
+
+                                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+
+                                        <li class="nav-item"><a href="contact-two.html" class="nav-link">Contact Style Two</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
+
+                                <li class="nav-item"><a href="#" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown-menu">
+                                        <li class="nav-item"><a href="blog-1.html" class="nav-link">Blog Grid</a></li>
+
+                                        <li class="nav-item"><a href="blog-2.html" class="nav-link">Blog Right Sidebar</a></li>
+
+                                        <li class="nav-item"><a href="single-blog.html" class="nav-link">Blog Details</a></li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
+                            </ul>
+
+                         
+                            <a href="{{ url('/login') }}" class="login-btn"><i class="flaticon-user"></i> Log In</a>
+                            <a href="{{ url('/register') }}" class="login-btn"><i class="flaticon-user"></i> Register</a></div>
                         </div>
-                    </div>
-                    <!-- module breadcrumb begin -->
-                    <div class="uk-width-1-1 in-breadcrumb" style="margin-top: 20px;">
-                        <ul class="uk-breadcrumb uk-text-uppercase">
-                            <li style="color: black"><a href="/">Home</a></li>
-                        </ul>
-                    </div>
-                    <!-- module breadcrumb end -->
+                    </nav>
                 </div>
             </div>
         </div>
-        <!-- header content end -->
-    </header>
+
+
+
+        <!-- End Navbar Area -->
+
+        
