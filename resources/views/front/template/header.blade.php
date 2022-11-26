@@ -82,7 +82,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                                <li class="nav-item"><a href="{{ url('/shop') }}" class="nav-link">Rent Now</a></li>
 
                                 <li class="nav-item"><a href="#" class="nav-link">Features <i class="fas fa-chevron-down"></i></a>
                                     <ul class="dropdown-menu">

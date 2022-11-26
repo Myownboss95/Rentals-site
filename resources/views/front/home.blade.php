@@ -1,7 +1,7 @@
 @include('front.template.header')
 
-  <!-- Start Main Banner Area -->
-  <div class="main-banner-section jarallax" data-jarallax='{"speed": 0.3}'>
+<!-- Start Main Banner Area -->
+<div class="main-banner-section jarallax" data-jarallax='{"speed": 0.3}'>
     <div class="d-table">
         <div class="d-table-cell">
             <div class="container">
@@ -35,7 +35,7 @@
                                 <div class="currency-info">
                                     <div class="bar"></div>
                                     <span><strong>800.3</strong> Exchange Rate</span>
-                                    
+
                                 </div>
 
                                 <div class="form-group">
@@ -141,155 +141,118 @@
         <div class="section-title">
             <h2>How It Works</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
         </div>
 
         <div class="row">
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/1.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/1.png') }}" alt="image">
 
                     <h3>1. Register for free</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/2.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/2.png') }}" alt="image">
 
                     <h3>2. Choose an item to rent</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/3.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/3.png') }}" alt="image">
 
                     <h3>3. Check Out</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/4.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/4.png') }}" alt="image">
 
                     <h3>4. Verify your identity</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/5.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/5.png') }}" alt="image">
 
                     <h3>5. Pay</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
 
             <div class="col-lg-4 col-sm-6 col-md-6">
                 <div class="single-how-it-works">
-                    <img src="{{asset('front/img/how-it-works-image/6.png')}}" alt="image">
+                    <img src="{{ asset('front/img/how-it-works-image/6.png') }}" alt="image">
 
                     <h3>6. That’s it. Return when due</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing aliqua.</p>
+                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
+                        aliqua.</p>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End How It Works Area -->
-<!-- Start Blog Area -->
+<!-- Start Shop Area -->
 <section class="blog-area ptb-70 pt-0">
-<div class="container">
-<div class="section-title">
-    <h2>Rentables</h2>
-    <div class="bar"></div>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-</div>
+    <div class="container">
+        <div class="section-title">
+            <h2>Rentables</h2>
+            <div class="bar"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
+        </div>
 
-<div class="row">
-    @foreach ($products as $product)
-    <div class="col-lg-4 col-md-6">
-        <div class="single-blog-post">
-            <div class="blog-image">
-                <a href="{{ route('shop.show', $product->slug) }}">
-                    <img 
-                    src="{{ asset('storage/products/' . $product['image']) }}" class="img-fluid" alt="image"
-                    >
-                </a>
+        <div class="row">
+            @foreach ($products as $product)
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-blog-post">
+                        <div class="blog-image">
+                            <a href="{{ route('shop.show', $product->slug) }}">
+                                <img src="{{ asset('storage/products/' . $product['image']) }}" class="img-fluid"
+                                    alt="image">
+                            </a>
 
-                <div class="date">
-                    <i class="far fa-calendar-alt"></i> {{format($product['rent_price']) }} per {{$product['max_rent_duration'] }} Days
+                            <div class="date">
+                                <i class="far fa-calendar-alt"></i> {{ format($product['rent_price']) }} per
+                                {{ $product['max_rent_duration'] }} Days
+                            </div>
+                        </div>
+
+                        <div class="blog-post-content">
+                            <h3><a href="{{ route('shop.show', $product->slug) }}">{{ $product['name'] }}</a></h3>
+
+                            <span>Category <a href="#">{{ $product->category->name }}</a></span>
+
+                            <p>@limitDetails($product['description'])</p>
+
+                            <a href="{{ route('shop.show', $product->slug) }}" class="read-more-btn">Rent Now <i
+                                    class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+            @endforeach
 
-            <div class="blog-post-content">
-                <h3><a href="{{ route('shop.show', $product->slug) }}">{{$product['name'] }}</a></h3>
-
-                <span>Category <a href="#">{{ $product->category->name }}</a></span>
-
-                <p>@limitDetails($product['description'])</p>
-
-                <a href="{{ route('shop.show', $product->slug) }}" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
-            </div>
         </div>
     </div>
-    @endforeach
-    {{-- <div class="col-lg-4 col-md-6">
-        <div class="single-blog-post">
-            <div class="blog-image">
-                <a href="single-blog.html">
-                    <img src="{{asset('front/img/blog-image/2.jpg')}}" alt="image">
-                </a>
-
-                <div class="date">
-                    <i class="far fa-calendar-alt"></i> $450/Month
-                </div>
-            </div>
-
-            <div class="blog-post-content">
-                <h3><a href="single-blog.html">Office Space</a></h3>
-
-                <span>by <a href="#">admin</a></span>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3">
-        <div class="single-blog-post">
-            <div class="blog-image">
-                <a href="single-blog.html">
-                    <img src="{{asset('front/img/blog-image/3.jpg')}}" alt="image">
-                </a>
-
-                <div class="date">
-                    <i class="far fa-calendar-alt"></i> $850/Month
-                </div>
-            </div>
-
-            <div class="blog-post-content">
-                <h3><a href="single-blog.html">Official Cars</a></h3>
-
-                <span>by <a href="#">admin</a></span>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.</p>
-
-                <a href="single-blog.html" class="read-more-btn">Rent Now <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div> --}}
-</div>
-</div>
 </section>
-<!-- End Blog Area -->
+<!-- End Shop Area -->
 <!-- Start Services Area -->
 <section class="services-area ptb-70 pt-0">
     <div class="container-fluid p-0">
@@ -299,7 +262,8 @@
                     <span class="sub-title">Fast & Easy Online Rentals</span>
                     <h2>Freelancers, entrepreneurs, and sole traders</h2>
                     <div class="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
 
                     <ul class="features-list">
                         <li><span><i class="flaticon-check-mark"></i> Free plan available</span></li>
@@ -316,7 +280,7 @@
 
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{asset('front/img/4.jpg')}}" alt="image">
+                    <img src="{{ asset('front/img/4.jpg') }}" alt="image">
                 </div>
             </div>
         </div>
@@ -330,10 +294,10 @@
         <div class="overview-box">
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{asset('front/img/5.png')}}" alt="image">
+                    <img src="{{ asset('front/img/5.png') }}" alt="image">
 
                     <div class="circle-img">
-                        <img src="{{asset('front/img/circle.png')}}" alt="image">
+                        <img src="{{ asset('front/img/circle.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -343,7 +307,8 @@
                     <span class="sub-title">Top Security</span>
                     <h2>Small- to medium-sized businesses</h2>
                     <div class="bar"></div>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.</p>
 
                     <ul class="features-list">
                         <li><span><i class="flaticon-check-mark"></i> Easy Set up</span></li>
@@ -371,7 +336,8 @@
                     <span class="sub-title">Price Transparency</span>
                     <h2>Large or enterprise level businesses</h2>
                     <div class="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua.</p>
 
                     <ul class="features-list">
                         <li><span><i class="flaticon-check-mark"></i> Corporate Cards</span></li>
@@ -388,7 +354,7 @@
 
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{asset('front/img/6.jpg')}}" alt="image">
+                    <img src="{{ asset('front/img/6.jpg') }}" alt="image">
                 </div>
             </div>
         </div>
@@ -402,7 +368,7 @@
         <div class="overview-box">
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{asset('front/img/7.jpg')}}" alt="image">
+                    <img src="{{ asset('front/img/7.jpg') }}" alt="image">
                 </div>
             </div>
 
@@ -411,7 +377,8 @@
                     <span class="sub-title">Automated Accounting</span>
                     <h2>Save 24 hours per week on accounting</h2>
                     <div class="bar"></div>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit.</p>
 
                     <ul class="features-list">
                         <li><span><i class="flaticon-check-mark"></i> Easy transfers</span></li>
@@ -436,7 +403,8 @@
         <div class="section-title">
             <h2>Compare us with others</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
         </div>
 
         <div class="comparisons-table table-responsive">
@@ -449,7 +417,7 @@
                         <th scope="col">Business Man</th>
                     </tr>
                 </thead>
-                
+
                 <tbody>
                     <tr>
                         <td>Control payout timing</td>
@@ -506,7 +474,8 @@
         <div class="section-title">
             <h2>Our Features</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
         </div>
     </div>
 
@@ -522,7 +491,8 @@
                                 </div>
 
                                 <h3>Incredible infrastructure</h3>
-                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore
+                                    magna aliqua.</p>
                             </div>
                         </div>
 
@@ -533,7 +503,8 @@
                                 </div>
 
                                 <h3>Email notifications</h3>
-                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore
+                                    magna aliqua.</p>
                             </div>
                         </div>
 
@@ -544,7 +515,8 @@
                                 </div>
 
                                 <h3>Simple dashboard</h3>
-                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore
+                                    magna aliqua.</p>
                             </div>
                         </div>
 
@@ -555,7 +527,8 @@
                                 </div>
 
                                 <h3>Information retrieval</h3>
-                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+                                <p>Lorem ipsum dolor amet, adipiscing, sed do eiusmod tempor incididunt ut labore dolore
+                                    magna aliqua.</p>
                             </div>
                         </div>
                     </div>
@@ -564,7 +537,7 @@
 
             <div class="col-lg-7 col-md-12">
                 <div class="features-image">
-                    <img src="{{asset('front/img/features-img1.png')}}" alt="image">
+                    <img src="{{ asset('front/img/features-img1.png') }}" alt="image">
                 </div>
             </div>
         </div>
@@ -580,7 +553,9 @@
                 <div class="invoicing-content">
                     <h2>Easy Payment to borrow free get a better filling at home</h2>
                     <div class="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip.</p>
                     <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
             </div>
@@ -588,19 +563,24 @@
             <div class="col-lg-6 col-md-12">
                 <div class="invoicing-image">
                     <div class="main-image">
-                        <img src="{{asset('front/img/invoicing-image/1.png')}}" class="wow animate__animated animate__zoomIn" alt="image">
-                        <img src="{{asset('front/img/invoicing-image/2.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
-                        <img src="{{asset('front/img/invoicing-image/3.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
-                        <img src="{{asset('front/img/invoicing-image/4.png')}}" class="wow animate__animated animate__fadeInRight" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/1.png') }}"
+                            class="wow animate__animated animate__zoomIn" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/2.png') }}"
+                            class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/3.png') }}"
+                            class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/4.png') }}"
+                            class="wow animate__animated animate__fadeInRight" alt="image">
                     </div>
 
                     <div class="main-mobile-image">
-                        <img src="{{asset('front/img/invoicing-image/main-pic.png')}}" class="wow animate__animated animate__zoomIn" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/main-pic.png') }}"
+                            class="wow animate__animated animate__zoomIn" alt="image">
                     </div>
 
                     <div class="circle-image">
-                        <img src="{{asset('front/img/invoicing-image/circle1.png')}}" alt="image">
-                        <img src="{{asset('front/img/invoicing-image/circle2.png')}}" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/circle1.png') }}" alt="image">
+                        <img src="{{ asset('front/img/invoicing-image/circle2.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -615,7 +595,8 @@
         <div class="section-title">
             <h2>We always try to understand customers expectation</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
         </div>
 
         <div class="row">
@@ -655,7 +636,7 @@
         </div>
 
         <div class="map-bg">
-            <img src="{{asset('front/img/map.png')}}" alt="map">
+            <img src="{{ asset('front/img/map.png') }}" alt="map">
         </div>
     </div>
 </section>
@@ -667,7 +648,8 @@
         <div class="section-title">
             <h2>What customers say about Us</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua.</p>
         </div>
 
         <div class="feedback-slides">
@@ -676,96 +658,112 @@
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/1.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/1.jpg') }}" alt="image">
                             </div>
 
                             <h3>John Lucy</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/2.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/2.jpg') }}" alt="image">
                             </div>
 
                             <h3>John Smith</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/3.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/3.jpg') }}" alt="image">
                             </div>
 
                             <h3>Maxwel Warner</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/4.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/4.jpg') }}" alt="image">
                             </div>
 
                             <h3>Ross Taylor</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/5.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/5.jpg') }}" alt="image">
                             </div>
 
                             <h3>James Anderson</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/1.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/1.jpg') }}" alt="image">
                             </div>
 
                             <h3>Steven Smith</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/2.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/2.jpg') }}" alt="image">
                             </div>
 
                             <h3>Steven Lucy</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
-                    
+
                     <div class="item">
                         <div class="single-feedback">
                             <div class="client-img">
-                                <img src="{{asset('front/img/client-image/3.jpg')}}" alt="image">
+                                <img src="{{ asset('front/img/client-image/3.jpg') }}" alt="image">
                             </div>
 
                             <h3>John Terry</h3>
                             <span>Web Developer</span>
-                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <p>Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus
+                                vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
                         </div>
                     </div>
                 </div>
@@ -774,42 +772,50 @@
             <div class="client-thumbnails">
                 <div>
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/1.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/1.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/2.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/2.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/3.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/3.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/4.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/4.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/5.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/5.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/1.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/1.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/2.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/2.jpg') }}" alt="client">
+                        </div>
                     </div>
-                    
+
                     <div class="item">
-                        <div class="img-fill"><img src="{{asset('front/img/client-image/3.jpg')}}" alt="client"></div>
+                        <div class="img-fill"><img src="{{ asset('front/img/client-image/3.jpg') }}" alt="client">
+                        </div>
                     </div>
                 </div>
 
                 <button class="prev-arrow slick-arrow">
                     <i class="fas fa-arrow-left"></i>
                 </button>
-                
+
                 <button class="next-arrow slick-arrow">
                     <i class="fas fa-arrow-right"></i>
                 </button>
@@ -842,127 +848,127 @@
             <div class="row align-items-center">
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-1.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover1.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-1.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover1.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-2.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover2.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-2.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover2.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-3.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover3.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-3.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover3.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-4.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover4.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-4.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover4.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-5.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover5.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-5.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover5.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-6.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover6.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-6.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover6.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-7.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover7.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-7.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover7.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-8.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover8.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-8.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover8.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-9.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover9.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-9.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover9.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-10.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover10.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-10.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover10.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-11.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover11.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-11.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover11.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-12.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover12.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-12.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover12.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-13.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover13.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-13.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover13.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-14.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover14.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-14.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover14.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-15.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover15.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-15.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover15.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-16.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover16.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-16.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover16.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-17.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover17.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-17.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover17.png') }}" alt="partner">
                     </a>
                 </div>
 
                 <div class="col-lg-2 col-sm-4 col-md-3 col-6">
                     <a href="#">
-                        <img src="{{asset('front/img/partner-image/partner-18.png')}}" alt="partner">
-                        <img src="{{asset('front/img/partner-image/partner-hover18.png')}}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-18.png') }}" alt="partner">
+                        <img src="{{ asset('front/img/partner-image/partner-hover18.png') }}" alt="partner">
                     </a>
                 </div>
             </div>
@@ -978,16 +984,19 @@
             <div class="col-lg-6 col-md-12">
                 <div class="app-image">
                     <div class="main-image">
-                        <img src="{{asset('front/img/mobile-app1.png')}}" class="wow animate__animated animate__fadeInLeft" alt="image">
-                        <img src="{{asset('front/img/mobile-app2.png')}}" class="wow animate__animated animate__fadeInUp" alt="image">
+                        <img src="{{ asset('front/img/mobile-app1.png') }}"
+                            class="wow animate__animated animate__fadeInLeft" alt="image">
+                        <img src="{{ asset('front/img/mobile-app2.png') }}"
+                            class="wow animate__animated animate__fadeInUp" alt="image">
                     </div>
 
                     <div class="main-mobile-image">
-                        <img src="{{asset('front/img/main-mobile.png')}}" class="wow animate__animated animate__fadeInUp" alt="image">
+                        <img src="{{ asset('front/img/main-mobile.png') }}"
+                            class="wow animate__animated animate__fadeInUp" alt="image">
                     </div>
 
                     <div class="circle-img">
-                        <img src="{{asset('front/img/circle.png')}}" alt="image">
+                        <img src="{{ asset('front/img/circle.png') }}" alt="image">
                     </div>
                 </div>
             </div>
@@ -996,7 +1005,9 @@
                 <div class="app-download-content">
                     <h2>You can find all the thing you need to payout</h2>
                     <div class="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                        laboris nisi ut aliquip.</p>
 
                     <div class="btn-box">
                         <a href="#" class="app-store-btn">

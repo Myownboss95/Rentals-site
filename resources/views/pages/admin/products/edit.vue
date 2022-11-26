@@ -48,6 +48,13 @@
             v-model="form.rent_status"
           />
           <FormSelect
+            id="sales_status"
+            name="sales_status"
+            label="Sales Status"
+            :options="{ 1: 'Enable', 0: 'Disable' }"
+            v-model="form.sales_status"
+          />
+          <FormSelect
             id="featured"
             name="featured"
             label="Make Featured Product"
@@ -152,6 +159,7 @@ const form = useForm({
   details: props.product?.details,
   category_id: props.product?.category_id,
   rent_status: props.product?.rent_status,
+  sales_status:props.product?.sales_status,
   max_rent_duration: props.product?.max_rent_duration,
   rent_price: props.product?.rent_price,
   sales_price: props.product?.sales_price,

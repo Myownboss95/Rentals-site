@@ -55,7 +55,7 @@
               <i class="fa fa-plus"></i>
               Add
             </FormButton>
-          </div>
+          </div> 
           <div>
             <InputGroup
               :placeholder="`Plan feature ${key + 1}`"
@@ -104,7 +104,7 @@ const props =  defineProps(['plan','features'])
   });
 
   const addFeature = () => form.features.push('');
-
+ 
   const removeFeature = (key) =>
     (form.features = form.features.filter((item, k) => form.features[key] != k));
 

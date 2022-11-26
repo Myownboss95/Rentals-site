@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Pipeline;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
@@ -30,6 +31,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //
+        Paginator::useBootstrap();
         Blade::directive('limitDetails', function ($details,$limit = 10) {
             return "<?php echo limit_text($details, $limit); ?>";
         });

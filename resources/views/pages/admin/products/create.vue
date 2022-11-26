@@ -41,6 +41,7 @@
             :options="categories"
             v-model="form.category_id"
           />
+          
 
           <FormSelect
             id="rent_status"
@@ -48,6 +49,13 @@
             label="Rent Status"
             :options="{ 1: 'Enable', 0: 'Disable' }"
             v-model="form.rent_status"
+          />
+          <FormSelect
+            id="sales_status"
+            name="sales_status"
+            label="Sales Status"
+            :options="{ 1: 'Enable', 0: 'Disable' }"
+            v-model="form.sales_status"
           />
           <FormSelect
             id="featured"
@@ -141,6 +149,7 @@ const form = useForm({
   details:"",
   category_id: "",
   rent_status: "",
+  sales_status:'',
   max_rent_duration:"",
   rent_price: "",
   sales_price: "",
@@ -149,6 +158,7 @@ const form = useForm({
   image: "",
   featured:'',
   images: "",
+  tags:"",
   description: "",
 });
 
@@ -164,6 +174,8 @@ watch(
 const props = defineProps({
   categories: Array,
                     })
+
+// console.log(props.categories[0])
 const categories = computed({
   get() {
       let filtered = { '': 'Select Category' };
@@ -174,8 +186,26 @@ const categories = computed({
     },
 })
 
+const category_tags = (tag) => {
+  // console.log(tag)
+  if(tag != ''){
+    let categories_tag = props.categories.filter((item, key)=> item.id == tag)[0].tags;
+    console.log(categories_tag)
+    // return categories_tag;
+    
+     
+  }
+}
+
+watch( ()=>form.category_id, (tag)=>{
+  
+    return category_tags(tag)
+  }
+)
+// console.log(category_tags)
+
 const createProducts = () => {
-  console.log(form.data())
+  // console.log(form.data())
   form.post(route("admin.products.store"));
 };
 </script>

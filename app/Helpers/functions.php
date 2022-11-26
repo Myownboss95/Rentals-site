@@ -20,7 +20,14 @@ function getStockLevel($quantity) {
         return 'Out Of Stock';
     }
 }
-
+ 
 function format($price) {
     echo '<label>&#8358;</label>'.number_format($price, 2);
+}
+function checkSaleStatus($status){
+    if($status == 1){
+        echo '<button class="btn-theme btn buy-btn" tabindex="0">
+        <i class="fa fa-shopping-cart"></i> Buy Now
+    </button>';
+    }
 }

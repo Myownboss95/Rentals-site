@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +37,8 @@ class ProductController extends Controller
     public function create()
     {
         //
-        $categories = Category::all();
+        $categories = Category::with('tags')->latest()->get();
+        // dd($categories);
         return inertia('admin.products.create', ['categories'=> $categories]);
     }
 
@@ -55,6 +57,7 @@ class ProductController extends Controller
             'details' => ['required', 'string'],
             'category_id' => ['required', 'numeric', 'exists:categories,id'],
             'rent_status' => ['required','numeric'],
+            'sales_status' => ['required','numeric'],
             'max_rent_duration' => ['required','integer'],
             'rent_price' => ['required','numeric'],
             'sales_price' => ['nullable','numeric'],
@@ -153,6 +156,7 @@ class ProductController extends Controller
             'rent_status' => ['required','numeric'],
             'max_rent_duration' => ['required','integer'],
             'rent_price' => ['required','numeric'],
+            'sales_status' => ['required','numeric'],
             'sales_price' => ['nullable','numeric'],
             'discount_price' => ['required','numeric'],
             'quantity' => ['integer','numeric'],

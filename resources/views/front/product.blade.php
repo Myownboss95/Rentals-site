@@ -457,8 +457,11 @@
                             <div class="_p-qty-and-cart">
                                 <div class="_p-add-cart">
                                     <button class="btn-theme btn buy-btn" tabindex="0">
-                                        <i class="fa fa-shopping-cart"></i> Buy Now
+                                        <i class="fa fa-shopping-cart"></i> Rent Now
                                     </button>
+                                    @php
+                                         checkSaleStatus($product->sales_status)
+                                    @endphp
                                     <button class="btn-theme btn btn-success" tabindex="0">
                                         <i class="fa fa-shopping-cart"></i> Add to Cart
                                     </button>
