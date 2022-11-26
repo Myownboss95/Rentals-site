@@ -59,14 +59,14 @@
             <div class="luvion-nav">
                 <div class="container">
                     <nav class="navbar navbar-expand-md navbar-light">
-                        <a class="navbar-brand" href="{{route('/')}}">
+                        <a class="navbar-brand" href="{{url('/')}}">
                             <img src="{{asset('front/img/logo.png')}}" alt="logo">
                             <img src="{{asset('front/img/black-logo.png')}}" alt="logo">
                         </a>
 
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a href="{{route('/')}}" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
+                                <li class="nav-item"><a href="{{url('/')}}" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
 
