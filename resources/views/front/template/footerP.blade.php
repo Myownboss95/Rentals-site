@@ -7,8 +7,8 @@
         <div class="col-lg-3 col-sm-6 col-md-6">
           <div class="single-footer-widget">
             <div class="logo">
-              <a href="{{ url('/') }}" class="black-logo"><img src="assets/img/black-logo.png" alt="logo"></a>
-              <a href="{{ url('/') }}" class="white-logo"><img src="assets/img/logo.png" alt="logo"></a>
+              <a href="{{ url('/') }}" class="black-logo"><img src="{{asset('front/img/black-logo.png')}}" alt="logo"></a>
+              <a href="{{ url('/') }}" class="white-logo"><img src="{{asset('front/img/logo.png')}}" alt="logo"></a>
                               <p>Quis ipsum suspendisse ultrices gravida commodo. Risus commodo veliliee vel viverra maecenas accumsan lacus vel facilisis.</p>
             </div>
                           

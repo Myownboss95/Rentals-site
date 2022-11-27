@@ -60,4 +60,18 @@ class ShopController extends Controller
             'stockLevel' => $stockLevel
         ]);
     }
+    public function search(Request $request){
+            // return $request->input();
+            $products = Product::where('name', 'like','%'.$request->input('item').'%')->orWhere('details', 'like','%'.$request->input('item').'%')
+            ->orWhere('description', 'like','%'.$request->input('item').'%')
+            ->paginate(10);
+            $categories = Category::all();
+            return view('front.search')->with([
+                'products' => $products,
+                'categories'=> $categories,
+                // 'tags'=> $tags,
+            // 'categoryName' => $categoryName ?? null,
+            //     'tagName' => $tagName ?? null
+                ]);
+    }
 }

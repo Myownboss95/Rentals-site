@@ -5,9 +5,9 @@
 <section class="blog-area ptb-70 pt-0" style="margin-top: 200px">
     <div class="container">
         <div class="section-title">
-            <h2>Rentables</h2>
+            <h2>Search Results</h2>
             <div class="bar"></div>
-            <p>Check out our list and make your orders</p>
+            <p>Your Search Results</p>
         </div>
 <div class="row">
     <div class="col-md-9">

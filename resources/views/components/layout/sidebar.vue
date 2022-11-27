@@ -48,18 +48,18 @@
             name="Trades History"
             :url="route(`${is_admin ? 'admin' : 'user'}.trades.index`)"
             icon="table"
-          />
+          /> -->
           <SidebarItem
-            name="Place Trade"
+            name="My Orders"
             :url="route('user.trades.view')"
-            icon="server"
+            icon="archive"
             v-if="!is_admin"
           />
-          <SidebarItem
-            :name="botsMenu"
+          <!-- <SidebarItem
+            name="My Orders"
             :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"
             icon="cpu"
-          /> -->
+          />  -->
           <li class="menu-title">Transactions</li>
           <SidebarItem
             :name="`${is_admin ? 'All Stakes' : 'My Stakes'}`"

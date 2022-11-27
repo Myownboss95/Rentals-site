@@ -77,6 +77,7 @@ Route::controller(ShopController::class)->group(function () {
     Route::get('/shop/{slug}', "show")->name('shop.show');
     Route::get('/shop', "index")->name('shop.index');
     Route::get('/shop/categories/{slug}', "index")->name('shop.categories');
+    Route::get('/products/search', "search")->name('search');
 });
 Route::controller(FrontendController::class)->group(function () {
     $theme = config('app.theme', 'front2');
