@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Wishlist;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Facades\Auth;
 
 class ShopController extends Controller
 {
@@ -46,11 +49,23 @@ class ShopController extends Controller
     public function show( $slug)
     {
         //
+        $user = (Auth::check()==true)? User::find(auth()->user()->id): null;
+
         Paginator::useBootstrap();
         $product = Product::where('slug', $slug)->firstOrFail();
         // dd($product->images);
         $images = $product->images;
-        $mightLike = Product::where('slug', '!=', $product->slug)->mightAlsoLike()->get();
+        // $wishlist = Wishlist::where('user_id', auth()->user()->id)->pluck('id')->toArray();
+        
+        // where('slug', '!=', $product->slug)->
+        if(!is_null($user)){
+            // $user->wishlist->products;
+                $mightLike = $user->wishlist->products()->orWhere('category_id', $product->category_id)->mightAlsoLike()->get();
+        }
+        else{
+            $mightLike = Product::where('slug', '!=', $product->slug)->orWhere('category_id', $product->category_id)->mightAlsoLike()->get();
+        }
+
         // dd($mightLike);
         $stockLevel = getStockLevel($product->quantity);
         return view('front.product')->with([

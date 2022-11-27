@@ -162,7 +162,7 @@ class BotController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy(Bot $bot)
-    {
+    { 
         $user = User::findOrFail(auth()->user()->id);
         $user->bots()->detach();
         session()->flash('success', 'Bot unlinked');

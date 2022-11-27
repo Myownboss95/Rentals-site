@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
+use DB;
+use Str;
+use Mail;
 use App\Models\Bot;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Mail\Bot\SendActivationToken;
-use DB;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Database\Eloquent\Builder;
-use Mail;
-use Str;
 
 class BotController extends Controller
 {
@@ -20,7 +21,7 @@ class BotController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index() 
     {
         $bots = Bot::latest()->paginate();
         return inertia('admin.bots.index', [
@@ -55,8 +56,7 @@ class BotController extends Controller
         ]);
 
         Bot::create($valid);
-        session()->flash('success', 'Bot created successfully');
-        return redirect()->route('admin.bots.index');
+        return Redirect::back()->withErrors(['msg' => 'Added to Cart']);
     }
 
     /**

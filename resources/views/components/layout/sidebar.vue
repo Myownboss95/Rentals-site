@@ -55,6 +55,12 @@
             icon="archive"
             v-if="!is_admin"
           />
+          <SidebarItem
+            name="My WishList"
+            :url="route('user.wishlist.index')"
+            icon="heart"
+            v-if="!is_admin"
+          />
           <!-- <SidebarItem
             name="My Orders"
             :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"

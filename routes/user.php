@@ -8,6 +8,7 @@ use App\Http\Controllers\User\OnboardController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\SubscriptionController;
 use App\Http\Controllers\User\TradeController;
+use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\User\WithdrawalController;
 use App\Models\User;
 
@@ -41,6 +42,8 @@ Route::middleware('onboarded')->group(function () {
     Route::resource('bots', BotController::class)->except('show', 'update');
 });
 
+Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+Route::delete('wishlist/destroy/{id}', [WishlistController::class, 'destroy'])->name('wishlist.destroy');
 Route::get('subscriptions', [SubscriptionController::class, 'plans'])->name('subscriptions.plans');
 Route::post('subscribe/{plan}', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
 

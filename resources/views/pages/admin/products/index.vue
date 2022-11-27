@@ -18,7 +18,7 @@
       <div class="table-responsive">
         <table class="table">
           <thead>
-            <tr>
+            <tr> 
               <th>Name</th>
               <th>Slug</th>
               <th>Amount[SKU]</th>
@@ -65,19 +65,26 @@
       </div>
     </div>
   </div>
-</template>
+</template> 
 
 <script setup>
 import breadcrumb from "@/views/components/layout/breadcrumb.vue";
 import { computed } from "vue";
 import Paginator from "@/views/components/paginator.vue";
+import { useForm } from '@inertiajs/inertia-vue3';
 
+const form = useForm({});
 const props = defineProps({
   products: Object,
 });
 // console.log(payment)
 const products = computed(() => props.products.data);
 const links = computed(() => props.products.links);
+const delete_product = id => {
+    form.post(route('user.wishlist.destroy', id), {
+        onBefore: () => confirm('Are you sure you want to Delete?'),
+    })
+}
 </script>
 
 <style>

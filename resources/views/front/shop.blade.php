@@ -5,6 +5,14 @@
 <section class="blog-area ptb-70 pt-0" style="margin-top: 200px">
     <div class="container">
         <div class="section-title">
+            @if(session()->has('message'))
+                
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    
+                    <strong> {{ session()->get('message') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                  </div>
+            @endif
             <h2>Rentables</h2>
             <div class="bar"></div>
             <p>Check out our list and make your orders</p>
@@ -30,7 +38,12 @@
                         <div class="blog-post-content">
                             <h3><a href="{{ route('shop.show', $product->slug) }}">{{ $product['name'] }}</a></h3>
 
-                            <span>Category | <a href="#">{{ $product->category->name }}</a></span>
+                            <span>Category | <a href="#">{{ $product->category->name }}</a> </span>
+                            <div>
+                                <a href="{{ route('add-to-wishlist', $product->slug) }}">
+                                <i class="fa fa-heart" style="color:red"></i> Add to Wishlist
+                                </a>
+                            </div>
 
                             <p>@limitDetails($product['description'])</p>
 
@@ -96,5 +109,12 @@
     </div>
 </section>
 <!-- End Shop Area -->
+<script>
+    window.setTimeout(function() {
+    $(".alert").fadeTo(500, 0).slideUp(500, function(){
+        $(this).remove(); 
+    });
+}, 2000);
+</script>
 
 @include('front.template.footer')

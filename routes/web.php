@@ -14,7 +14,7 @@ use App\Http\Controllers\ChangePasswordController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SuccessfulPasswordResetController;
 use App\Http\Controllers\TwoFactorAuthenticationController;
-
+use App\Http\Controllers\User\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +36,8 @@ use App\Http\Controllers\TwoFactorAuthenticationController;
 // Route::get('/product/{slug}', ProductController::class, 'show')->name('shop.show');
 
 Route::middleware(['auth'])->group(function () {
+
+    Route::get('add-to-wishlist/{slug}', [WishlistController::class, 'store'])->name('add-to-wishlist');
 
     Route::middleware(['verified'])->group(function () {
         Route::prefix('user')->as('user.')->middleware('can:is_user')->group(fn () => require_once('user.php'));

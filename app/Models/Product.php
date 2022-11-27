@@ -19,8 +19,12 @@ class Product extends Model
     ];
 
     public function category()
-    {
+    { 
         return $this->belongsTo(Category::class);
+    }
+    public function wishlist()
+    {
+        return $this->belongsToMany(Wishlist::class);
     }
     public function scopeMightAlsoLike($query) {
         return $query->inRandomOrder()->take(8);
