@@ -39,15 +39,21 @@
                 >
                   <i class="fa fa-edit"></i>
                 </InertiaLink>
-
-                <InertiaLink
+                <button
+                  @click="delete_product(product.id)"
+                  class="btn btn-outline-danger btn-sm cursor-pointer"
+                >
+                  <i class="fa fa-times"></i>
+                  Remove
+                </button>
+                <!-- <InertiaLink
                   method="delete"
                   :href="route('admin.products.destroy', product.id)"
                   class="btn btn-outline-danger btn-sm"
                   as="button"
                 >
                   <i class="fa fa-trash"></i>
-                </InertiaLink>
+                </InertiaLink> -->
               </td>
             </tr>
           </tbody>
@@ -81,7 +87,7 @@ const props = defineProps({
 const products = computed(() => props.products.data);
 const links = computed(() => props.products.links);
 const delete_product = id => {
-    form.post(route('user.wishlist.destroy', id), {
+    form.delete(route('admin.products.destroy', id), {
         onBefore: () => confirm('Are you sure you want to Delete?'),
     })
 }
