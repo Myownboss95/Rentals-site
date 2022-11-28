@@ -1,13 +1,20 @@
 @include('front.template.header')
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+</script>
 <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css">
 <link rel="stylesheet" type="text/css" href="https://w3learnpoint.com/cdn/jquery-picZoomer.css">
 <style>
     .picZoomer {
@@ -420,12 +427,12 @@
                 </div>
                 <div class="zoom-thumb">
                     <ul class="piclist">
-                @if ($images)
-                    @foreach ($images as $pic)
-                        <li><img src="{{ asset('storage/products/' . $pic) }}" alt=""></li>
-                    @endforeach
-                @endif
-                {{-- end --}}
+                        @if ($images)
+                            @foreach ($images as $pic)
+                                <li><img src="{{ asset('storage/products/' . $pic) }}" alt=""></li>
+                            @endforeach
+                        @endif
+                        {{-- end --}}
                     </ul>
                 </div>
             </div>
@@ -450,7 +457,7 @@
                         <div class="_p-features">
                             <span> Description About this product:- </span>
                             <p class="light-text">{!! $product->description !!}</p>
-                            
+
                         </div>
                         <form action="" method="post" accept-charset="utf-8">
                             <ul class="spe_ul"></ul>
@@ -460,9 +467,16 @@
                                         <i class="fa fa-shopping-cart"></i> Rent Now
                                     </button>
                                     @php
-                                         checkSaleStatus($product->sales_status)
+                                        checkSaleStatus($product->sales_status);
                                     @endphp
-                                    <button class="btn-theme btn btn-success" tabindex="0">
+                                    <button class="btn-theme btn btn-success add-to-cart" tabindex="0" type="button"
+                                        data-id="{{ $product->id }}" data-name="{{ $product->name }}"
+                                        data-price="{{ $product->rent_price }}"
+                                        data-slug="{{ $product->slug }}"
+                                        data-image="{{$product->image}}"
+                                        data-category="{{ $product->category->name }}"
+                                        
+                                        >
                                         <i class="fa fa-shopping-cart"></i> Add to Cart
                                     </button>
                                     <input type="hidden" name="pid" value="18" />
@@ -487,38 +501,41 @@
         <div class="row">
             <div class="col-md-12 list-slider mt-4">
                 <div class="owl-carousel common_wd  owl-theme" id="recent_post">
-                   @if ($mightLike)
-                   @foreach ( $mightLike as $mightLikes )
-                   <div class="item">
-                    <div class="sq_box shadow">
-                        <div class="pdis_img">
-                            {{-- <span class="wishlist">
+                    @if ($mightLike)
+                        @foreach ($mightLike as $mightLikes)
+                            <div class="item">
+                                <div class="sq_box shadow">
+                                    <div class="pdis_img">
+                                        {{-- <span class="wishlist">
                                 <a alt="Add to Wish List" title="Add to Wish List" href="javascript:void(0);"> <i
                                         class="fa fa-heart"></i></a>
                             </span> --}}
-                            <a href="{{ route('shop.show', $mightLikes->slug) }}">
-                                <img src="{{ asset('storage/products/' . $mightLikes['image']) }}">
-                            </a>
-                        </div>
-                        <h4 class="mb-1"> <a href="{{ route('shop.show', $mightLikes->slug) }}"> {{ $mightLikes['name'] }} </a> </h4>
-                        <div class="price-box mb-2">
-                            <h6 class="offer-price">Rent Price: {{ format($mightLikes['rent_price'] )}} </h6>
-                            <h6>Sales Price</h6>
-                            <span class="price"> {{ format($mightLikes['sales_price']) }} </span>
-                            <span class="offer-price"> {{ format($mightLikes['discount_price']) }}  </span>
-                        </div>
-                        <div class="btn-box text-center">
-                            <a class="btn btn-sm" href="javascript:void(0);"> <i class="fa fa-shopping-cart"></i>
-                                Add to Cart </a>
-                        </div>
-                    </div>
-                </div>
-                   @endforeach
+                                        <a href="{{ route('shop.show', $mightLikes->slug) }}">
+                                            <img src="{{ asset('storage/products/' . $mightLikes['image']) }}">
+                                        </a>
+                                    </div>
+                                    <h4 class="mb-1"> <a href="{{ route('shop.show', $mightLikes->slug) }}">
+                                            {{ $mightLikes['name'] }} </a> </h4>
+                                    <div class="price-box mb-2">
+                                        <h6 class="offer-price">Rent Price: {{ format($mightLikes['rent_price']) }}
+                                        </h6>
+                                        <h6>Sales Price</h6>
+                                        <span class="price"> {{ format($mightLikes['sales_price']) }} </span>
+                                        <span class="offer-price"> {{ format($mightLikes['discount_price']) }} </span>
+                                    </div>
+                                    <div class="btn-box text-center">
+                                        <a class="btn btn-sm" href="javascript:void(0);"> <i
+                                                class="fa fa-shopping-cart"></i>
+                                            Add to Cart </a>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
 
-                   
-                   @endif
-                    
-                    
+
+                    @endif
+
+
                 </div>
             </div>
         </div>
@@ -530,101 +547,134 @@
 
 {{-- @section('scripts') --}}
 <script>
-   
-   ;(function($){
-	$.fn.picZoomer = function(options){
-		var opts = $.extend({}, $.fn.picZoomer.defaults, options), 
-			$this = this,
-			$picBD = $('<div class="picZoomer-pic-wp"></div>').css({'width':opts.picWidth+'px', 'height':opts.picHeight+'px'}).appendTo($this),
-			$pic = $this.children('img').addClass('picZoomer-pic').appendTo($picBD),
-			$cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>').appendTo($picBD),
-			cursorSizeHalf = {w:$cursor.width()/2 ,h:$cursor.height()/2},
-			$zoomWP = $('<div class="picZoomer-zoom-wp"><img src="" alt="" class="picZoomer-zoom-pic"></div>').appendTo($this),
-			$zoomPic = $zoomWP.find('.picZoomer-zoom-pic'),
-			picBDOffset = {x:$picBD.offset().left,y:$picBD.offset().top};
-
-		
-		opts.zoomWidth = opts.zoomWidth||opts.picWidth;
-		opts.zoomHeight = opts.zoomHeight||opts.picHeight;
-		var zoomWPSizeHalf = {w:opts.zoomWidth/2 ,h:opts.zoomHeight/2};
-
-		//初始化zoom容器大小
-		$zoomWP.css({'width':opts.zoomWidth+'px', 'height':opts.zoomHeight+'px'});
-		$zoomWP.css(opts.zoomerPosition || {top: 0, left: opts.picWidth+30+'px'});
-		//初始化zoom图片大小
-		$zoomPic.css({'width':opts.picWidth*opts.scale+'px', 'height':opts.picHeight*opts.scale+'px'});
-
-		//初始化事件
-		$picBD.on('mouseenter',function(event){
-			$cursor.show();
-			$zoomWP.show();
-			$zoomPic.attr('src',$pic.attr('src'))
-		}).on('mouseleave',function(event){
-			$cursor.hide();
-			$zoomWP.hide();
-		}).on('mousemove', function(event){
-			var x = event.pageX-picBDOffset.x,
-				y = event.pageY-picBDOffset.y;
-
-			$cursor.css({'left':x-cursorSizeHalf.w+'px', 'top':y-cursorSizeHalf.h+'px'});
-			$zoomPic.css({'left':-(x*opts.scale-zoomWPSizeHalf.w)+'px', 'top':-(y*opts.scale-zoomWPSizeHalf.h)+'px'});
-
-		});
-		return $this;
-
-	};
-	$.fn.picZoomer.defaults = {
-        picHeight: 460,
-		scale: 2.5,
-		zoomerPosition: {top: '0', left: '380px'},
-
-		zoomWidth: 400,
-		zoomHeight: 460
-	};
-})(jQuery); 
+    (function($) {
+        $.fn.picZoomer = function(options) {
+            var opts = $.extend({}, $.fn.picZoomer.defaults, options),
+                $this = this,
+                $picBD = $('<div class="picZoomer-pic-wp"></div>').css({
+                    'width': opts.picWidth + 'px',
+                    'height': opts.picHeight + 'px'
+                }).appendTo($this),
+                $pic = $this.children('img').addClass('picZoomer-pic').appendTo($picBD),
+                $cursor = $('<div class="picZoomer-cursor"><i class="f-is picZoomCursor-ico"></i></div>')
+                .appendTo($picBD),
+                cursorSizeHalf = {
+                    w: $cursor.width() / 2,
+                    h: $cursor.height() / 2
+                },
+                $zoomWP = $(
+                    '<div class="picZoomer-zoom-wp"><img src="" alt="" class="picZoomer-zoom-pic"></div>')
+                .appendTo($this),
+                $zoomPic = $zoomWP.find('.picZoomer-zoom-pic'),
+                picBDOffset = {
+                    x: $picBD.offset().left,
+                    y: $picBD.offset().top
+                };
 
 
+            opts.zoomWidth = opts.zoomWidth || opts.picWidth;
+            opts.zoomHeight = opts.zoomHeight || opts.picHeight;
+            var zoomWPSizeHalf = {
+                w: opts.zoomWidth / 2,
+                h: opts.zoomHeight / 2
+            };
 
-$(document).ready(function () {
-     $('.picZoomer').picZoomer();
-    $('.piclist li').on('click', function (event) {
-        var $pic = $(this).find('img');
-        $('.picZoomer-pic').attr('src', $pic.attr('src'));
-    });
-   
-  var owl = $('#recent_post');
-              owl.owlCarousel({
-                margin:20,
-                dots:false,
-                nav: true,
-                navText: [
-                  "<i class='fa fa-chevron-left'></i>",
-                  "<i class='fa fa-chevron-right'></i>"
-                ],
-                autoplay: true,
-                autoplayHoverPause: true,
-                responsive: {
-                  0: {
+            //初始化zoom容器大小
+            $zoomWP.css({
+                'width': opts.zoomWidth + 'px',
+                'height': opts.zoomHeight + 'px'
+            });
+            $zoomWP.css(opts.zoomerPosition || {
+                top: 0,
+                left: opts.picWidth + 30 + 'px'
+            });
+            //初始化zoom图片大小
+            $zoomPic.css({
+                'width': opts.picWidth * opts.scale + 'px',
+                'height': opts.picHeight * opts.scale + 'px'
+            });
+
+            //初始化事件
+            $picBD.on('mouseenter', function(event) {
+                $cursor.show();
+                $zoomWP.show();
+                $zoomPic.attr('src', $pic.attr('src'))
+            }).on('mouseleave', function(event) {
+                $cursor.hide();
+                $zoomWP.hide();
+            }).on('mousemove', function(event) {
+                var x = event.pageX - picBDOffset.x,
+                    y = event.pageY - picBDOffset.y;
+
+                $cursor.css({
+                    'left': x - cursorSizeHalf.w + 'px',
+                    'top': y - cursorSizeHalf.h + 'px'
+                });
+                $zoomPic.css({
+                    'left': -(x * opts.scale - zoomWPSizeHalf.w) + 'px',
+                    'top': -(y * opts.scale - zoomWPSizeHalf.h) + 'px'
+                });
+
+            });
+            return $this;
+
+        };
+        $.fn.picZoomer.defaults = {
+            picHeight: 460,
+            scale: 2.5,
+            zoomerPosition: {
+                top: '0',
+                left: '380px'
+            },
+
+            zoomWidth: 400,
+            zoomHeight: 460
+        };
+    })(jQuery);
+
+
+
+    $(document).ready(function() {
+        $('.picZoomer').picZoomer();
+        $('.piclist li').on('click', function(event) {
+            var $pic = $(this).find('img');
+            $('.picZoomer-pic').attr('src', $pic.attr('src'));
+        });
+
+        var owl = $('#recent_post');
+        owl.owlCarousel({
+            margin: 20,
+            dots: false,
+            nav: true,
+            navText: [
+                "<i class='fa fa-chevron-left'></i>",
+                "<i class='fa fa-chevron-right'></i>"
+            ],
+            autoplay: true,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
                     items: 2
-                  },
-                  600: {
-                    items:3
-                  },
-                  1000: {
-                    items:5
-                  },
-                  1200: {
-                    items:4
-                  }
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                },
+                1200: {
+                    items: 4
                 }
-  });    
-  
-        $('.decrease_').click(function () {
+            }
+        });
+
+        $('.decrease_').click(function() {
             decreaseValue(this);
         });
-        $('.increase_').click(function () {
+        $('.increase_').click(function() {
             increaseValue(this);
         });
+
         function increaseValue(_this) {
             var value = parseInt($(_this).siblings('input#number').val(), 10);
             value = isNaN(value) ? 0 : value;
@@ -639,9 +689,63 @@ $(document).ready(function () {
             value--;
             $(_this).siblings('input#number').val(value);
         }
+
+
+
+        //addtocart
+
+
     });
 </script>
-{{-- @endsection --}}
+<script type="text/javascript">
+    window.cart = <?php echo json_encode($cart); ?>;
+
+    updateCartButton();
+
+    $(document).on('click','.add-to-cart', function(event) {
+        
+    var cart = window.cart || [];
+    // console.log($('#number').val());
+    cart.push({
+        'id': $(this).data('id'),
+        'name': $(this).data('name'),
+        'rent_price': $(this).data('price'),
+        'slug': $(this).data('slug'),
+        'image': $(this).data('image'),
+        'category': $(this).data('category'),
+        'qty': $('#number').val()
+    });
+    // console.log(cart)
+    window.cart = cart;
+    // console.log(cart)
+    $.ajax('/store/add-to-cart', {
+        type: 'POST',
+        data: {
+            "_token": "{{ csrf_token() }}",
+            "cart": cart
+        },
+        success: function(data, status, xhr) {
+
+        }
+    });
+    updateCartButton();
+
+
+    });
+    
+
+    function updateCartButton() {
+
+        var count = 0;
+        window.cart.forEach(function(item, i) {
+
+            count += Number(item.qty);
+        });
+
+        $('#items-in-cart').html(count);
+    }
+</script>
+
 
 
 

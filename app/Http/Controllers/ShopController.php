@@ -38,12 +38,16 @@ class ShopController extends Controller
             $products = $products->inRandomOrder()->paginate($pagination);
         }
         $categories = Category::all();
+        $cart = session()->get('cart');
+        if ($cart == null)
+            $cart = [];
+
         return view('front.shop')->with([
             'products' => $products,
             'categories'=> $categories,
-            // 'tags'=> $tags,
-        'categoryName' => $categoryName ?? null,
-            'tagName' => $tagName ?? null
+            'cart'=> $cart,
+        // 'categoryName' => $categoryName ?? null,
+        //     'tagName' => $tagName ?? null
             ]);
     }
     public function show( $slug)
@@ -68,11 +72,16 @@ class ShopController extends Controller
 
         // dd($mightLike);
         $stockLevel = getStockLevel($product->quantity);
+        $cart = session()->get('cart');
+        if ($cart == null)
+            $cart = [];
+
         return view('front.product')->with([
             'product' => $product,
             'mightLike' => $mightLike,
             'images' => $images,
-            'stockLevel' => $stockLevel
+            'stockLevel' => $stockLevel,
+            'cart' => $cart
         ]);
     }
     public function search(Request $request){
@@ -81,12 +90,24 @@ class ShopController extends Controller
             ->orWhere('description', 'like','%'.$request->input('item').'%')
             ->paginate(10);
             $categories = Category::all();
+            $cart = session()->get('cart');
+        if ($cart == null)
+            $cart = [];
+
             return view('front.search')->with([
                 'products' => $products,
                 'categories'=> $categories,
-                // 'tags'=> $tags,
+                'cart'=> $cart,
             // 'categoryName' => $categoryName ?? null,
             //     'tagName' => $tagName ?? null
                 ]);
+    }
+    public function addToCart(Request $request)
+    {
+        session()->put('cart', $request->post('cart'));
+
+        return response()->json([
+            'status' => 'added'
+        ]);
     }
 }

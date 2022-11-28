@@ -44,7 +44,7 @@
                   class="btn btn-outline-danger btn-sm cursor-pointer"
                 >
                   <i class="fa fa-times"></i>
-                  Remove
+                  Delete Product
                 </button>
                 <!-- <InertiaLink
                   method="delete"

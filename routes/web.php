@@ -2,19 +2,20 @@
 
 use App\Models\Plan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ShopController;
 use App\Http\Controllers\LocaleController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LocationController;
+// use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\ReferralController;
 use App\Http\Controllers\Admin\UserController;
-// use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\EmailVerifiedController;
+use App\Http\Controllers\User\WishlistController;
 use App\Http\Controllers\ChangePasswordController;
-use App\Http\Controllers\ShopController;
 use App\Http\Controllers\SuccessfulPasswordResetController;
 use App\Http\Controllers\TwoFactorAuthenticationController;
-use App\Http\Controllers\User\WishlistController;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,6 +81,12 @@ Route::controller(ShopController::class)->group(function () {
     Route::get('/shop', "index")->name('shop.index');
     Route::get('/shop/categories/{slug}', "index")->name('shop.categories');
     Route::get('/products/search', "search")->name('search');
+});
+
+Route::controller(CartController::class)->group(function () {
+    Route::get('/cart', "index")->name('cart.index');
+    Route::post('/store/add-to-cart', "addToCart")->name('cart.store');
+   
 });
 Route::controller(FrontendController::class)->group(function () {
     $theme = config('app.theme', 'front2');
