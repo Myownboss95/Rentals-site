@@ -7,7 +7,7 @@
         </div>
         <div class="bar"></div>
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-md-7 card p-5 offset-md-1 rounded shadow-sm ">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
@@ -20,6 +20,9 @@
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Quantity</div>
+                                </th>
+                                <th scope="col" class="border-0 bg-light">
+                                    <div class="py-2 text-uppercase">Rent Duration</div>
                                 </th>
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Remove</div>
@@ -53,6 +56,8 @@
                                     <td class="border-0 align-middle"><strong>{{ format($item['rent_price']) }}</strong>
                                     </td>
                                     <td class="border-0 align-middle"><strong>{{ $qty }}</strong></td>
+                                    <td class="border-0 align-middle"><strong>{{ $item['rent_duration'] }}</strong>
+                                    </td>
                                     <td class="border-0 align-middle"><a href="#" class="text-dark"><i
                                                 class="fa fa-trash"></i></a></td>
                                 </tr>
@@ -66,11 +71,23 @@
 
                 </div>
             </div>
+            <div class="col-lg-3 card p-5 rounded shadow-sm">
+                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Order summary </div>
+                <div class="p-4">
+                  <p class="font-italic mb-4">Select Payment Method</p>
+                  <ul class="list-unstyled mb-4">
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Order Subtotal </strong><strong>{{ format($total)}}</strong></li>
+                    <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Total</strong>
+                      <h5 class="font-weight-bold">{{ format($total)}}</h5>
+                    </li>
+                  </ul><a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Procceed to checkout</a>
+                </div>
+              </div>
 
         </div>
     </div>
     @php
-        // SessionCache::flush('cart');
+        // Session::flush('cart');
     @endphp
 </section>
 

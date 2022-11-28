@@ -218,6 +218,17 @@
         font-size: 14px;
         box-sizing: border-box;
     }
+    ._p-qty input#rent_duration {
+        text-align: center;
+        border: none;
+        border-top: 1px solid #fe0000;
+        border-bottom: 1px solid #fe0000;
+        margin: 0px;
+        width: 50px;
+        height: 35px;
+        font-size: 14px;
+        box-sizing: border-box;
+    }
 
     ._p-add-cart {
         margin-left: 0px;
@@ -416,6 +427,7 @@
 <div style="margin-top:60px; margin-bottom:60px;">&nbsp;</div>
 <section id="services" class="container section-bg p-5 m-5">
     <div class="container-fluid">
+        <div id="alertCart"></div>
 
         <div class="row row-sm">
             <div class="col-md-6 _boxzoom">
@@ -452,6 +464,14 @@
                                 <div class="value-button decrease_" id="" value="Decrease Value">-</div>
                                 <input type="number" name="qty" id="number" value="1" />
                                 <div class="value-button increase_" id="" value="Increase Value">+</div>
+                            </div>
+                        </div>
+                        <div class="_p-add-cart">
+                            <div class="_p-qty">
+                                <span>Add Number of Days</span>
+                                <div class="value-button decrease_R" id="" value="Decrease Value">-</div>
+                                <input type="number" name="rent_duration" id="rent_duration" value="1" />
+                                <div class="value-button increase_R" id="" value="Increase Value">+</div>
                             </div>
                         </div>
                         <div class="_p-features">
@@ -674,6 +694,12 @@
         $('.increase_').click(function() {
             increaseValue(this);
         });
+        $('.decrease_R').click(function() {
+            decreaseValueR(this);
+        });
+        $('.increase_R').click(function() {
+            increaseValueR(this);
+        });
 
         function increaseValue(_this) {
             var value = parseInt($(_this).siblings('input#number').val(), 10);
@@ -688,6 +714,20 @@
             value < 1 ? value = 1 : '';
             value--;
             $(_this).siblings('input#number').val(value);
+        }
+        function increaseValueR(_this) {
+            var value = parseInt($(_this).siblings('input#rent_duration').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value++;
+            $(_this).siblings('input#rent_duration').val(value);
+        }
+
+        function decreaseValueR(_this) {
+            var value = parseInt($(_this).siblings('input#rent_duration').val(), 10);
+            value = isNaN(value) ? 0 : value;
+            value < 1 ? value = 1 : '';
+            value--;
+            $(_this).siblings('input#rent_duration').val(value);
         }
 
 
@@ -713,7 +753,8 @@
         'slug': $(this).data('slug'),
         'image': $(this).data('image'),
         'category': $(this).data('category'),
-        'qty': $('#number').val()
+        'qty': $('#number').val(),
+        'rent_duration': $('#rent_duration').val()
     });
     // console.log(cart)
     window.cart = cart;
@@ -725,7 +766,8 @@
             "cart": cart
         },
         success: function(data, status, xhr) {
-
+            // alert(data.status);
+            alertMessages(data.status)
         }
     });
     updateCartButton();
@@ -744,6 +786,20 @@
 
         $('#items-in-cart').html(count);
     }
+    function timeout(){
+        window.setTimeout(function() {
+        $(".alertCartR").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 2000);
+    }
+    function alertMessages(messages){
+        $('#alertCart').append(
+            '<div class="alert alert-success alert-dismissible fade show alertCartR" role="alert" id="#alertCartR"><strong>'+ messages +' </strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></div>'
+        )
+        timeout();
+    }
+   
 </script>
 
 

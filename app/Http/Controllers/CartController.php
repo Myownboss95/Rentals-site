@@ -23,7 +23,7 @@ class CartController extends Controller
         session()->put('cart', $request->post('cart'));
 
         return response()->json([
-            'status' => 'added'
+            'status' => 'Added to Cart'
         ]);
     }
 }

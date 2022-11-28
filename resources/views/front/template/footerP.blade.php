@@ -81,6 +81,13 @@
               <span class="slider round"></span>
           </label>
       </div>
+      <script>
+        window.setTimeout(function() {
+        $(".alert").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove(); 
+        });
+    }, 2000);
+    </script>
 
       <!-- Links of JS files -->
       {{-- <script src="{{asset('front/js/jquery.min.js')}}"></script> --}}
