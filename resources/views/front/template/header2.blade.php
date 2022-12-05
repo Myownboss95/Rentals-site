@@ -67,84 +67,25 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item"><a href="{{url('/')}}" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
-
-                                        <li class="nav-item"><a href="index-2.html" class="nav-link active">Loan Providers</a></li>
-
-                                        <li class="nav-item"><a href="index-3.html" class="nav-link">Digital Banking</a></li>
-
-                                        <li class="nav-item"><a href="index-4.html" class="nav-link">Financial Service Provider</a></li>
-
-                                        <li class="nav-item"><a href="index-5.html" class="nav-link">Bankers & Entrepreneurs</a></li>
-
-                                        <li class="nav-item"><a href="index-6.html" class="nav-link">Social Finance Agency</a></li>
-
-                                        <li class="nav-item"><a href="index-7.html" class="nav-link">Currency Transfer Provider</a></li>
-                                    </ul>
+                                   
                                 </li>
 
                                 <li class="nav-item"><a href="{{ url('/shop') }}" class="nav-link">Rent Now</a></li>
 
-                                <li class="nav-item"><a href="#" class="nav-link">Features <i class="fas fa-chevron-down"></i></a>
+                                <li class="nav-item"><a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
-
-                                        <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="#" class="nav-link">About Us</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item"><a href="about.html" class="nav-link">About Style One</a></li>
-
-                                                <li class="nav-item"><a href="about-two.html" class="nav-link">About Style Two</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a href="#" class="nav-link">Features</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
-        
-                                                <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
-
+                                        @if ($categories)
+                                        @foreach ($categories as $category)
+                                        <li class="nav-item"><a href="{{ route('shop.index', ['category' => $category->slug]) }}" class="nav-link">
+                                           {{ $category->name }}</a></li>     
+                                        @endforeach    
+                                        @endif
                                         
-
-                                        <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
-
-                                        <li class="nav-item"><a href="{{ url('/register') }}" class="nav-link">Register</a></li>
-
-                                        <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error</a></li>
-
-                                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-
-                                        <li class="nav-item"><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-
-                                        <li class="nav-item"><a href="personal.html" class="nav-link">Personal</a></li>
-
-                                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
-
-                                        <li class="nav-item"><a href="contact-two.html" class="nav-link">Contact Style Two</a></li>
-                                    </ul>
+                                       
+                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="blog-1.html" class="nav-link">Blog Grid</a></li>
-
-                                        <li class="nav-item"><a href="blog-2.html" class="nav-link">Blog Right Sidebar</a></li>
-
-                                        <li class="nav-item"><a href="single-blog.html" class="nav-link">Blog Details</a></li>
-                                    </ul>
-                                </li>
+                               
 
                                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                             </ul>

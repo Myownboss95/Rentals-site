@@ -139,17 +139,7 @@
                                     </ul>
                                 </li>
 
-                                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-
-                                <li class="nav-item"><a href="#" class="nav-link">Blog <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="blog-1.html" class="nav-link">Blog Grid</a></li>
-
-                                        <li class="nav-item"><a href="blog-2.html" class="nav-link">Blog Right Sidebar</a></li>
-
-                                        <li class="nav-item"><a href="single-blog.html" class="nav-link">Blog Details</a></li>
-                                    </ul>
-                                </li>
+                              
 
                                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                             </ul>
