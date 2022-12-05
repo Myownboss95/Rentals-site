@@ -66,8 +66,8 @@
 
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
-                                <li class="nav-item"><a href="#" class="nav-link active">Home <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
+                                <li class="nav-item"><a href="#" class="nav-link active">Home </a>
+                                    {{-- <ul class="dropdown-menu">
                                         <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
 
                                         <li class="nav-item"><a href="index-2.html" class="nav-link active">Loan Providers</a></li>
@@ -81,17 +81,22 @@
                                         <li class="nav-item"><a href="index-6.html" class="nav-link">Social Finance Agency</a></li>
 
                                         <li class="nav-item"><a href="index-7.html" class="nav-link">Currency Transfer Provider</a></li>
-                                    </ul>
+                                    </ul> --}}
                                 </li>
 
                                 <li class="nav-item"><a href="{{ url('/shop') }}" class="nav-link">Rent Now</a></li>
 
-                                <li class="nav-item"><a href="#" class="nav-link">Features <i class="fas fa-chevron-down"></i></a>
+                                <li class="nav-item"><a href="#" class="nav-link">Categories <i class="fas fa-chevron-down"></i></a>
                                     <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
-
-                                        <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
-                                    </ul>
+                                        @if ($categories)
+                                        @foreach ($categories as $category)
+                                        <li class="nav-item"><a href="{{ route('shop.index', ['category' => $category->slug]) }}" class="nav-link">
+                                           {{ $category->name }}</a></li>     
+                                        @endforeach    
+                                        @endif
+                                        
+                                       
+                                     </ul>
                                 </li>
 
                                 <li class="nav-item"><a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>

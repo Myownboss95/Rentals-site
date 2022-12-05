@@ -462,7 +462,7 @@
                             <div class="_p-qty">
                                 <span>Add Quantity</span>
                                 <div class="value-button decrease_" id="" value="Decrease Value">-</div>
-                                <input type="number" name="qty" id="number" value="1" />
+                                <input type="number" name="quantity" id="number" value="1" />
                                 <div class="value-button increase_" id="" value="Increase Value">+</div>
                             </div>
                         </div>
@@ -753,12 +753,12 @@
         'slug': $(this).data('slug'),
         'image': $(this).data('image'),
         'category': $(this).data('category'),
-        'qty': $('#number').val(),
+        'quantity': $('#number').val(),
         'rent_duration': $('#rent_duration').val()
     });
     // console.log(cart)
     window.cart = cart;
-    // console.log(cart)
+    
     $.ajax('/store/add-to-cart', {
         type: 'POST',
         data: {
@@ -767,7 +767,8 @@
         },
         success: function(data, status, xhr) {
             // alert(data.status);
-            alertMessages(data.status)
+            // console.log(cart)
+            alertMessages(data.cart)
         }
     });
     updateCartButton();

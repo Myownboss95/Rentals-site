@@ -18,7 +18,8 @@ class ShopController extends Controller
         $pagination = 5;
         if(request()->category) {
             $category = Category::where('slug', request()->category)->get()->first();
-            $products = Product::where('category_id', $category->id);
+            // $products = Product::where('category_id', $category->id);
+            $products = $category->products();
             $categoryName = $category->name;
         }
         //  else if(request()->tag) {
@@ -84,6 +85,15 @@ class ShopController extends Controller
             'cart' => $cart
         ]);
     }
+
+    // public function showCategory(){
+    //     $category = Category::where('slug', request()->category)->get()->first();
+    //     $products = $category->products();
+    //     dd($products);
+    //     return view('front.categories')->with([
+    //         'products' => $products
+    //     ]);
+    // }
     public function search(Request $request){
             // return $request->input();
             $products = Product::where('name', 'like','%'.$request->input('item').'%')->orWhere('details', 'like','%'.$request->input('item').'%')

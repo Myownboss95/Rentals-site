@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\Settings;
 use Illuminate\Http\Request;
@@ -17,8 +18,9 @@ class FrontendController extends Controller
     public function home()
     {
         $setting = Settings::first();
+        $categories = Category::paginate();
         $products = Product::latest()->where('rent_status', 1)->where('featured', 1)->with('category')->limit(6)->get();
-        return view("$this->theme.home", compact('setting', 'products'));
+        return view("$this->theme.home", compact('setting', 'products', 'categories'));
     }
 
     public function about()

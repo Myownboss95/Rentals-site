@@ -76,6 +76,7 @@ Route::get('/ref/{token}', [ReferralController::class, 'check']);
 
 Route::match(['get', 'post'], 'set-locale/{locale}', [LocaleController::class, 'setLocale'])->name('set-locale');
 
+// Route::get('/categories/{slug}', ShopController::class, 'showCategory')->name('category.show');
 Route::controller(ShopController::class)->group(function () {
     Route::get('/shop/{slug}', "show")->name('shop.show');
     Route::get('/shop', "index")->name('shop.index');
