@@ -99,45 +99,7 @@
                                      </ul>
                                 </li>
 
-                                <li class="nav-item"><a href="#" class="nav-link">Pages <i class="fas fa-chevron-down"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="#" class="nav-link">About Us</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item"><a href="about.html" class="nav-link">About Style One</a></li>
-
-                                                <li class="nav-item"><a href="about-two.html" class="nav-link">About Style Two</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a href="#" class="nav-link">Features</a>
-                                            <ul class="dropdown-menu">
-                                                <li class="nav-item"><a href="features-1.html" class="nav-link">Features Style One</a></li>
-        
-                                                <li class="nav-item"><a href="features-2.html" class="nav-link">Features Style Two</a></li>
-                                            </ul>
-                                        </li>
-
-                                        <li class="nav-item"><a href="team.html" class="nav-link">Team</a></li>
-
-                                        
-
-                                        <li class="nav-item"><a href="{{ url('/login') }}" class="nav-link">Login</a></li>
-
-                                        <li class="nav-item"><a href="{{ url('/register') }}" class="nav-link">Register</a></li>
-
-                                        <li class="nav-item"><a href="error-404.html" class="nav-link">404 Error</a></li>
-
-                                        <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-
-                                        <li class="nav-item"><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-
-                                        <li class="nav-item"><a href="personal.html" class="nav-link">Personal</a></li>
-
-                                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
-
-                                        <li class="nav-item"><a href="contact-two.html" class="nav-link">Contact Style Two</a></li>
-                                    </ul>
-                                </li>
+                               
 
                               
 
