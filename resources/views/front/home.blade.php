@@ -141,8 +141,7 @@
         <div class="section-title">
             <h2>How It Works</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+            <p>This is 232 rentals where you login and register to rent.</p>
         </div>
 
         <div class="row">
