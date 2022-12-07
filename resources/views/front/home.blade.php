@@ -84,7 +84,7 @@
                             <i class="flaticon-piggy-bank"></i>
                         </div>
 
-                        <h3>Transparent Pricing</h3>
+                        <h3>Transparent Rentals</h3>
                         <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
 
                         <a href="features-1.html" class="read-more-btn">Read More</a>
