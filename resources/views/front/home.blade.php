@@ -8,8 +8,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6 col-md-12">
                         <div class="banner-content">
-                            <h1>Easy, Rentals for entrepreneurs</h1>
-                            <p>Get the tools for business, events, parties, etc</p>
+                            <h1>Easy, Rentals Services for Everyone</h1>
+                            <p>Get the right tools and services to rent</p>
                             <a href="#" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                         </div>
 
                         <h3>Transparent Pricing</h3>
-                        <p>Lorem ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan.</p>
+                        <p>We offer transparent pricing in all our items and services.Rental prices are cheap and quite affordable.</p>
 
                         <a href="features-1.html" class="read-more-btn">Read More</a>
                     </div>
@@ -142,7 +142,7 @@
         <div class="section-title">
             <h2>How It Works</h2>
             <div class="bar"></div>
-            <p>This is 232 rentals where you login and register to rent.</p>
+            <p>You register an account. Login with your details to rent or purchase items.</p>
         </div>
 
         <div class="row">
@@ -150,9 +150,8 @@
                 <div class="single-how-it-works">
                     <img src="{{ asset('front/img/how-it-works-image/1.png') }}" alt="image">
 
-                    <h3>1. Register for free</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
-                        aliqua.</p>
+                    <h3>1. Register </h3>
+                    <p> Register an account with us for free. </p>
                 </div>
             </div>
 
@@ -160,9 +159,8 @@
                 <div class="single-how-it-works">
                     <img src="{{ asset('front/img/how-it-works-image/2.png') }}" alt="image">
 
-                    <h3>2. Choose an item to rent</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
-                        aliqua.</p>
+                    <h3>2. Choose an item to rent or buy</h3>
+                    <p> After registration, choose an item to rent or buy. Our rates are very affordable</p>
                 </div>
             </div>
 
@@ -191,8 +189,7 @@
                     <img src="{{ asset('front/img/how-it-works-image/5.png') }}" alt="image">
 
                     <h3>5. Pay</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
-                        aliqua.</p>
+                    <p>Pay using Paystack or Peer to Peer Crypto Exchange transaction.</p>
                 </div>
             </div>
 
@@ -201,8 +198,7 @@
                     <img src="{{ asset('front/img/how-it-works-image/6.png') }}" alt="image">
 
                     <h3>6. That’s it. Return when due</h3>
-                    <p>Ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel adipiscing
-                        aliqua.</p>
+                    <p>Return at when due. Late payments attracts penalties.</p>
                 </div>
             </div>
         </div>
@@ -215,8 +211,7 @@
         <div class="section-title">
             <h2>Rentables</h2>
             <div class="bar"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.</p>
+            <p>Check our list and make your order.<br> Our rentables cut across different Categories, Real Estate, Equipments, Properties(both furnished and unfurnished) and Serviced Apartments.</p>
         </div>
 
         <div class="row">
@@ -260,27 +255,24 @@
             <div class="overview-content">
                 <div class="content left-content">
                     <span class="sub-title">Fast & Easy Online Rentals</span>
-                    <h2>Freelancers, entrepreneurs, and sole traders</h2>
+                    <h2>Entrepreneurs, Sole Proprietors and Traders</h2>
                     <div class="bar"></div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua.</p>
+                    <p>232rentals provide fast and easy rentals for your various needs in your businesses, suitable for Entrepreneurs, Sole Proprietors and Traders</p>
 
                     <ul class="features-list">
-                        <li><span><i class="flaticon-check-mark"></i> Free plan available</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Full data privacy compliance</span></li>
                         <li><span><i class="flaticon-check-mark"></i> 100% transparent costs</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Commitment-free</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Real-time spending overview</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Debit Mastercard included</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Crypto Peer to Peer included</span></li>
                     </ul>
 
-                    <a href="#" class="btn btn-primary">Apply Now</a>
+                    <a href="#" class="btn btn-success">Apply Now</a>
                 </div>
             </div>
 
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{ asset('front/img/4.jpg') }}" alt="image">
+                    <img src="{{ asset('front/img/istockphoto1.jpg') }}" alt="image">
                 </div>
             </div>
         </div>
@@ -304,22 +296,20 @@
 
             <div class="overview-content">
                 <div class="content">
-                    <span class="sub-title">Top Security</span>
+                    <span class="sub-title">Advantages</span>
                     <h2>Small- to medium-sized businesses</h2>
                     <div class="bar"></div>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</p>
+                    <p>Small- to medium-sized businesses can rent items instead of buying, which saves cost.</p>
 
                     <ul class="features-list">
-                        <li><span><i class="flaticon-check-mark"></i> Easy Set up</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Easy Registration</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Return within time</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> A powerful open API</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Coverage around the world</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Customer satisfaction</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Business without borders</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
+
                     </ul>
 
-                    <a href="#" class="btn btn-primary">Get Started</a>
+                    <a href="#" class="btn btn-success">Get Started</a>
                 </div>
             </div>
         </div>
@@ -334,27 +324,25 @@
             <div class="overview-content">
                 <div class="content left-content">
                     <span class="sub-title">Price Transparency</span>
-                    <h2>Large or enterprise level businesses</h2>
+                    <h2>Large or Enterprise level businesses</h2>
                     <div class="bar"></div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                         labore et dolore magna aliqua.</p>
 
                     <ul class="features-list">
-                        <li><span><i class="flaticon-check-mark"></i> Corporate Cards</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> International Payments</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Automated accounting</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Coverage around the Country</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Request Features</span></li>
                         <li><span><i class="flaticon-check-mark"></i> Premium Support</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Direct Debit</span></li>
+                        <li><span><i class="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
                     </ul>
 
-                    <a href="#" class="btn btn-primary">Create Account</a>
+                    <a href="#" class="btn btn-success">Create Account</a>
                 </div>
             </div>
 
             <div class="overview-image">
                 <div class="image">
-                    <img src="{{ asset('front/img/6.jpg') }}" alt="image">
+                    <img src="{{ asset('front/img/seanp.jpg') }}" alt="image">
                 </div>
             </div>
         </div>
@@ -363,38 +351,7 @@
 <!-- End Services Area -->
 
 <!-- Start Services Area -->
-<section class="services-area ptb-70 bg-f7fafd">
-    <div class="container-fluid p-0">
-        <div class="overview-box">
-            <div class="overview-image">
-                <div class="image">
-                    <img src="{{ asset('front/img/7.jpg') }}" alt="image">
-                </div>
-            </div>
 
-            <div class="overview-content">
-                <div class="content">
-                    <span class="sub-title">Automated Accounting</span>
-                    <h2>Save 24 hours per week on accounting</h2>
-                    <div class="bar"></div>
-                    <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, lorem ipsum dolor sit amet,
-                        consectetur adipiscing elit.</p>
-
-                    <ul class="features-list">
-                        <li><span><i class="flaticon-check-mark"></i> Easy transfers</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Deposit checks instantly</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> A powerful open API</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Coverage around the world</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Business without borders</span></li>
-                        <li><span><i class="flaticon-check-mark"></i> Affiliates and partnerships</span></li>
-                    </ul>
-
-                    <a href="#" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- End Services Area -->
 
 <!-- Start Comparisons Area -->
@@ -831,7 +788,7 @@
         <div class="ready-to-talk-content">
             <h3>Ready to talk?</h3>
             <p>Our team is here to answer your question about 232 Rentals</p>
-            <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            <a href="contact.html" class="btn btn-success class">Contact Us</a>
             <span><a href="#">Or, get started now with a free trial</a></span>
         </div>
     </div>
@@ -839,142 +796,7 @@
 <!-- End Ready To Talk Area -->
 
 <!-- Start Partner Area -->
-<div class="partner-area">
-    <div class="container">
 
-        <h3>More that 1.5 million people and organizations use 232 Rentals</h3>
-
-        <div class="partner-inner">
-            <div class="row align-items-center">
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-1.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover1.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-2.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover2.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-3.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover3.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-4.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover4.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-5.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover5.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-6.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover6.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-7.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover7.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-8.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover8.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-9.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover9.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-10.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover10.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-11.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover11.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-12.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover12.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-13.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover13.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-14.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover14.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-15.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover15.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-16.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover16.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-17.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover17.png') }}" alt="partner">
-                    </a>
-                </div>
-
-                <div class="col-lg-2 col-sm-4 col-md-3 col-6">
-                    <a href="#">
-                        <img src="{{ asset('front/img/partner-image/partner-18.png') }}" alt="partner">
-                        <img src="{{ asset('front/img/partner-image/partner-hover18.png') }}" alt="partner">
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 <!-- End Partner Area -->
 
 <!-- Start App Download Area -->
