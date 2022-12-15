@@ -15,12 +15,14 @@ class FrontendController extends Controller
     {
         $this->theme = config('app.theme', 'front');
     }
-    public function home()
+    public function home() 
     {
+        $cart = session()->get('cart');
+        if ($cart == null) $cart = [];
         $setting = Settings::first();
         $categories = Category::paginate();
         $products = Product::latest()->where('rent_status', 1)->where('featured', 1)->with('category')->limit(6)->get();
-        return view("$this->theme.home", compact('setting', 'products', 'categories'));
+        return view("$this->theme.home", compact('setting', 'products', 'categories','cart'));
     }
 
     public function about()
