@@ -1,4 +1,5 @@
 <!-- Start Footer Area -->
+@include('front.template.scripts')
 <footer class="footer-area">
     <div class="container">
         <div class="row">

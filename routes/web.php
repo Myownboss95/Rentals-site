@@ -84,11 +84,11 @@ Route::controller(ShopController::class)->group(function () {
     Route::get('/products/search', "search")->name('search');
 });
 
-Route::controller(CartController::class)->group(function () {
-    Route::get('/cart', "index")->name('cart.index');
-    Route::post('/store/add-to-cart', "addToCart")->name('cart.store');
+// Route::controller(CartController::class)->group(function () {
+//     Route::get('/cart', "index")->name('cart.index');
+//     Route::post('/store/add-to-cart', "addToCart")->name('cart.store');
    
-});
+// });
 Route::controller(FrontendController::class)->group(function () {
     $theme = config('app.theme', 'front2');
     Route::get('/', "home")->name('front.index');
@@ -97,3 +97,10 @@ Route::controller(FrontendController::class)->group(function () {
     Route::get('/terms-and-conditions', "terms_and_conditions");
     Route::get('/faqs', "faqs");
 });
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+
+Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.to.cart');
+
+Route::patch('/update-cart', [CartController::class, 'update'])->name('update.cart');
+
+Route::delete('/remove-from-cart', [CartController::class, 'remove'])->middleware('auth')->name('remove.from.cart');

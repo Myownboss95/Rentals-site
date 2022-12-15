@@ -54,6 +54,7 @@ class ShopController extends Controller
     public function show( $slug)
     {
         //
+        $categories = Category::all();
         $user = (Auth::check()==true)? User::find(auth()->user()->id): null;
 
         Paginator::useBootstrap();
@@ -78,6 +79,7 @@ class ShopController extends Controller
             $cart = [];
 
         return view('front.product')->with([
+            'categories'=>$categories,
             'product' => $product,
             'mightLike' => $mightLike,
             'images' => $images,

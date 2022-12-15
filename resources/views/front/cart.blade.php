@@ -1,4 +1,14 @@
 @include('front.template.header')
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+</script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-zoom/1.7.21/jquery.zoom.min.js">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"
+    integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous">
+</script>
+
 <section class="blog-area ptb-70 pt-0" style="margin-top: 200px">
     <div class="container">
         <div class="section-title">
@@ -24,19 +34,21 @@
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Rent Duration</div>
                                 </th>
+                                @if (Auth::check())
                                 <th scope="col" class="border-0 bg-light">
                                     <div class="py-2 text-uppercase">Remove</div>
                                 </th>
+                                @endif
                             </tr>
                         </thead>
                         <tbody>
                             <?php $total = 0; ?>
                             @foreach ($cart as $item)
-                                <?php
-                                $qty = $item['qty'] ?? 1;
+                                @php
+                                $qty = $item['quantity'] ?? 1;
                                 $cart_category = $item['category'] ?? 'test';
                                 $total += $item['rent_price'] * $qty;
-                                ?>
+                                @endphp
                                 <tr>
                                     <th scope="row" class="border-0">
                                         <div class="p-2">
@@ -58,8 +70,19 @@
                                     <td class="border-0 align-middle"><strong>{{ $qty }}</strong></td>
                                     <td class="border-0 align-middle"><strong>{{ $item['rent_duration'] }}</strong>
                                     </td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"><i
-                                                class="fa fa-trash"></i></a></td>
+                                    <td class="border-0 align-middle"><a href="#" class="text-dark"></a>
+                                            
+                                        @if (Auth::check())
+                                        <button class="btn btn-dark remove-from-cart" tabindex="0" type="button"
+                                        data-slug="{{ $item['slug'] }}"
+                                        data-quantity="{{ $qty }}">
+                                        <i
+                                        class="fa fa-trash"></i>
+                                    </button>
+                                        @endif        
+                                        
+
+                                            </td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -86,9 +109,9 @@
 
         </div>
     </div>
-    @php
-        // Session::flush('cart');
-    @endphp
+    {{-- @php
+        Session::flush('cart');
+    @endphp --}}
 </section>
 
-@include('front.template.footer')
+@include('front.template.footerP')

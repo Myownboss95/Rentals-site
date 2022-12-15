@@ -49,6 +49,16 @@ class CreateNewUser implements CreatesNewUsers
             ]);
             }
         } 
+
+        $cart = session()->get('cart', []);
+
+         if (isset($cart)) {
+           foreach ($cart as $carts) {
+              $user->userCart()->create($carts);
+             }
+             $user->refresh();
+             }
+
         event(new CreateUserAccounts($user));
         return $user;
     }

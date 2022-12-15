@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Events\CreateUserAccounts as EventsCreateUserAccounts;
 use App\Listeners\CreateUserAccounts;
+use App\Listeners\LoginCart;
+use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Events\Verified;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -18,11 +20,16 @@ class EventServiceProvider extends ServiceProvider
      * @var array<class-string, array<int, class-string>>
      */
     protected $listen = [
-        // Registered::class => [
-        //     SendEmailVerificationNotification::class,
-        // ],
+        Registered::class => [
+            // SendEmailVerificationNotification::class,
+            LoginCart::class
+
+        ],
         EventsCreateUserAccounts::class => [
             CreateUserAccounts::class
+        ],
+        Login::class => [
+            LoginCart::class
         ]
     ];
 
