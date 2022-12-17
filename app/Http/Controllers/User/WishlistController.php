@@ -72,7 +72,7 @@ class WishlistController extends Controller
 
         
         
-    }
+    } 
 
     /**
      * Display the specified resource.
