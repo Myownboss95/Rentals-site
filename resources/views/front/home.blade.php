@@ -1,80 +1,12 @@
-@include('front.template.header')
+{{-- @include('front.template.header') --}}
+@extends('front.layouts.app')
 
-<!-- Start Main Banner Area -->
-<div class="main-banner-section jarallax" data-jarallax='{"speed": 0.3}'>
-    <div class="d-table">
-        <div class="d-table-cell">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 col-md-12">
-                        <div class="banner-content">
-                            <h1>Easy, Rentals for entrepreneurs</h1>
-                            <p>Get the tools for business, events, parties, etc</p>
-                            <a href="#" class="btn btn-primary">Learn More</a>
-                        </div>
-                    </div>
+@section('content')
 
-                    <div class="col-lg-6 col-md-12">
-                        <div class="money-transfer-form">
-                            <form>
-                                <div class="form-group">
-                                    <label>You Are Looking For</label>
-                                    <div class="money-transfer-field">
-                                        <input type="text" class="form-control" autocomplete="off" value="1">
 
-                                        <div class="amount-currency-select">
-                                            <select>
-                                                <option>Cars</option>
-                                                <option>Houses</option>
-                                                <option>Boats</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="currency-info">
-                                    <div class="bar"></div>
-                                    <span><strong>800.3</strong> Exchange Rate</span>
-
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Within the Range of</label>
-                                    <div class="money-transfer-field">
-                                        <input type="text" class="form-control" autocomplete="off" value="1,000">
-
-                                        <div class="amount-currency-select">
-                                            <select>
-                                                <option>USD</option>
-                                                <option>EUR</option>
-                                                <option>GBP</option>
-                                                <option>BRL</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- <div class="money-transfer-info">
-                                    <span>You could save vs banks <strong>1,010.32 USD</strong></span>
-                                </div> -->
-
-                                <button type="submit" class="btn btn-primary">Get Started</button>
-
-                                <div class="terms-info">
-                                    <p>By clicking continue, I am agree with <a href="#">Terms & Policy</a></p>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Main Banner Area -->
 
 <!-- Start Featured Boxes Area -->
-<section class="featured-boxes-area">
+<section class="featured-boxes-area" style="margin-top:-24px;">
     <div class="container">
         <div class="featured-boxes-inner">
             <div class="row m-0">
@@ -1043,5 +975,5 @@
 </section>
 <!-- End Account Create Area -->
 
-
-@include('front.template.footer')
+@stop
+{{-- @include('front.template.footer') --}}

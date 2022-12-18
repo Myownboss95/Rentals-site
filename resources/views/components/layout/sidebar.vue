@@ -68,7 +68,7 @@
           />  -->
           <li class="menu-title">Transactions</li>
           <SidebarItem
-            :name="`${is_admin ? 'All Stakes' : 'My Stakes'}`"
+            :name="`${is_admin ? 'All Crypto Deposits' : 'My Crypto Deposits'}`"
             :url="route(`${is_admin ? 'admin' : 'user'}.deposits.index`)"
             icon="credit-card"
           />
@@ -100,7 +100,7 @@
           />
           
           <SidebarItem
-            name="Add Coins"
+            name="Add Payment Methods"
             :url="route('admin.payment-method.index')"
             icon="plus-square"
             v-if="is_admin"

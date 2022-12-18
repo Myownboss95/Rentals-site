@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
         <!-- Links of CSS files -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
         <link rel="stylesheet" href="{{asset('front/css/bootstrap.min.css')}}">
         <link rel="stylesheet" href="{{asset('front/css/animate.min.css')}}">
         <link rel="stylesheet" href="{{asset('front/css/fontawesome.min.css')}}">
@@ -107,8 +108,16 @@
                             </ul>
 
                             <div class="others-options">
+                                @if (Auth::check())
+                                <a href="{{ route('login') }}" class="login-btn"><i class="bi bi-easel2-fill"></i> Dashboard</a>
+                                <form method="POST" action="{{ route('logout') }}" style="display:inline">
+                                    @csrf
+                                    <button class="btn btn-danger btn-xs p-2" title="Log Out" type="submit"><i class="bi bi-power"></i></button>
+                                </form>
+                                @else
                                 <a href="{{ url('/login') }}" class="login-btn"><i class="flaticon-user"></i> Log In</a>
                                 <a href="{{ url('/register') }}" class="login-btn"><i class="flaticon-user"></i> Register</a>
+                                @endif
                             
                             </div>
                         </div>
