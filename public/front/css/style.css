@@ -1,3 +1,4 @@
+
 /*
 @File: Luvion Template Styles
 
@@ -965,7 +966,7 @@ Navbar Area CSS
 
 .luvion-responsive-nav .mean-container a.meanmenu-reveal span {
   top: 8px;
-  height: 4px;
+  height: 14px;
   margin-top: -6px;
   position: relative;
 }
@@ -993,10 +994,14 @@ Navbar Area CSS
             box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
   }
   .luvion-responsive-nav .mean-container a.meanmenu-reveal {
-    color: #ffffff;
+    color: #bb0f0f;
   }
   .luvion-responsive-nav .mean-container a.meanmenu-reveal span {
+    background: #840f0f;
+  }
+  .luvion-responsive-nav .mean-container a.meanmenu-reveal span:nth-child(2) {
     background: #ffffff;
+    height: 10px;
   }
   .luvion-responsive-nav .logo {
     position: relative;
@@ -1073,7 +1078,7 @@ Navbar Area CSS
   .navbar-area.navbar-style-two .luvion-responsive-nav .others-options .login-btn:hover {
     color: #ee0979;
   }
-  .luvion-nav {
+  .luvion-nav { 
     display: none;
   }
 }

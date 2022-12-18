@@ -41,7 +41,7 @@
 			
 			<!-- REVOLUTION STYLE SHEETS -->
 			<link rel="stylesheet" type="text/css" href="{{asset('front/css/rs6.css')}}">
-            <script>
+             <script>
                 window.RS_MODULES = window.RS_MODULES || {};
                 window.RS_MODULES.modules = window.RS_MODULES.modules || {};
                 window.RS_MODULES.waiting = window.RS_MODULES.waiting || [];
@@ -120,7 +120,10 @@
             </div>
         </div>
         <!-- End Preloader -->
-
+        <link rel="stylesheet" href="{{asset('front/css/style.css')}}">
+        <script src="{{ asset('front/js/meanmenu.js') }}"></script>
+        <link rel="stylesheet" href="{{asset('front/css/meanmenu.css')}}">
+           
         <!-- Start Navbar Area -->
         <div class="navbar-area">
             <div class="luvion-responsive-nav">
@@ -147,21 +150,7 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav">
                                 <li class="nav-item"><a href="#" class="nav-link active">Home </a>
-                                    {{-- <ul class="dropdown-menu">
-                                        <li class="nav-item"><a href="index.html" class="nav-link">Banking & Payment Processing</a></li>
-
-                                        <li class="nav-item"><a href="index-2.html" class="nav-link active">Loan Providers</a></li>
-
-                                        <li class="nav-item"><a href="index-3.html" class="nav-link">Digital Banking</a></li>
-
-                                        <li class="nav-item"><a href="index-4.html" class="nav-link">Financial Service Provider</a></li>
-
-                                        <li class="nav-item"><a href="index-5.html" class="nav-link">Bankers & Entrepreneurs</a></li>
-
-                                        <li class="nav-item"><a href="index-6.html" class="nav-link">Social Finance Agency</a></li>
-
-                                        <li class="nav-item"><a href="index-7.html" class="nav-link">Currency Transfer Provider</a></li>
-                                    </ul> --}}
+                                   
                                 </li>
 
                                 <li class="nav-item"><a href="{{ url('/shop') }}" class="nav-link">Rent Now</a></li>
