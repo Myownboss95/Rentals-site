@@ -229,10 +229,6 @@ const props = defineProps({
   withdrawals: Object,
   deposits_count: Number,
   deposits: Object,
-  num_buyTrades: Number,
-  buyTrades: Object,
-  num_sellTrades: Number,
-  sellTrades: Object,
 });
 onMounted(() => {
   // console.log(props.num_users);
@@ -245,10 +241,6 @@ const withdrawals_count = computed(() => props.withdrawals_count);
 const withdrawals = computed(() => props.withdrawals);
 const deposits_count = computed(() => props.deposits_count);
 const deposits = computed(() => props.deposits);
-const num_buyTrades = computed(() => props.num_buyTrades);
-const buyTrades = computed(() => props.buyTrades);
-const num_sellTrades = computed(() => props.num_sellTrades);
-const sellTrades = computed(() => props.sellTrades);
 </script>
 
 

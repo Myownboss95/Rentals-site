@@ -38,13 +38,7 @@
             v-model="form.wallet"
             class="mt-3"
           />
-          <FormGroup
-            name="roi"
-            placeholder="ROI"
-            label="Rewards"
-            v-model="form.roi"
-            class="mt-3"
-          />
+          
           <div class="mt-3 mb-3">
           <label >Coin Logo</label>
           <input class="form-control" type="file" @input="form.svg = $event.target.files[0]" />
@@ -88,7 +82,6 @@ import { error } from '@/js/toast';
     wallet:'',
     price: '',
     symbol: '',
-    roi: '',
   });
   
   watch(()=> form.symbol, (symbol)=>{

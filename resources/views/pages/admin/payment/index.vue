@@ -15,7 +15,6 @@
                   <tr>
                       <th>Name</th>
                       <th>Symbol</th>
-                      <th>ROI</th>
                       <th>Enabled</th>
                       <th>Date</th>
 
@@ -28,7 +27,6 @@
                       <td>{{payments.name}}</td>
                       
                       <td>{{payments.symbol}}</td>
-                      <td>{{payments.roi}}%</td>
                       <td>{{(payments.status == 1)? 'Yes': 'No'}}</td>
                       <td>{{new Date(payments.created_at).toDateString()}}</td>
                       <td>

@@ -21,13 +21,7 @@
             v-model="form.symbol"
             class="mt-3"
           />
-          <FormGroup
-            name="roi"
-            placeholder="ROI"
-            label="Rewards"
-            v-model="form.roi"
-            class="mt-3"
-          />
+          
 
           <FormSelect
             id="demo"
@@ -100,7 +94,6 @@ const props = defineProps(['payment']);
     image:props.payment?.image,
     logo:props.payment?.logo,
     svg:props.payment?.svg,
-    roi:props.payment?.roi,
   });
 
   let photo = ref(null);

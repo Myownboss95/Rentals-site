@@ -37,25 +37,15 @@ class DashboardController extends Controller
 
         $trade_profits = $user->trades()->where('status', 'active')->sum('returns');
         //all the coins
-        $payment_methods = Account::latest()->where('status', 1)->where('user_id', auth()->user()->id)->get();
-
+       
 
  
         return inertia('user.index', [
             'userMainBalance' => $userMainBalance,
-            'userRefBalance' => $userRefBalance,
-            'userInvestedBalance' => $userInvestedBalance,
-            'withdrawals' => $withdrawals,
-            'withdrawals_count' => $num_withdrawals,
+            
             'deposits' => $deposits,
             'deposits_count' => $num_deposits,
-            'buyTrades' => $buyTrades,
-            'num_buyTrades' => $num_buyTrades,
-            'sellTrades' => $sellTrades,
-            'num_sellTrades' => $num_sellTrades,
-            'trade_profits' => $trade_profits,
-            'payment_methods' => $payment_methods,
-            'active_trades' => $user->trades()->where('status', 'active')->count()
+            
         ]);
     }
 }

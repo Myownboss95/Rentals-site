@@ -78,36 +78,29 @@ class User extends Authenticatable implements MustVerifyEmail
         $account = $this->accounts()->where('type', $type)->first();
         return (float) $account?->account ?? 0;
     }
-
     public function generateAccounts()
     {
-        $coins = [];
-        PaymentMethod::whereStatus(1)->get()->map(function ($method) use (&$coins) {
-            $coins[] = [
-                'account' => 0, 'symbol' => strtolower($method->symbol), 'type' => strtolower($method->name),
-                'svg' => strtolower($method->svg),
-                'coin_id' => strtolower($method->id),
-                'status' => strtolower($method->status)
-            ];
-        });
-        // dd($coins);
-        $this->accounts()->createMany($coins);
-        //     [
-        //     [
-        //         'account' => 0,
-        //         'type' => 'main',
-        //     ],
-        //     [
-        //         'account' => 0,
-        //         'type' => 'invested',
-        //     ],
-        //     [
-        //         'account' => 0,
-        //         'type' => 'referral',
-        //     ],
-        // ]
-        // );
+        $this->accounts()->createMany([
+            [
+                'account' => 0,
+                'type' => 'main',
+            ]
+        ]);
     }
+    // public function generateAccounts()
+    // {
+    //     $coins = [];
+    //     PaymentMethod::whereStatus(1)->get()->map(function ($method) use (&$coins) {
+    //         $coins[] = [
+    //             'account' => 0, 'symbol' => strtolower($method->symbol), 'type' => strtolower($method->name),
+    //             'svg' => strtolower($method->svg),
+    //             'coin_id' => strtolower($method->id),
+    //             'status' => strtolower($method->status)
+    //         ];
+    //     });
+    //     $this->accounts()->createMany($coins);
+        
+    // }
 
     public function subscriptions()
     {

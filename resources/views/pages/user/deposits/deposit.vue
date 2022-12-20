@@ -2,23 +2,23 @@
   <Head title="Deposit" />
   <breadcrumb title="Deposit" :crumbs="['Dashboard', 'Deposits', 'Deposit']" />
 
-  <div class="card shadow-lg radius-20 col-lg-9 mx-auto">
+  <div class="card shadow-lg radius-20 col-lg-7 mx-auto">
     <div class="card-body">
       <div class="row align-items-center py-3">
         <div class="col-md-6 border-end">
-          <div class="row"> 
+          <div class="row">
             <div
               class="col-6 text-center my-2"
               v-for="(method, key) in props.payment_methods"
               :class="{ selected: form.method_id == method.id }"
-              @click="selectMethod(method.id, method.name, method.symbol)"
+              @click="selectMethod(method.id)"
             >
               <div class="border p-4 w-100">
                 <img :src="`/storage/payment_methods/${method.svg}`" alt="" class="img-fluid" style="width:100px;height:100px;"/>
+                
                 <h6>{{ method.name }}</h6>
-                <!-- <h6>{{ price }}</h6> -->
               </div>
-            </div> 
+            </div>
             <div class="col-12">
               <FormGroup
                 :disabled="disableElements"
@@ -27,9 +27,6 @@
                 v-model="form.amount"
                 class="mt-2"
               />
-              <h3 v-if="form.name != ''">
-               Amount in USD: {{format_money(price[form.name.toLowerCase()]['usd'] * form.amount)}}
-              </h3>
               <!-- label="Amount" -->
               <FormButton
                 :disabled="disableElements"
@@ -46,25 +43,25 @@
           <div class="px-3">
             <div class="" v-if="!props.validated">
                 <h4>Instructions:</h4>
-                <ol>
-                    <li>Click on any of the Coins</li>
+                <ul>
+                    <li>Select a Deposit method.</li>
                     <li>Enter Amount to deposit.</li>
                     <li>Click on continue.</li>
                     <li>Scan or copy the wallet address.</li>
                     <li>Transfer the amount to the wallet address you scanned or copied.</li>
                     <li>Upload the proof of payment.</li>
                     <li>And finally click on complete deposit.</li>
-                </ol>
+                </ul>
             </div>
             <div class="text-center" v-else>
               <div class="placeholder">
-                <img :src="`/storage/payment_methods/${method.image}`" alt="" class="w-100 img-fluid"/>
+                <img :src="`/storage/payment_methods/${method.image}`" alt="" />
               </div>
               <strong class="font-size-16 my-1">{{method.wallet}} <span class="ml-2" @click="copy(method.wallet)"><i class="fa fa-copy"></i></span></strong>
               <p class="mt-3">
                 Copy the wallet address or scan the Qrcode above and send the
                 equivalent of
-                <strong>{{ parseFloat(form.amount) }}{{ method.symbol }} or  {{format_money(parseFloat(price[form.name.toLowerCase()]['usd'] * form.amount))}}</strong> worth of
+                <strong>{{ format_money(parseFloat(form.amount)) }}</strong> of
                 <strong>{{ method.name }}</strong> to the wallet address.
               </p>
               <p>After payment, upload your proof of payment.</p>
@@ -100,15 +97,9 @@
   import FormButton from '@/views/components/form/FormButton.vue';
   import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
   import Error from '@/views/components/alerts/error.vue';
-  import axios from 'axios';
   import { ref, watch, computed, reactive } from 'vue';
 import { info } from '@/js/toast';
 import { copy } from '@/js/functions';
-
-const getCoinUsdPrice = (coin, response) => {
-  // coin = coin.toLowerCase();
-  return response[coin.toLowerCase()].usd
-}
 
   const props = defineProps({
     payment_methods: Array,
@@ -127,38 +118,13 @@ const getCoinUsdPrice = (coin, response) => {
     amount: '',
     pay_with: 'main',
     proof: '',
-    name: '',
-    symbol: '',
   });
 
   const method = ref({});
-  var price = ref({});
-  const priceDollar = ()=>{
-    
-  }
-  const selectMethod = (id, name, symbol) => {
 
+  const selectMethod = (id) => {
     if (!props.validated) {
-     
       form.method_id = id;
-      form.name = name;
-      form.symbol = symbol;
-      console.log(form)
-      const reqPrice = form.name
-      axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${form.name}&vs_currencies=usd`)
-        .then(response => {
-            if (response.status == 200) {
-                 price.value = response.data;
-                // console.log(reqPrice)
-                console.log(price)
-            } else {
-                throw Error();
-            }
-        })
-        .catch( error => {
-            // error('Failed to load states, please refresh this page');
-            console.log(error)
-        })
     } else {
       info('You cannot change method now. Refresh page.');
     }
@@ -171,8 +137,6 @@ const getCoinUsdPrice = (coin, response) => {
       method.value = m[0];
     }
   );
-    
-
 
   const disableElements = computed(() => form.method_id == '' || props.validated);
 
@@ -188,7 +152,6 @@ const getCoinUsdPrice = (coin, response) => {
 <style>
   .selected div {
     border-color: #5156be !important;
-    border: 3px solid ;
   }
 
   .placeholder {

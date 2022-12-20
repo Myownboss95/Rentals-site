@@ -19,13 +19,13 @@ class DepositController extends Controller
         return inertia('admin.deposits.index', [
             'deposits' => $deposits->paginate(),
         ]);
-    } 
+    }
 
     public function approve($id)
     {
         $transaction = Transaction::findOrFail($id)?->load('user');
         $user = $transaction->user;
-        $account = $user->accounts()->where('symbol', $transaction->symbol)->first();
+        $account = $user->accounts()->where('type', 'main')->first();
         $account->account += $transaction->amount;
         $transaction->status = 'successful';
         $transaction->save();
@@ -39,12 +39,12 @@ class DepositController extends Controller
     {
         $transaction = Transaction::findOrFail($id)?->load('user');
         $user = $transaction->user;
-        $account = $user->accounts()->where('symbol', $transaction->symbol)->first();
+        $account = $user->accounts()->where('type', 'main')->first();
         $transaction->status = 'failed';
         $transaction->save();
         $account->save();
         Mail::to($user)->send(new Declined($user, $transaction));
-        session()->flash('warning', 'Deposit declined');
+        session()->flash('success', 'Deposit approved');
         return back();
     }
 }

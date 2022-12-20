@@ -72,12 +72,7 @@
             :url="route(`${is_admin ? 'admin' : 'user'}.deposits.index`)"
             icon="credit-card"
           />
-          <SidebarItem
-            name="Withdrawals"
-            :url="route(`${is_admin ? 'admin' : 'user'}.withdrawals.index`)"
-            icon="dollar-sign"
-          />
-
+         
           <li class="menu-title" v-if="is_admin">Communication</li>
           <SidebarItem
             name="Send Email"
@@ -100,7 +95,7 @@
           />
           
           <SidebarItem
-            name="Add Payment Methods"
+            name="Payment Methods"
             :url="route('admin.payment-method.index')"
             icon="plus-square"
             v-if="is_admin"

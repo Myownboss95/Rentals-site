@@ -54,7 +54,6 @@ class PaymentMethodController extends Controller
             'status' => ['required'],
             'wallet' => ['required', 'string'],
             'symbol' => ['required', 'string'],
-            'roi' => ['required', 'numeric'],
             'image' => ['required','mimes:png,jpg,jpeg'],
             'svg' => ['required','mimes:png,jpg,jpeg']
         ]);
@@ -136,7 +135,6 @@ class PaymentMethodController extends Controller
             'status' => ['required'],
             'wallet' => ['required', 'string'],
             'symbol' => ['required', 'string'],
-            'roi' => ['required', 'numeric'],
          ]);
 
         $file = $this->uploadFile($request);
