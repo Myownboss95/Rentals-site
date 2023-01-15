@@ -25,7 +25,8 @@ use App\Models\User;
 */
 
 Route::middleware('onboarded')->group(function () {
-    Route::get('/', DashboardController::class)->name('index');
+    Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/my-orders', [DashboardController::class, 'my_orders'])->name('orders');
     Route::post('deposits/validate', [DepositController::class, 'validateDeposit'])->name('deposits.validate');
     Route::resource('deposits', DepositController::class)->except('show');
     Route::get('/profile/view',[ProfileController::class, 'index'])->name('profile.view');

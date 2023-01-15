@@ -14,7 +14,7 @@ use App\Models\Product;
 
 class DashboardController extends Controller
 {
-    public function __invoke()
+    public function index()
     {
         //return main account balance
         $user = User::findOrFail(auth()->user()->id);
@@ -25,7 +25,7 @@ class DashboardController extends Controller
         // {
         //     return $query->with('products')->get();
         // })->get();
-        $user_orders = $user->orders()->with('order_items.products')->get();
+        $user_orders = $user->orders()->with('order_items.products')->limit(2)->get();
         
        //return deposits
         $deposits = $user->transactions()->where('type', 'deposit')->limit(6)->get();
@@ -38,5 +38,12 @@ class DashboardController extends Controller
             'deposits_count' => $num_deposits,
             
         ]);
+    }
+
+    public function my_orders(){
+        $user = User::findOrFail(auth()->user()->id);
+        $user_orders = $user->orders()->with('order_items.products')->paginate(5);
+        // dd($user_orders);
+        return inertia('user.orders', ['user_orders' => $user_orders]);
     }
 }

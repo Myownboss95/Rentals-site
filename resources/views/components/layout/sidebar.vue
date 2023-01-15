@@ -51,7 +51,7 @@
           /> -->
           <SidebarItem
             name="My Orders"
-            :url="route('user.trades.view')"
+            :url="route('user.orders')"
             icon="archive"
             v-if="!is_admin"
           />

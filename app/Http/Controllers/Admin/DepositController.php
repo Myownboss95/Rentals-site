@@ -9,7 +9,7 @@ use App\Models\Deposit;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Mail;
-
+ 
 class DepositController extends Controller
 {
     public function index()

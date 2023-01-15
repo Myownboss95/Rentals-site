@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
@@ -66,9 +67,12 @@ class PaymentController extends Controller
                 "products_id" => $cart->product_id,
                 "quantity" => $cart->quantity,
                 "amount" => $cart->rent_price,
-                "rent_duration" => $cart->rent_duration
+                "rent_duration" => $cart->rent_duration,
+                "rent_start" => Carbon::today(),
+                "rent_stop" =>Carbon::today()->copy()->addDays($cart->rent_duration)
             ]);
         }
+        $user->userCart()->delete();
         session()->flash('success', 'Items Purchased Successfully');
         return redirect()->route('user.index');
         

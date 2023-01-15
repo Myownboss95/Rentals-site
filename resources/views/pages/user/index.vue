@@ -82,7 +82,7 @@
       </div>
     </div> -->
 
-    <div class="p-2 col-md-6 col-sm-12">
+    <div class="p-2 col-md-12 col-sm-12">
       <div class="card shadow">
         <div class="card-body m-3">
           <div class="row align-items-center">
@@ -93,20 +93,30 @@
                   <thead class="table-light">
                     <tr>
                       <th>Order Ref</th>
-                      <th>Total Amount</th>
-                      <th>Products</th>
+                      <th>Total Order Amount</th>
+                      
                     </tr>
                   </thead>
                   <tbody>
                     <tr v-for="(user_order, key) in user_orders" :key="key">
-                      <td>{{ user_order.reference }}</td>
-                      <td>{{ format_money(user_order.amount) }} </td>
-                      <td>
-                        <ul v-for="(items, key) in user_order.order_items">
-                          <li>{{ items.products.name }}</li>
-                        </ul>
-                        
+                      <td><h5>Order ID = {{ user_order.reference }}</h5>
+                        <table class="table table-sm ">
+                          <tr>
+                            <th>Product</th>
+                            <th>Purchase Details</th>
+                          </tr>
+                          <tr v-for="(items, key) in user_order.order_items">
+                            <td><img :src="`/storage/products/${items.products.image}`" class="img-thumbnail" alt="" />
+                              {{ items.products.name }}</td>
+                            <td> Qty = {{ items.quantity }}, Amount = {{ format_money(items.amount) }}
+                              <br>
+                              Rented for {{ items.rent_duration }} days
+                            </td>
+                          </tr>
+                        </table>
                       </td>
+                      <td>{{ format_money(user_order.amount) }} </td>
+                      
                     </tr>
                   </tbody>
                 </table>
@@ -224,5 +234,9 @@ const user_orders = computed(()=> props.user_orders);
 .feather-50 {
   width: 50px;
   height: 50px;
+}
+img{
+  width: 80px;
+  height: 80px;
 }
 </style>
