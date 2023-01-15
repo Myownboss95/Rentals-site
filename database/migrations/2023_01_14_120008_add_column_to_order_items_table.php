@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('order_items', function (Blueprint $table) {
             //
-            // $table->dropColumn('symbol');
-            $table->dropColumn('type');
-            
-            $table->dropColumn('status');
-            $table->dropColumn('svg');
-            $table->dropColumn('coin_id');
+            $table->unsignedInteger('rent_duration')->after('amount');
         });
     }
 
@@ -31,8 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('order_items', function (Blueprint $table) {
             //
+            $table->dropColumn('rent_duration');
         });
     }
 };

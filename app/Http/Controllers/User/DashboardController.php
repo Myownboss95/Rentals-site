@@ -9,6 +9,8 @@ use Illuminate\Http\Request;
 use App\Models\PaymentMethod;
 use App\Http\Controllers\Controller;
 use App\Models\Account;
+use App\Models\OrderItem;
+use App\Models\Product;
 
 class DashboardController extends Controller
 {
@@ -17,32 +19,21 @@ class DashboardController extends Controller
         //return main account balance
         $user = User::findOrFail(auth()->user()->id);
         $userMainBalance = $user->accountBalance();
-        //return referral account balance
-        $userRefBalance = $user->accountBalance('referral');
-        //return referral account balance
-        $userInvestedBalance = $user->accountBalance('invested');
 
-        //return withdrawals
-        $withdrawals = $user->transactions()->where('type', 'withdrawal')->limit(6)->get();
-        $num_withdrawals = $user->transactions()->where('type', 'withdrawal')->count();
+        //return orders
+        // $user_orders = $user->orders()->whereHas('order_items', function($query) 
+        // {
+        //     return $query->with('products')->get();
+        // })->get();
+        $user_orders = $user->orders()->with('order_items.products')->get();
+        
        //return deposits
         $deposits = $user->transactions()->where('type', 'deposit')->limit(6)->get();
         $num_deposits = $user->transactions()->where('type', 'deposit')->count();
-        //return buy trades
-        $buyTrades = $user->transactions()->where('type', 'buy')->limit(6)->get();
-        $num_buyTrades = $user->transactions()->where('type', 'buy')->count();
-        //return sell trades
-        $sellTrades = $user->transactions()->where('type', 'sell')->limit(6)->get();
-        $num_sellTrades = $user->transactions()->where('type', 'buy')->count();
-
-        $trade_profits = $user->trades()->where('status', 'active')->sum('returns');
-        //all the coins
        
-
- 
-        return inertia('user.index', [
+       return inertia('user.index', [
             'userMainBalance' => $userMainBalance,
-            
+            'user_orders' => $user_orders,
             'deposits' => $deposits,
             'deposits_count' => $num_deposits,
             

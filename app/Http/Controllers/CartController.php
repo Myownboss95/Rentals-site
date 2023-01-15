@@ -20,19 +20,21 @@ class CartController extends Controller
         $categories = Category::all();
         if (Auth::check()){
             $user = User::findOrFail(auth()->user()->id);
-            $cart=  $user->userCart()->get();
+            $cart=  $user->userCart()->get();   
+            $userMainBalance = $user->accountBalance();
         }elseif(session()->exists('cart')){
         $cart = session()->get('cart');
         }
         else{
-
+            $userMainBalance = null;
         }
-        
-        // dd($cart);
 
+        
+ 
         return view('front.cart')->with([
             'cart' => $cart,
-            'categories' => $categories
+            'categories' => $categories,
+            'userMainBalance' => $userMainBalance
         ]);
     }
 
@@ -60,6 +62,7 @@ class CartController extends Controller
         } else {
         $cart[$id] = [
             "name" => $product->name,
+            "product_id" => $product->id,
             "quantity" => $quantity,
             "rent_price" => $product->rent_price,
             "image" => $product->image,

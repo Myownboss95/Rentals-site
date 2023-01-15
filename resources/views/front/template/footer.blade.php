@@ -119,20 +119,7 @@
 <script src="{{ asset('front/js/jquery.ajaxchimp.min.js') }}"></script>
 <script src="{{ asset('front/js/main.js') }}"></script>
 
-{{-- <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
-<script>
-    const {
-        createApp
-    } = Vue
-    createApp({
-        data() {
-            return {
-                message: 'Hello Vue!'
-            }
-        }
-    }).mount('#app')
-</script> --}}
 
 </body>
 

@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             //
-            $table->integer('coin_id')->nullable();
+            $table->string('reference')->after('id');
         });
     }
 
@@ -26,9 +26,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('accounts', function (Blueprint $table) {
+        Schema::table('orders', function (Blueprint $table) {
             //
-            $table->dropColumn('coin_id');
+            $table->dropColumn('reference');
         });
     }
 };

@@ -86,6 +86,61 @@
       <div class="card shadow">
         <div class="card-body m-3">
           <div class="row align-items-center">
+            <h4 class="mb-3">Recent Orders</h4>
+            <div v-if="user_orders.length">
+              <div class="table-responsive">
+                <table class="table mb-0">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Order Ref</th>
+                      <th>Total Amount</th>
+                      <th>Products</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr v-for="(user_order, key) in user_orders" :key="key">
+                      <td>{{ user_order.reference }}</td>
+                      <td>{{ format_money(user_order.amount) }} </td>
+                      <td>
+                        <ul v-for="(items, key) in user_order.order_items">
+                          <li>{{ items.products.name }}</li>
+                        </ul>
+                        
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div v-else>
+              <span class="ms-1 text-muted font-size-13"
+                >No Transactions to Display</span
+              >
+            </div>
+          </div>
+          <div class="text-nowrap mb-2">
+            <span class="badge bg-soft-success text-success">
+              {{
+                !isNaN(deposits_count) && deposits_count != 0
+                  ? deposits_count - 6
+                  : "0"
+              }}
+              more</span
+            >
+            <!-- <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span> -->
+          </div>
+          <inertia-link
+            :href="route('user.deposits.index')"
+            class="btn btn-primary"
+            >View Deposits<i class="mdi mdi-arrow-right ms-1"></i
+          ></inertia-link>
+        </div>
+      </div>
+    </div>
+    <div class="p-2 col-md-6 col-sm-12">
+      <div class="card shadow">
+        <div class="card-body m-3">
+          <div class="row align-items-center">
             <h4 class="mb-3">Recent Deposits</h4>
             <div v-if="deposits.length">
               <div class="table-responsive">
@@ -150,6 +205,7 @@ const props = defineProps({
   userMainBalance: Number,
   deposits_count: Number,
   deposits: Object,
+  user_orders: Object,
   
 });
 onMounted(() => {
@@ -159,6 +215,7 @@ onMounted(() => {
 const userMainBalance = computed(() => props.userMainBalance);
 const deposits_count = computed(() => props.deposits_count);
 const deposits = computed(() => props.deposits);
+const user_orders = computed(()=> props.user_orders);
 
 </script>
 

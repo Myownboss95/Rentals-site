@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(User::class);
             $table->double('account')->default(0);
-            $table->enum('type', ['invested', 'main', 'referral']);
+            // $table->enum('type', ['invested', 'main', 'referral']);
             $table->boolean('demo')->default(false);
             $table->timestamps();
         });

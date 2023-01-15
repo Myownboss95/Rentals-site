@@ -63,7 +63,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function accounts()
     {
-        return $this->hasMany(Account::class);
+        return $this->hasOne(Account::class);
     }
     public function userCart(){
         return $this->hasMany(Cart::class);
@@ -73,17 +73,16 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasOne(Wishlist::class);
     }
 
-    public function accountBalance($type = 'main')
+    public function accountBalance()
     {
-        $account = $this->accounts()->where('type', $type)->first();
+          $account = $this->accounts()->first();
         return (float) $account?->account ?? 0;
     }
     public function generateAccounts()
     {
         $this->accounts()->createMany([
             [
-                'account' => 0,
-                'type' => 'main',
+                'account' => 0.00,
             ]
         ]);
     }
@@ -130,5 +129,9 @@ class User extends Authenticatable implements MustVerifyEmail
     public function referrals()
     {
         return $this->hasMany(User::class, 'referrer_id', 'id');
+    }
+    public function orders(){
+        return $this->hasMany(Order::class);
+        
     }
 }

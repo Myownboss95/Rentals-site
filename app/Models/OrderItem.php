@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class OrderItem extends Model
 {   
-    protected $table = 'orders';
+    protected $guarded = ['id'];
+
+    protected $table = 'order_items';
+    public function order(){
+        return $this->belongsTo(OrderItem::class);
+    }
+    public function products()
+    {
+        return $this->belongsTo(Product::class);
+    }
+
 }

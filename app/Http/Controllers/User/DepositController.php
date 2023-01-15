@@ -63,6 +63,7 @@ class DepositController extends Controller
         }
 
         $user = User::findOrFail(auth()->user()->id);
+        
 
         $user->transactions()->create([
             'amount' => $request->input('amount'),

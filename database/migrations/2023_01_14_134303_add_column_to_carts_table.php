@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Product;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,9 +14,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('carts', function (Blueprint $table) {
             //
-            $table->dropColumn('symbol');
+            $table->foreignIdFor(Product::class)->after('name');
         });
     }
 
@@ -26,9 +27,9 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
+        Schema::table('carts', function (Blueprint $table) {
             //
-            $table->string('symbol')->nullable();
+            $table->dropForeign(['product_id']);
         });
     }
 };

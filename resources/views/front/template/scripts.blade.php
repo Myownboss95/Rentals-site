@@ -1,6 +1,7 @@
 
 {{-- @section('scripts') --}}
 <script>
+    
     (function($) {
         $.fn.picZoomer = function(options) {
             var opts = $.extend({}, $.fn.picZoomer.defaults, options),
@@ -304,6 +305,9 @@ if(confirm("Are you sure want to remove?")) {
         )
         timeout();
     }
+
+
+    
    
 </script>
 

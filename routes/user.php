@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\DashboardController;
 use App\Http\Controllers\User\DepositController;
 use App\Http\Controllers\User\OnboardController;
+use App\Http\Controllers\User\PaymentController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\SubscriptionController;
 use App\Http\Controllers\User\TradeController;
@@ -47,6 +48,9 @@ Route::delete('wishlist/destroy/{id}', [WishlistController::class, 'destroy'])->
 Route::get('subscriptions', [SubscriptionController::class, 'plans'])->name('subscriptions.plans');
 Route::post('subscribe/{plan}', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
 
+
+Route::post('pay', [PaymentController::class, 'redirectToGateway'])->name('payment');
+Route::get('payment/callback', [PaymentController::class, 'handleGatewayCallback'])->name('payment.callback');
 
 Route::prefix('onboard')->name('onboard.')->group(function () {
     Route::get('', [OnboardController::class, 'onboardPage']);

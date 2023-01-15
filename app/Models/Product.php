@@ -26,6 +26,11 @@ class Product extends Model
     {
         return $this->belongsToMany(Wishlist::class);
     }
+    public function order_items()
+    {
+        return $this->hasMany(OrderItem::class);
+    }
+
     public function scopeMightAlsoLike($query) {
         return $query->inRandomOrder()->take(8);
     }

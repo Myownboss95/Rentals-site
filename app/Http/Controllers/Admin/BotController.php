@@ -55,6 +55,7 @@ class BotController extends Controller
             'trades_per_day' => ['required', 'numeric', 'max:4']
         ]);
 
+        
         Bot::create($valid);
         return Redirect::back()->withErrors(['msg' => 'Added to Cart']);
     }

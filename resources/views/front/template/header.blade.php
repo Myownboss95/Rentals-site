@@ -108,6 +108,7 @@
                             </ul>
 
                             <div class="others-options">
+                                <a class="btn btn-info btn-xs p-2" title="cart" href="{{route('cart')}}"><i class="bi bi-cart-plus-fill"></i></a>
                                 @if (Auth::check())
                                 <a href="{{ route('login') }}" class="login-btn"><i class="bi bi-easel2-fill"></i> Dashboard</a>
                                 <form method="POST" action="{{ route('logout') }}" style="display:inline">
