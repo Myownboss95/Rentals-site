@@ -26,6 +26,7 @@
         "@types/node": "^18.0.3",
         "@types/ziggy-js": "^1.3.2",
         "dotenv": "^16.0.1",
+        "format-to-naira": "^1.0.5",
         "izitoast": "^1.4.0",
         "jquery": "^3.6.0",
         "metismenujs": "^1.3.1",

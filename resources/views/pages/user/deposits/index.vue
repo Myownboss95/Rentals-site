@@ -23,7 +23,7 @@
               <tbody v-if="deposits.length">
                   <tr v-for="(deposit, key) in deposits" :key="key">
                       <td>{{deposit.reference}}</td>
-                      <td>{{deposit.amount}}{{deposit.symbol}}</td>
+                      <td>{{format_money(deposit.amount)}}</td>
                       <td>{{deposit.status}}</td>
                       <td>{{new Date(deposit.created_at).toDateString()}}</td>
                   </tr>

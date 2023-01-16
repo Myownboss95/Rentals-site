@@ -1,9 +1,9 @@
 export const format_money = {
     methods: {
         format_money(amount) {
-            return amount.toLocaleString('en-US', {
+            return amount.toLocaleString('en-NG', {
                 style: 'currency',
-                currency: '₦',
+                currency: 'NGN'
             });
         }
     }

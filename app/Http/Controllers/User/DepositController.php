@@ -66,7 +66,7 @@ class DepositController extends Controller
         
 
         $user->transactions()->create([
-            'amount' => $request->input('amount'),
+            'amount' => $request->input('main_amount'),
             'options' => ['payment_method_id' => $request->input('method_id')],
             'image' => $this->uploadProof($request->file('proof')),
             'type' => 'deposit',

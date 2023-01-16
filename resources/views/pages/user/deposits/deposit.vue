@@ -11,7 +11,7 @@
               class="col-6 text-center my-2"
               v-for="(method, key) in props.payment_methods"
               :class="{ selected: form.method_id == method.id }"
-              @click="selectMethod(method.id)"
+              @click="selectMethod(method.id, method.name, method.symbol)"
             >
               <div class="border p-4 w-100">
                 <img :src="`/storage/payment_methods/${method.svg}`" alt="" class="img-fluid" style="width:100px;height:100px;"/>
@@ -27,6 +27,17 @@
                 v-model="form.amount"
                 class="mt-2"
               />
+              <!-- <FormGroup
+                disabled
+                name="main_amount"
+                placeholder="Amount in Naira"
+                v-model="form.main_amount"
+                class="mt-2"
+              /> -->
+              <!-- check -->
+              <h6 v-if="form.name != ''">
+               Amount in Naira: {{format_money(price[form.name.toLowerCase()]['ngn'] * form.amount)}}
+              </h6>
               <!-- label="Amount" -->
               <FormButton
                 :disabled="disableElements"
@@ -39,19 +50,17 @@
             </div>
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="px-3">
+        <div class="col-md-6 align-text-top">
+          <div class="">
             <div class="" v-if="!props.validated">
                 <h4>Instructions:</h4>
-                <ul>
-                    <li>Select a Deposit method.</li>
-                    <li>Enter Amount to deposit.</li>
-                    <li>Click on continue.</li>
-                    <li>Scan or copy the wallet address.</li>
-                    <li>Transfer the amount to the wallet address you scanned or copied.</li>
-                    <li>Upload the proof of payment.</li>
-                    <li>And finally click on complete deposit.</li>
-                </ul>
+                <p>Click on a payment option</p>
+                <div class="mt-3" v-if="form.name != '' && form.amount!= ''">
+               <p> Copy the wallet address or scan the Qrcode above and send the
+                equivalent of <strong> {{format_money(price[form.name.toLowerCase()]['ngn'] * form.amount)}}</strong> or <strong>{{ parseFloat(form.amount) }} {{ method.symbol }}</strong> to the wallet address.</p>
+               <p>After payment, upload your proof of payment.</p> 
+                </div>
+              
             </div>
             <div class="text-center" v-else>
               <div class="placeholder">
@@ -59,12 +68,9 @@
               </div>
               <strong class="font-size-16 my-1">{{method.wallet}} <span class="ml-2" @click="copy(method.wallet)"><i class="fa fa-copy"></i></span></strong>
               <p class="mt-3">
-                Copy the wallet address or scan the Qrcode above and send the
-                equivalent of
-                <strong>{{ format_money(parseFloat(form.amount)) }}</strong> of
-                <strong>{{ method.name }}</strong> to the wallet address.
-              </p>
-              <p>After payment, upload your proof of payment.</p>
+               Copy the wallet address or scan the Qrcode above and send the
+                equivalent of <strong> {{format_money(price[form.name.toLowerCase()]['ngn'] * form.amount)}}</strong> or <strong>{{ parseFloat(form.amount) }} {{ method.symbol }}</strong> to the wallet address.</p>
+               <p>After payment, upload your proof of payment.</p> 
               <input
                 class="form-control"
                 type="file"
@@ -98,8 +104,14 @@
   import ButtonLoader from '@/views/components/form/ButtonLoader.vue';
   import Error from '@/views/components/alerts/error.vue';
   import { ref, watch, computed, reactive } from 'vue';
+  import axios from 'axios';
 import { info } from '@/js/toast';
 import { copy } from '@/js/functions';
+
+const getCoinUsdPrice = (coin, response) => {
+  // coin = coin.toLowerCase();
+  return response[coin.toLowerCase()].ngn
+}
 
   const props = defineProps({
     payment_methods: Array,
@@ -118,18 +130,61 @@ import { copy } from '@/js/functions';
     amount: '',
     pay_with: 'main',
     proof: '',
+    name: '',
+    symbol: '',
+    main_amount:''
   });
 
   const method = ref({});
+  var price = ref({});
+  
 
-  const selectMethod = (id) => {
+  const selectMethod = (id, name, symbol) => {
     if (!props.validated) {
       form.method_id = id;
+      form.name = name;
+      form.symbol = symbol;
+      const reqPrice = form.name
+      axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${form.name}&vs_currencies=ngn`)
+        .then(response => {
+            if (response.status == 200) {
+                 price.value = response.data;
+                 form.main_amount = price[form.name.toLowerCase()]['ngn'] * form.amount;
+                console.log(response.data)
+               
+            } else {
+                throw Error();
+            }
+        })
+        .catch( error => {
+           
+        })
     } else {
       info('You cannot change method now. Refresh page.');
     }
   };
 
+  // check2
+  watch(
+    ()=>form.amount,
+    (amount)=>{
+      axios.get(`https://api.coingecko.com/api/v3/simple/price?ids=${form.name}&vs_currencies=ngn`)
+        .then(response => {
+            if (response.status == 200) {
+                 price.value = response.data;
+                 form.main_amount = (response.data[form.name.toLowerCase()]['ngn'] * amount)
+                // console.log(response.data)
+               
+            } else {
+                throw Error();
+            }
+        })
+        .catch( error => {
+           
+        })
+      
+    }
+  );
   watch(
     () => form.method_id,
     (newMethod) => {
@@ -145,6 +200,7 @@ import { copy } from '@/js/functions';
   };
 
   const deposit = () => {
+  //  console.log( form.data())
     form.post(route('user.deposits.store'));
   };
 </script>
