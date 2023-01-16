@@ -26,7 +26,10 @@ use App\Models\User;
 
 Route::middleware('onboarded')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('index');
+    Route::get('/rented-products', [DashboardController::class, 'my_rented_products'])->name('rented_products');
+    Route::get('/expired-products', [DashboardController::class, 'my_expired_products'])->name('expired_products');
     Route::get('/my-orders', [DashboardController::class, 'my_orders'])->name('orders');
+    Route::get('/refund-product/{id}', [DashboardController::class, 'return_product'])->name('return_product');
     Route::post('deposits/validate', [DepositController::class, 'validateDeposit'])->name('deposits.validate');
     Route::resource('deposits', DepositController::class)->except('show');
     Route::get('/profile/view',[ProfileController::class, 'index'])->name('profile.view');
@@ -49,7 +52,7 @@ Route::delete('wishlist/destroy/{id}', [WishlistController::class, 'destroy'])->
 Route::get('subscriptions', [SubscriptionController::class, 'plans'])->name('subscriptions.plans');
 Route::post('subscribe/{plan}', [SubscriptionController::class, 'subscribe'])->name('subscriptions.subscribe');
 
-
+Route::post('account-pay', [PaymentController::class, 'pay_via_account_funds'])->name('account.payment');
 Route::post('pay', [PaymentController::class, 'redirectToGateway'])->name('payment');
 Route::get('payment/callback', [PaymentController::class, 'handleGatewayCallback'])->name('payment.callback');
 

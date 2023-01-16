@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\SettingController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\OrderController;
 use App\Http\Controllers\Admin\TradeableController;
 use App\Http\Controllers\Admin\WithdrawalController;
 use App\Http\Controllers\Admin\PaymentMethodController;
@@ -60,6 +61,13 @@ Route::resource('deposits', DepositController::class)->only('index');
 
 Route::get('deposits/approve/{id}', [DepositController::class, 'approve'])->name('deposits.approve');
 Route::get('deposits/decline/{id}', [DepositController::class, 'decline'])->name('deposits.decline');
+
+Route::get('returned-products', [OrderController::class, 'index'])->name('order.index');
+Route::get('all-orders', [OrderController::class, 'all_orders'])->name('order.all_orders');
+Route::post('send-mail/{id}/{email}/{message}', [OrderController::class, 'send'])->name('order.sendmail');
+Route::get('due-products', [OrderController::class, 'due_products'])->name('order.due_products');
+Route::get('product-return/approve/{id}', [OrderController::class, 'approve'])->name('order.return.approve');
+Route::get('product-return/decline/{id}', [OrderController::class, 'decline'])->name('order.return.decline');
 
 Route::resource('withdrawals', WithdrawalController::class);
 Route::post('withdrawals/approve/{id}', [WithdrawalController::class, 'approve'])->name('withdrawals.approve');

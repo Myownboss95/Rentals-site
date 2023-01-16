@@ -5,7 +5,7 @@
   <div class="col-lg-11 mx-auto">
     <div class="w-100 mb-3 d-flex justify-content-between">
       <div class="col-sm-6 col-md-3">
-        <FormInput placeholder="Search..." v-model.lazy="form.search" />
+        <FormInput placeholder="Search..." v-model="form.search" />
       </div>
 
       <div class="col-sm-6 col-md-2">

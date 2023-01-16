@@ -25,7 +25,7 @@ class DepositController extends Controller
     {
         $transaction = Transaction::findOrFail($id)?->load('user');
         $user = $transaction->user;
-        $account = $user->accounts()->where('type', 'main')->first();
+        $account = $user->accounts()->first();
         $account->account += $transaction->amount;
         $transaction->status = 'successful';
         $transaction->save();
@@ -47,4 +47,5 @@ class DepositController extends Controller
         session()->flash('success', 'Deposit approved');
         return back();
     }
+   
 }

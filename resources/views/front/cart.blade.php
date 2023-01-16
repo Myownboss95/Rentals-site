@@ -135,8 +135,14 @@
                             </small> 
                         @endif
                     @endif
-                    <a href="#" id="proceed" class="btn btn-dark rounded-pill py-3 btn-block d-none">Purchase with Account Funds</a>
-                    <a href="{{url('user/deposits/create')}}" id="topup" class="btn btn-dark rounded-pill py-3 btn-block d-none">Top Up Account</a>
+                    <form action="{{route('user.account.payment')}}" method="POST" >
+                        @csrf
+                        <input type="hidden" name="amount" value="{{$total}}">
+                      <button  class="btn btn-dark rounded-pill py-2 btn-block d-none"
+                       id="proceed">Purchase with Account Funds</button>
+                      </form>
+                   
+                    <a href="{{route('user.deposits.create')}}" id="topup" class="btn btn-dark rounded-pill py-3 btn-block d-none">Top Up Account</a>
                   </div>
                   
               </div>

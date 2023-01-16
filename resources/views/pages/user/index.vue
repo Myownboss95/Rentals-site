@@ -31,56 +31,7 @@
 
   <!-- Bottom Section -->
   <div class="row m-1">
-    <!-- <div class="p-2 col-md-6 col-sm-12">
-      <div class="card shadow">
-        <div class="card-body m-3">
-          <div class="row align-items-center">
-            <h4 class="mb-3">Recent Orders</h4>
-            <div v-if="withdrawals.length">
-              <div class="table-responsive">
-                <table class="table mb-0">
-                  <thead class="table-light">
-                    <tr>
-                      <th>Reference</th>
-                      <th>Amount</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr v-for="(withdrawal, key) in withdrawals" :key="key">
-                      <td>{{ withdrawal.reference }}</td>
-                      <td>{{ withdrawal.amount }}{{ withdrawal.symbol }}</td>
-                      <td>{{ withdrawal.status }}</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            </div>
-            <div v-else>
-              <span class="ms-1 text-muted font-size-13"
-                >No Transactions to Display</span
-              >
-            </div>
-          </div>
-          <div class="text-nowrap mb-2">
-            <span class="badge bg-soft-success text-success">
-              {{
-                !isNaN(withdrawals_count) && withdrawals_count != 0
-                  ? withdrawals_count - 6
-                  : "0"
-              }}
-              more</span
-            > -->
-            <!-- <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span> -->
-          <!-- </div> -->
-          <!-- <inertia-link
-            :href="route('user.withdrawals.index')"
-            class="btn btn-primary"
-            >View Withdrawals<i class="mdi mdi-arrow-right ms-1"></i
-          ></inertia-link>
-        </div>
-      </div>
-    </div> -->
+   
 
     <div class="p-2 col-md-12 col-sm-12">
       <div class="card shadow">
@@ -140,9 +91,9 @@
             <!-- <span class="ms-1 text-muted font-size-13"><inertia-link href="#" >View More</inertia-link></span> -->
           </div>
           <inertia-link
-            :href="route('user.deposits.index')"
+            :href="route('user.orders')"
             class="btn btn-primary"
-            >View Deposits<i class="mdi mdi-arrow-right ms-1"></i
+            >View All Orders<i class="mdi mdi-arrow-right ms-1"></i
           ></inertia-link>
         </div>
       </div>
@@ -235,7 +186,7 @@ const user_orders = computed(()=> props.user_orders);
   width: 50px;
   height: 50px;
 }
-img{
+img.img-thumbnail{
   width: 80px;
   height: 80px;
 }

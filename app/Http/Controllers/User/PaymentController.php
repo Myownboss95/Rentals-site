@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers\User;
 
+use Paystack;
+use Carbon\Carbon;
 use App\Models\User;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Carbon\Carbon;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Str;
-use Paystack;
 
 class PaymentController extends Controller
 {
@@ -53,9 +54,9 @@ class PaymentController extends Controller
     {
         $user = User::find(auth()->user()->id);
         $carts=  $user->userCart()->get(); 
-        // dd($carts);
-        $paymentDetails = Paystack::getPaymentData();
-        // dd($paymentDetails);
+        $data = $request->validate([
+            'amount' => ['required', 'numeric']
+        ]);
         
         $order = $user->orders()->create([
             "amount" => $paymentDetails['data']['amount'],
@@ -64,6 +65,7 @@ class PaymentController extends Controller
         foreach ($carts as $cart) {
             # code...
             $order->order_items()->create([
+                "user_id" => $user->id,
                 "products_id" => $cart->product_id,
                 "quantity" => $cart->quantity,
                 "amount" => $cart->rent_price,
@@ -73,9 +75,54 @@ class PaymentController extends Controller
             ]);
         }
         $user->userCart()->delete();
+        session()->forget('cart');
         session()->flash('success', 'Items Purchased Successfully');
         return redirect()->route('user.index');
         
+    }
+
+    public function pay_via_account_funds(Request $request)
+    {
+        $user = User::find(auth()->user()->id);
+        $account = $user->accounts()->first();
+        $balance = $account?->account ?? 0;
+
+        $request->validate([
+            'amount' => ['required', 'numeric']
+        ]);
+        $amount = number_format((float)$request->input('amount'), 2, '.', '');
+        $order_id = Str::upper(Str::random(10).rand(10000,99999).Str::random(5).rand(10000,99999));
+        
+        $carts=  $user->userCart()->get(); 
+        if ($balance >= $amount) {
+            $order = $user->orders()->create([
+                "amount" => $amount,
+                "reference" => $order_id,
+            ]);
+            foreach ($carts as $cart) {
+                # code...
+                $order->order_items()->create([
+                    "user_id" => $user->id,
+                    "products_id" => $cart->product_id,
+                    "quantity" => $cart->quantity,
+                    "amount" => $cart->rent_price,
+                    "rent_duration" => $cart->rent_duration,
+                    "rent_start" => Carbon::today(),
+                    "rent_stop" =>Carbon::today()->copy()->addDays($cart->rent_duration)
+                ]);
+            }
+            $user->userCart()->delete();
+            $account->account -= $amount;
+            $account->save();
+            session()->forget('cart');
+            session()->flash('success', 'Items Purchased Successfully');
+            return redirect()->route('user.orders');
+         }
+         else{
+            session()->flash('error', 'Insufficient Account Balance, Please Top Up or Use Paystack');
+            return redirect()->route('user.deposits.create');
+         }
+       
     }
 
 }

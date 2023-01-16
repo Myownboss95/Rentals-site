@@ -191,7 +191,7 @@ const approve = id => {
         onBefore: () => confirm('Are you sure you want to approve this user?'),
          onSuccess: () => closeModal()
     });
-}
+} 
 
   const decline = id => {
       declineForm.post(route('admin.kyc.decline', id), {

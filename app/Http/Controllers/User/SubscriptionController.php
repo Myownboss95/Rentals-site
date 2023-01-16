@@ -16,7 +16,7 @@ class SubscriptionController extends Controller
         return inertia('user.subscriptions', [
             'plans' => $plans
         ]);
-    }
+    } 
 
     public function subscribe(Plan $plan)
     {

@@ -24,6 +24,7 @@
             icon="user-x"
             v-if="is_admin"
           />
+          <li class="menu-title" v-if="is_admin">Store</li>
           <SidebarItem
             name="Product Categories"
             :url="route('admin.categories.index')"
@@ -56,16 +57,44 @@
             v-if="!is_admin"
           />
           <SidebarItem
+            name="My Rented Products"
+            :url="route('user.rented_products')"
+            icon="shopping-bag"
+            v-if="!is_admin"
+          />
+          <SidebarItem
+            name="My Expired Products"
+            :url="route('user.expired_products')"
+            icon="alert-triangle"
+            v-if="!is_admin"
+          />
+          <SidebarItem
             name="My WishList"
             :url="route('user.wishlist.index')"
             icon="heart"
             v-if="!is_admin"
           />
-          <!-- <SidebarItem
-            name="My Orders"
-            :url="route(`${is_admin ? 'admin' : 'user'}.bots.index`)"
-            icon="cpu"
-          />  -->
+
+          <li class="menu-title" v-if="is_admin">Orders</li>
+          <SidebarItem
+            name="All Orders"
+            :url="route('admin.order.all_orders')"
+            icon="download"
+            v-if="is_admin"
+          />
+          <SidebarItem
+            name="Confirm Returned"
+            :url="route('admin.order.index')"
+            icon="corner-right-down"
+            v-if="is_admin"
+          />
+          <SidebarItem
+            name="Due Products"
+            :url="route('admin.order.due_products')"
+            icon="alert-triangle"
+            v-if="is_admin"
+          />
+         
           <li class="menu-title">Transactions</li>
           <SidebarItem
             :name="`${is_admin ? 'All Crypto Deposits' : 'My Crypto Deposits'}`"
