@@ -54,21 +54,17 @@ class OrderController extends Controller
             // }]);
 
             $query->orWhereHas('user', function ($query) use ($search){
-                $query->where('first_name', 'like', '%'.$search.'%');
-            })->with(['user' => function($query) use ($search){
-                $query->where('first_name', 'like', '%'.$search.'%');
-            }]);
-            $query->orWhereHas('user', function ($query) use ($search){
-                $query->where('last_name', 'like', '%'.$search.'%');
-            })->with(['user' => function($query) use ($search){
-                $query->where('last_name', 'like', '%'.$search.'%');
-            }]);
+                $query->where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%');
+            });
 
-            $query->orWhereHas('user', function ($query) use ($search){
-                $query->where('last_name', 'like', '%'.$search.'%');
-            })->with(['user' => function($query) use ($search){
-                $query->where('last_name', 'like', '%'.$search.'%');
-            }]);
+            $query->orWhereHas('order_items', function($query) use($search){
+                $query->whereHas('products', function($q) use($search){
+                    $q->where('name', 'like', '%'.$search.'%')->orWhere('rent_price', 'like', '%'.$search.'%');
+                });
+            });
+
+            // $query->whereRelation('order_items.products','name', 'like', '%'.$search.'%');
+          
            
             
             
@@ -76,7 +72,7 @@ class OrderController extends Controller
         $all_orders = Order::with(['order_items.products','user'])->latest()->paginate(10);
         // dd($all_orders);
         
-        
+        // dd($query->get());
         return inertia('admin.orders.index', ['user_orders' => $query->paginate()->through(function ($orders, $key) {
             return $orders;
         })->withQueryString(),]);
