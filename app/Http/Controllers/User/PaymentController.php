@@ -75,7 +75,8 @@ class PaymentController extends Controller
         $user->userCart()->delete();
         session()->forget('cart');
         session()->flash('success', 'Items Purchased Successfully');
-        return redirect()->route('user.index');
+        return redirect()->route('user.index')
+                ->withSuccess('You do not have an active subscription plan');
         
     }
 
