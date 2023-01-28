@@ -46,8 +46,8 @@ class Handler extends ExceptionHandler
         $this->reportable(function (Throwable $e) {
             //
         });
-        $this->renderable(function (\Exception $e, $request) {
-            return redirect(route('404'));
-         });
+        // $this->renderable(function (\Exception $e, $request) {
+        //     return redirect(route('404'));
+        //  });
     }
 }
