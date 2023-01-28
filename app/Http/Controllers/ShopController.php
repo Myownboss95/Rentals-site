@@ -66,9 +66,9 @@ class ShopController extends Controller
         // where('slug', '!=', $product->slug)->
         // dd($user); 
         if(!is_null($user)){
-            dd($user->wishlist?->products());
-                if(!is_null($user->wishlist->products))
-                $mightLike = $user->wishlist->products()->orWhere('category_id', $product->category_id)->mightAlsoLike()->get();
+            // dd($user->wishlist?->products());
+                if(!is_null($user->wishlist?->products))
+                $mightLike = $user->wishlist?->products()->orWhere('category_id', $product->category_id)->mightAlsoLike()->get();
                 $mightLike = Product::where('slug', '!=', $product->slug)->orWhere('category_id', $product->category_id)->mightAlsoLike()->get();
         }
         else{
