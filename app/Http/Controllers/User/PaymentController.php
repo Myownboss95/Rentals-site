@@ -75,8 +75,8 @@ class PaymentController extends Controller
         $user->userCart()->delete();
         session()->forget('cart');
         session()->flash('success', 'Items Purchased Successfully');
-        return redirect()->route('user.index')
-                ->withSuccess('You do not have an active subscription plan');
+        return redirect()->route('user.rented_products')
+                ->withSuccess('Items purchased Successfully');
         
     }
 
@@ -99,7 +99,6 @@ class PaymentController extends Controller
                 "reference" => $order_id,
             ]);
             foreach ($carts as $cart) {
-                # code...
                 $order->order_items()->create([
                     "user_id" => $user->id,
                     "products_id" => $cart->product_id,
@@ -114,8 +113,9 @@ class PaymentController extends Controller
             $account->account -= $amount;
             $account->save();
             session()->forget('cart');
-            session()->flash('success', 'Items Purchased Successfully');
-            return redirect()->route('user.orders');
+            
+            return redirect()->route('user.rented_products')
+                ->withSuccess('Items Purchased Successfully');
          }
          else{
             session()->flash('error', 'Insufficient Account Balance, Please Top Up or Use Paystack');
