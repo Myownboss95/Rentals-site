@@ -43,49 +43,58 @@
                         </thead>
                         <tbody>
                             <?php $total = 0; ?>
+                            @if ($cart->count() >0)
                             @foreach ($cart as $item)
-                                @php
-                                $qty = $item['quantity'] ?? 1;
-                                $rent_duration = $item['rent_duration'] ?? 1;
-                                $cart_category = $item['category'] ?? 'test';
-                                $total += $item['rent_price'] * $qty * $rent_duration;
-                                @endphp
-                                <tr>
-                                    <th scope="row" class="border-0">
-                                        <div class="p-2">
-                                            <img src="{{ asset('storage/products/' . $item['image']) }}"
-                                                alt="" width="70" class="img-fluid rounded shadow-sm">
-                                            <div class="ml-3 d-inline-block align-middle">
-                                                <h5 class="mb-0">  
-                                                    <a href="{{ route('shop.show', $item['slug']) }}"
-                                                    class="text-dark d-inline-block align-middle">
-                                                        {{ $item['name'] }}
-                                                    </a></h5><span
-                                                    class="text-muted font-weight-normal font-italic d-block">Category:
-                                                    {{ $cart_category }}</span>
-                                            </div>
+                            @php
+                            $qty = $item['quantity'] ?? 1;
+                            $rent_duration = $item['rent_duration'] ?? 1;
+                            $cart_category = $item['category'] ?? 'test';
+                            $total += $item['rent_price'] * $qty * $rent_duration;
+                            @endphp
+                            <tr>
+                                <th scope="row" class="border-0">
+                                    <div class="p-2">
+                                        <img src="{{ asset('storage/products/' . $item['image']) }}"
+                                            alt="" width="70" class="img-fluid rounded shadow-sm">
+                                        <div class="ml-3 d-inline-block align-middle">
+                                            <h5 class="mb-0">  
+                                                <a href="{{ route('shop.show', $item['slug']) }}"
+                                                class="text-dark d-inline-block align-middle">
+                                                    {{ $item['name'] }}
+                                                </a></h5><span
+                                                class="text-muted font-weight-normal font-italic d-block">Category:
+                                                {{ $cart_category }}</span>
                                         </div>
-                                    </th>
-                                    <td class="border-0 align-middle"><strong>{{ format($item['rent_price']) }}</strong>
-                                    </td>
-                                    <td class="border-0 align-middle"><strong>{{ $qty }}</strong></td>
-                                    <td class="border-0 align-middle"><strong>{{ $item['rent_duration'] }} Days</strong>
-                                    </td>
-                                    <td class="border-0 align-middle"><a href="#" class="text-dark"></a>
-                                            
-                                        @if (Auth::check())
-                                        <button class="btn btn-dark remove-from-cart" tabindex="0" type="button"
-                                        data-slug="{{ $item['slug'] }}"
-                                        data-quantity="{{ $qty }}">
-                                        <i
-                                        class="fa fa-trash"></i>
-                                    </button>
-                                        @endif        
+                                    </div>
+                                </th>
+                                <td class="border-0 align-middle"><strong>{{ format($item['rent_price']) }}</strong>
+                                </td>
+                                <td class="border-0 align-middle"><strong>{{ $qty }}</strong></td>
+                                <td class="border-0 align-middle"><strong>{{ $item['rent_duration'] }} Days</strong>
+                                </td>
+                                <td class="border-0 align-middle"><a href="#" class="text-dark"></a>
                                         
+                                    @if (Auth::check())
+                                    <button class="btn btn-dark remove-from-cart" tabindex="0" type="button"
+                                    data-slug="{{ $item['slug'] }}"
+                                    data-quantity="{{ $qty }}">
+                                    <i
+                                    class="fa fa-trash"></i>
+                                </button>
+                                    @endif        
+                                    
 
-                                            </td>
-                                </tr>
+                                        </td>
+                            </tr>
                             @endforeach
+                            @else
+                                <tr>
+                                    <td colspan="5" class="text-center">
+                                        No Product in Cart, <a href="{{route('shop.index')}}" class="btn btn-outline-info mx-2">Back to Shop</a>
+                                    </td>
+                                </tr>
+                            @endif
+                            
                         </tbody>
                     </table>
 
@@ -110,6 +119,9 @@
                   </ul>
                   
                 </div>
+                @if ($cart->count() > 0)
+                    
+                
                 <p class="font-italic">Select Payment Method</p>
                   <select id="payment_option" class="form-select mb-3">
                     <option value="">Select</option>
@@ -144,7 +156,7 @@
                    
                     <a href="{{route('user.deposits.create')}}" id="topup" class="btn btn-dark rounded-pill py-3 btn-block d-none">Top Up Account</a>
                   </div>
-                  
+                  @endif
               </div>
 
         </div>
