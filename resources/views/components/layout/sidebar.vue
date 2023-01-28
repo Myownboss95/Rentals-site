@@ -74,6 +74,13 @@
             icon="heart"
             v-if="!is_admin"
           />
+          <SidebarItem
+            name="Cart"
+            :url="route('cart')"
+            icon="shopping-bag"
+            :raw="true"
+            v-if="!is_admin"
+          />
 
           <li class="menu-title" v-if="is_admin">Orders</li>
           <SidebarItem
