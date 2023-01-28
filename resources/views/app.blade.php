@@ -7,6 +7,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1"
     >
+    <link rel="icon" type="image/png" href="{{asset('front/favicon.png')}}">
     {{-- <title>Laravel with Inertia</title> --}}
     @vite
     @routes

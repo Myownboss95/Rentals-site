@@ -1,5 +1,5 @@
 <template>
-  <div class="auth-page">
+  <div class="auth-page"> 
     <div class="container-fluid p-0">
       <div class="row g-0">
         <div class="col-xxl-4 col-lg-4 col-md-6">
@@ -8,8 +8,8 @@
               <div class="d-flex flex-column h-100">
                 <div class="mb-4 mb-md-5 text-center">
                   <a href="/" class="d-block auth-logo">
-                    <img src="@/assets/images/logo-sm.svg" alt="" height="28" />
-                    <span class="logo-txt">{{ $appName }}</span>
+                    <img src="@/assets/images/black-logo.png" alt="" height="28" />
+                    <!-- <span class="logo-txt">{{ $appName }}</span> -->
                   </a>
                 </div>
                 <div class="auth-content my-auto">
