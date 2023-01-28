@@ -54,9 +54,7 @@ class PaymentController extends Controller
     {
         $user = User::find(auth()->user()->id);
         $carts=  $user->userCart()->get(); 
-        $data = $request->validate([
-            'amount' => ['required', 'numeric']
-        ]);
+        $paymentDetails = Paystack::getPaymentData();
         
         $order = $user->orders()->create([
             "amount" => $paymentDetails['data']['amount'],
