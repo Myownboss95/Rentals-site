@@ -18,15 +18,13 @@ class CartController extends Controller
     {   
         $cart = [];
         $categories = Category::all();
+        $userMainBalance = 0;
         if (Auth::check()){
             $user = User::findOrFail(auth()->user()->id);
             $cart=  $user->userCart()->get();   
-            $userMainBalance = $user->accountBalance();
+            $userMainBalance = $user->accountBalance()??0;
         }elseif(session()->exists('cart')){
         $cart = session()->get('cart');
-        }
-        else{
-            $userMainBalance = null;
         }
 
         
