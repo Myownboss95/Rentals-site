@@ -174,7 +174,7 @@
 
                                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
                             </ul>
-
+							<a class="btn btn-info btn-xs p-2 mx-2" title="cart" href="{{route('cart')}}"><i class="bi bi-cart-plus-fill"></i></a>
                             <div class="others-options">
                                 @if (Auth::check())
                                 <a href="{{ route('login') }}" class="login-btn"><i class="bi bi-easel2-fill"></i> Dashboard</a>

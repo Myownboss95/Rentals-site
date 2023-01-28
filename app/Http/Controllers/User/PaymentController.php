@@ -66,7 +66,7 @@ class PaymentController extends Controller
                 "user_id" => $user->id,
                 "products_id" => $cart->product_id,
                 "quantity" => $cart->quantity,
-                "amount" => $cart->rent_price,
+                "amount" => $cart->rent_price * $cart->quantity,
                 "rent_duration" => $cart->rent_duration,
                 "rent_start" => Carbon::today(),
                 "rent_stop" =>Carbon::today()->copy()->addDays($cart->rent_duration)
