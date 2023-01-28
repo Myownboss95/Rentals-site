@@ -57,7 +57,7 @@ class PaymentController extends Controller
         $paymentDetails = Paystack::getPaymentData();
         
         $order = $user->orders()->create([
-            "amount" => number_format($paymentDetails['data']['amount'], 2) ,
+            "amount" => round($paymentDetails['data']['amount'], 2) ,
             "reference" => $paymentDetails['data']['reference'],
         ]);
         foreach ($carts as $cart) {
