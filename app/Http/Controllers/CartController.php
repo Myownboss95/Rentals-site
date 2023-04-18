@@ -19,14 +19,17 @@ class CartController extends Controller
         $cart = [];
         $categories = Category::all();
         $userMainBalance = 0;
+        
         if (Auth::check()){
             $user = User::findOrFail(auth()->user()->id);
             $cart=  $user->userCart()->get();   
             $userMainBalance = $user->accountBalance()??0;
-        }elseif(session()->exists('cart')){
+        }
+        
+        else if(session()->exists('cart'))
+        {
         $cart = session()->get('cart');
         }
-
         
  
         return view('front.cart')->with([
@@ -39,19 +42,18 @@ class CartController extends Controller
     public function addToCart(Request $request)
     {
         $id= $request->input('id');
-        $quantity= $request->input('quantity');
+        $quantity= number_format($request->input('quantity'));
         $rent_duration= $request->input('rent_duration');
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
 
          if (isset($cart[$id])) {
-            $cart[$id]['quantity']++;
+            $cart[$id]['quantity']+=$quantity;
             session()->put('cart', $cart);
             if (Auth::check()) {
             
                 $user = User::findOrFail(auth()->user()->id);
                   foreach ($cart as $carts) {
-                        // $cartC = Cart::where('slug', $carts['slug'])->userCart()->first();
                       $user->userCart()->create($carts);
                     }
                     $user->refresh();
@@ -93,17 +95,18 @@ class CartController extends Controller
 
     {
 
-        if($request->id && $request->quantity){
+        $id = $request->input('id');
+        $quantity = $request->input('quantity');
 
-            $cart = session()->get('cart');
-
-            $cart[$request->id]["quantity"] = $request->quantity;
-
-            session()->put('cart', $cart);
-
-            session()->flash('success', 'Cart updated successfully');
-
+        if ($quantity <= 0) {
+            $this->removeItem($id);
+        } else {
+            $cart = session('cart', []);
+            $cart[$id]['quantity'] = $quantity;
+            session(['cart' => $cart]);
         }
+
+        return response()->json(['success' => true]);
 
     }
 

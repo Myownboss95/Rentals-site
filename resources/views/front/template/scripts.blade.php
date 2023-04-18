@@ -1,7 +1,5 @@
-
 {{-- @section('scripts') --}}
 <script>
-    
     (function($) {
         $.fn.picZoomer = function(options) {
             var opts = $.extend({}, $.fn.picZoomer.defaults, options),
@@ -150,6 +148,7 @@
             value--;
             $(_this).siblings('input#number').val(value);
         }
+
         function increaseValueR(_this) {
             var value = parseInt($(_this).siblings('input#rent_duration').val(), 10);
             value = isNaN(value) ? 0 : value;
@@ -177,139 +176,141 @@
 
     // updateCartButton();
 
-    $(document).on('click','.add-to-cart', function(event) {
-        
-    // var cart = window.cart || [];
-    var cart = [];
-    // console.log(cart);
-    // cart.push({
-    //     'id': $(this).data('id'),
-    //     // 'name': $(this).data('name'),
-    //     // 'rent_price': $(this).data('price'),
-    //     // 'slug': $(this).data('slug'),
-    //     // 'image': $(this).data('image'),
-    //     // 'category': $(this).data('category'),
-    //     'quantity': $('#number').val(),
-    //     // 'rent_duration': $('#rent_duration').val()
-    // });
-    // console.log(cart)
-    window.cart = cart;
-    // console.log(cart.quantity)
-    
-    $.ajax(`/add-to-cart`, {
-        type: 'POST',
-        data: {
-            "_token": "{{ csrf_token() }}",
-            "id": $(this).data('id'),
-            'quantity': $('#number').val(),
-            'rent_duration': $('#rent_duration').val()
+    $(document).on('click', '.add-to-cart', function(event) {
 
-        },
-        success: function(data, status, xhr) {
-            // alert(data.status);
-            console.log(data.cart)
-            alertMessages(data.status)
-        }
+        // var cart = window.cart || [];
+        var cart = [];
+        // console.log(cart);
+        // cart.push({
+        //     'id': $(this).data('id'),
+        //     // 'name': $(this).data('name'),
+        //     // 'rent_price': $(this).data('price'),
+        //     // 'slug': $(this).data('slug'),
+        //     // 'image': $(this).data('image'),
+        //     // 'category': $(this).data('category'),
+        //     'quantity': $('#number').val(),
+        //     // 'rent_duration': $('#rent_duration').val()
+        // });
+        // console.log(cart)
+        window.cart = cart;
+        // console.log(cart.quantity)
+
+        $.ajax(`/add-to-cart`, {
+            type: 'POST',
+            data: {
+                "_token": "{{ csrf_token() }}",
+                "id": $(this).data('id'),
+                'quantity': $('#number').val(),
+                'rent_duration': $('#rent_duration').val()
+
+            },
+            success: function(data, status, xhr) {
+                // alert(data.status);
+                console.log(data.cart)
+                alertMessages(data.status)
+            }
+        });
+
     });
 
-    });
-    
-    $(".update-cart").change(function (e) {
+    $(".update-cart").change(function(e) {
 
-e.preventDefault();
+        e.preventDefault();
 
 
 
-var ele = $(this);
+        var ele = $(this);
 
 
 
-$.ajax({
+        $.ajax({
 
-    url: '{{ route('update.cart') }}',
+            url: '{{ route('update.cart') }}',
 
-    method: "patch",
+            method: "patch",
 
-    data: {
+            data: {
 
-        _token: '{{ csrf_token() }}', 
+                _token: '{{ csrf_token() }}',
 
-        id: ele.parents("tr").attr("data-id"), 
+                id: ele.parents("tr").attr("data-id"),
 
-        quantity: ele.parents("tr").find(".quantity").val()
+                quantity: ele.parents("tr").find(".quantity").val()
 
-    },
+            },
 
-    success: function (response,data, status) {
+            success: function(response, data, status) {
 
-    //    window.location.reload();
-       alertMessages(data.status);
-
-    }
-
-});
-
-});
-
-
-
-$(".remove-from-cart").click(function (e) {
-
-e.preventDefault();
-
-
-
-var ele = $(this);
-
-
-// console.log($(this).data('slug'))
-if(confirm("Are you sure want to remove?")) {
-
-    $.ajax({
-
-        url: '{{ route('remove.from.cart') }}',
-
-        method: "DELETE",
-
-        data: {
-            _token: '{{ csrf_token() }}', 
-            'id': $(this).data('id'),
-            'quantity': $(this).data('quantity'),
-            'slug': $(this).data('slug'),
-             },
-
-        success: function (data, status, xhr) {
-
-            // window.location.reload();
-            
-            alertMessages(data.status);
-            console.log(data.cart)
+                //    window.location.reload();
+                alertMessages(data.status);
 
             }
 
+        });
+
     });
 
-}
 
-});
-    function timeout(){
+
+    $(".remove-from-cart").click(function(e) {
+
+        e.preventDefault();
+
+
+
+        var ele = $(this);
+
+
+        // console.log($(this).data('slug'))
+        if (confirm("Are you sure want to remove?")) {
+
+            $.ajax({
+
+                url: '{{ route('remove.from.cart') }}',
+
+                method: "DELETE",
+
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    'id': $(this).data('id'),
+                    'quantity': $(this).data('quantity'),
+                    'slug': $(this).data('slug'),
+                },
+
+                success: function(data, status, xhr) {
+
+                    // window.location.reload();
+
+                    alertMessages(data.status);
+                    console.log(data.cart)
+
+                },
+                error: function(error) {
+
+                }
+
+            });
+
+        }
+
+    });
+
+    function timeout() {
         window.setTimeout(function() {
-        $(".alertCartR").fadeTo(500, 0).slideUp(500, function(){
-            $(this).remove(); 
-        });
-    }, 2000);
+            $(".alertCartR").fadeTo(500, 0).slideUp(500, function() {
+                $(this).remove();
+            });
+        }, 2000);
     }
-    function alertMessages(messages){
+
+    function alertMessages(messages) {
         $('#alertCart').append(
-            '<div class="alert alert-success alert-dismissible fade show alertCartR" role="alert" id="#alertCartR"><strong>'+ messages +' </strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></div>'
+            `<div class="alert alert-success alert-dismissible fade show alertCartR mt-5" role="alert" id="#alertCartR" style="margin-top: 100px; z-index: 1000"><strong> ${messages} </strong><button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></div>`
         )
+        $('#alertCart').focus();
+        $('html, body').animate({
+            scrollTop: $('#alertCart').offset().top
+        }, 300);
         timeout();
     }
-
-
-    
-   
 </script>
-
-
-

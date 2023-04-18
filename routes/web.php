@@ -99,6 +99,6 @@ Route::get('/cart', [CartController::class, 'index'])->name('cart');
 
 Route::post('/add-to-cart', [CartController::class, 'addToCart'])->name('add.to.cart');
 
-Route::patch('/update-cart', [CartController::class, 'update'])->name('update.cart');
+Route::post('/update-cart', [CartController::class, 'update'])->name('update.cart');
 
 Route::delete('/remove-from-cart', [CartController::class, 'remove'])->middleware('auth')->name('remove.from.cart');
