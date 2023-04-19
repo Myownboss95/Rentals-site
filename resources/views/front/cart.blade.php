@@ -129,43 +129,58 @@
                 </div>
                 @if (count($cart) > 0)
 
+                    @if (!Auth::check())
+                        <p class="text-center">
+                            You need to Register to Rent Items
+                        </p> 
+                        <a href="{{ route('register') }}" class="btn btn-dark rounded-pill py-2 btn-block">Create An
+                            Account</a>
+                            <p class="text-center">Or if you have an account,</p>
+                        <a href="{{ route('login') }}" class="btn btn-link">Login Here</a>
+                    @else
+                        <div id="showPaymentOptions">
 
-                    <p class="font-italic">Select Payment Method</p>
-                    <select id="payment_option" class="form-select mb-3">
-                        <option value="">Select</option>
-                        <option value="paystack">Paystack</option>
-                        <option value="account">Account Funds</option>
-                    </select>
-                    <br>
-                    <form action="{{ route('user.payment') }}" method="POST">
-                        @csrf
-                        <input type="hidden" name="amount" value="{{ $total }}">
-                        <button class="btn btn-dark rounded-pill py-2 btn-block d-none" id="paystack">Procceed with
-                            Paystack</button>
-                    </form>
-                    <br>
+                        </div>
+                        <p class="font-italic">Select Payment Method</p>
+                        <select id="payment_option" class="form-select mb-3">
+                            <option value="">Select</option>
+                            <option value="paystack">Paystack</option>
+                            <option value="account">Account Funds</option>
+                        </select>
+                        <br>
 
-                    <div id="account" class=" d-none py-3">
-                        @if (!Auth::check())
-                            You need to login to use account funds
-                        @else
-                            @if ($total > $userMainBalance)
-                                <small class="text-danger">
-                                    Your Balance is {{ format($userMainBalance) }} and you need
-                                    <br>{{ format($total - $userMainBalance) }} to complete this transaction
-                                </small>
-                            @endif
-                        @endif
-                        <form action="{{ route('user.account.payment') }}" method="POST">
+                        <form action="{{ route('user.payment') }}" method="POST">
                             @csrf
                             <input type="hidden" name="amount" value="{{ $total }}">
-                            <button class="btn btn-dark rounded-pill py-2 btn-block d-none" id="proceed">Purchase with
-                                Account Funds</button>
+                            <button class="btn btn-dark rounded-pill py-2 btn-block d-none" id="paystack">Proceed with
+                                Paystack</button>
                         </form>
 
-                        <a href="{{ route('user.deposits.create') }}" id="topup"
-                            class="btn btn-dark rounded-pill py-3 btn-block d-none">Top Up Account</a>
-                    </div>
+                        <br>
+
+                        <div id="account" class=" d-none py-3">
+                            @if (!Auth::check())
+                                You need to login to use account funds
+                            @else
+                                @if ($total > $userMainBalance)
+                                    <small class="text-danger">
+                                        Your Balance is {{ format($userMainBalance) }} and you need
+                                        <br>{{ format($total - $userMainBalance) }} to complete this transaction
+                                    </small>
+                                @endif
+                            @endif
+                            <form action="{{ route('user.account.payment') }}" method="POST">
+                                @csrf
+                                <input type="hidden" name="amount" value="{{ $total }}">
+                                <button class="btn btn-dark rounded-pill py-2 btn-block d-none" id="proceed">Purchase
+                                    with
+                                    Account Funds</button>
+                            </form>
+
+                            <a href="{{ route('user.deposits.create') }}" id="topup"
+                                class="btn btn-dark rounded-pill py-3 btn-block d-none">Top Up Account</a>
+                        </div>
+                    @endif
                 @endif
             </div>
 
